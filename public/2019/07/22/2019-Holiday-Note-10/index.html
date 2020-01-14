@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon32.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Note,C++,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="君子不器" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Holiday Note_10开始学C++了。第一天，学的特别杂，主要是C++对于C的一些增强，如全局变量检测，函数检测，类型转换检查，struct，bool，三目运算符，const。然后学了C++中的namespace，using和引用的使用方法。其中 引用(reference) 是其中的重点，它是C++对C的重要扩充。相较于C的地址，指针传递，引用更加清晰，语法更加简单不容易出错。">
+<meta name="keywords" content="Note,C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Holiday Note_10">
+<meta property="og:url" content="www.bottlewei.com/2019/07/22/2019-Holiday-Note-10/index.html">
+<meta property="og:site_name" content="君子不器">
+<meta property="og:description" content="Holiday Note_10开始学C++了。第一天，学的特别杂，主要是C++对于C的一些增强，如全局变量检测，函数检测，类型转换检查，struct，bool，三目运算符，const。然后学了C++中的namespace，using和引用的使用方法。其中 引用(reference) 是其中的重点，它是C++对C的重要扩充。相较于C的地址，指针传递，引用更加清晰，语法更加简单不容易出错。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://miao.su/images/2019/07/22/CPP573f4.md.png">
+<meta property="og:updated_time" content="2019-07-24T15:13:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Holiday Note_10">
+<meta name="twitter:description" content="Holiday Note_10开始学C++了。第一天，学的特别杂，主要是C++对于C的一些增强，如全局变量检测，函数检测，类型转换检查，struct，bool，三目运算符，const。然后学了C++中的namespace，using和引用的使用方法。其中 引用(reference) 是其中的重点，它是C++对C的重要扩充。相较于C的地址，指针传递，引用更加清晰，语法更加简单不容易出错。">
+<meta name="twitter:image" content="https://miao.su/images/2019/07/22/CPP573f4.md.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":16,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="www.bottlewei.com/2019/07/22/2019-Holiday-Note-10/">
+
+
+
+
+
+  <title>Holiday Note_10 | 君子不器</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '135080128-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?129843fc827ed0b20e0e23de49875737";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+      <a href="https://github.com/ofcZsgj/ofcZsgj.github.io" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">君子不器</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">停灯向晓, 抱影无眠</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.bottlewei.com/2019/07/22/2019-Holiday-Note-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左手工匠">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="君子不器">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Holiday Note_10</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-22T20:22:51+08:00">
+                2019-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Holiday-Note-10"><a href="#Holiday-Note-10" class="headerlink" title="Holiday Note_10"></a>Holiday Note_10</h1><p>开始学C++了。第一天，学的特别杂，主要是C++对于C的一些增强，如<strong>全局变量检测</strong>，<strong>函数检测</strong>，<strong>类型转换检查</strong>，<strong>struct</strong>，<strong>bool</strong>，<strong>三目运算符</strong>，<strong>const</strong>。然后学了C++中的<strong>namespace</strong>，<strong>using</strong>和<strong>引用</strong>的使用方法。其中 <em>引用(reference)</em> 是其中的重点，它是C++对C的重要扩充。相较于C的地址，指针传递，引用更加清晰，语法更加简单不容易出错。</p>
+<a id="more"></a>
+
+<h2 id="C-对C的增强"><a href="#C-对C的增强" class="headerlink" title="C++对C的增强"></a>C++对C的增强</h2><blockquote>
+<p>C++之父-本贾尼·斯特劳斯特卢普(Bjarne Stroustrup)是这么说的：C++主要是为了我的朋友和我不必再使 用汇编语言、C语言或者其他现代高级语言来编程而设计的。它的主要功能是可以更方便得编写出好程序，<strong>让每个程序员更加快乐</strong>”。</p>
+</blockquote>
+<p><a href="https://miao.su/image/TINaJ" target="_blank" rel="noopener"><img src="https://miao.su/images/2019/07/22/CPP573f4.md.png" alt="CPP573f4.md.png"></a></p>
+<p>看得出来他很快乐👴</p>
+<p>C++是面向对象的， 面向对象三大特性：<strong>继承</strong>；<strong>封装</strong>；<strong>多态</strong>；</p>
+<h3 id="全局变量检测增强"><a href="#全局变量检测增强" class="headerlink" title="全局变量检测增强"></a>全局变量检测增强</h3><p>此代码在C++下编译失败,在C下编译通过</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>; <span class="comment">//赋值，当做定义</span></span><br><span class="line"><span class="keyword">int</span> a; <span class="comment">//没有赋值，当做声明</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="函数检测增强"><a href="#函数检测增强" class="headerlink" title="函数检测增强"></a>函数检测增强</h3><p>C++中所有的变量和函数都必须有类型，因此，在C中写函数可以不写返回值类型，不写参数类型，不写参数，有返回值却不写return都可以编译成功，但是C++编译均会失败。</p>
+<ol>
+<li>参数类型检测</li>
+<li>返回值检测</li>
+<li>传参个数检测</li>
+</ol>
+<h3 id="类型转换检测增强"><a href="#类型转换检测增强" class="headerlink" title="类型转换检测增强"></a>类型转换检测增强</h3><p>malloc返回void* ，C中可以不用强转用想使用的指针类型接收即可，C++必须强转成接收指针类型才能编译成功；</p>
+<h3 id="struct增强"><a href="#struct增强" class="headerlink" title="struct增强"></a>struct增强</h3><ul>
+<li>c中定义结构体变量需要加上struct关键字，C++不需要。</li>
+<li>c中的结构体只能定义成员变量，不能定义成员函数。C++即可以定义成员变量，也可以定义成员函数。</li>
+</ul>
+<p>以下为C++可以实现的结构体定义以及使用。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Person</span> &#123;</span></span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">64</span>];</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">ageAdd</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		age++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Person p1;</span><br><span class="line">p1.ageAdd();</span><br></pre></td></tr></table></figure>
+
+<h3 id="bool数据类型增强"><a href="#bool数据类型增强" class="headerlink" title="bool数据类型增强"></a>bool数据类型增强</h3><p>C++中有bool类型，C没有。true/false。sizeof结果为1。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三目运算符增强"><a href="#三目运算符增强" class="headerlink" title="三目运算符增强"></a>三目运算符增强</h3><ul>
+<li>C语言三目运算表达式<strong>返回值为数据值</strong>，为右值，不能赋值。</li>
+<li>C++语言三目运算表达式<strong>返回值为变量本身(引用)</strong>，为左值，可以赋值。<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">int</span> a = <span class="number">10</span>, <span class="keyword">b </span>= <span class="number">20</span><span class="comment">;</span></span><br><span class="line">//下面这条语句在C中无法成功编译。C++执行完后<span class="keyword">b的值变成了100</span></span><br><span class="line"><span class="keyword">(a </span>&gt; <span class="keyword">b </span>? a : <span class="keyword">b) </span>= <span class="number">100</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="const增强"><a href="#const增强" class="headerlink" title="const增强"></a>const增强</h3><ol>
+<li><strong>在C++中，一个const不必创建内存空间，而在C中，一个const总是需要一块内存空间。</strong></li>
+</ol>
+<ul>
+<li><p>C语言中const是伪常量，局部const存储在堆栈区，只是不能通过变量直接修改const只读变量的值，但是可以跳过编译器的检查，通过指针间接修改const值。</p>
+</li>
+<li><p>C++中const会放入到<strong>符号表</strong>中，不会分配内存，而是<strong>Key-Value</strong>的形式，const修饰的变量为key值，变量值为value。当对其取地址时，才会分配内存，但是这个新分配出的内存只是拷贝的const修饰变量的value值，指针操作的只是这块空间，因此无法进行修改。</p>
+</li>
+</ul>
+<ol start="2">
+<li><p>C语言中const默认是外部链接，C++中const默认是内部链接</p>
+</li>
+<li><p>const分配内存情况</p>
+</li>
+</ol>
+<ul>
+<li>对变量取地址，会分配<strong>临时内存</strong><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> m_A = <span class="number">10</span>;<span class="comment">//不分配内存，KEY-VALUE</span></span><br><span class="line">	<span class="keyword">int</span>* p = (<span class="keyword">int</span> *)&amp;(m_A);<span class="comment">//分配的是临时内存</span></span><br><span class="line">	*p = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"*p = "</span> &lt;&lt; *p &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//100</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"m_A = "</span> &lt;&lt; m_A &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p>extern关键字下的const会分配内存</p>
+</li>
+<li><p>用<strong>普通变量初始化const变量</strong>会分配内存</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test06</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> m_A = b;<span class="comment">//会分配内存</span></span><br><span class="line">	<span class="keyword">int</span>* p = (<span class="keyword">int</span>*) &amp; (m_A);</span><br><span class="line"></span><br><span class="line">	*p = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"*p = "</span> &lt;&lt; *p &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//100</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"m_A = "</span> &lt;&lt; m_A &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//100</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>自定义数据类型</strong>会分配内存</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Person</span> &#123;</span></span><br><span class="line">	<span class="built_in">string</span> name = <span class="string">"AAA"</span>;</span><br><span class="line">	<span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Person p1;</span><br><span class="line"><span class="comment">//p1.name = "BBB";//虽然不能简单修改，但是通过指针取地址可以修改了</span></span><br><span class="line">	</span><br><span class="line">Person* p = (Person*) &amp; (p1);	</span><br><span class="line">p-&gt;name = <span class="string">"BBB"</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"name = "</span> &lt;&lt; p-&gt;name &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//name = BBB</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="4">
+<li>尽量用const代替define</li>
+</ol>
+<ul>
+<li>const有类型，<strong>可进行编译器类型安全检查</strong>。#define无类型，不可进行类型检查.</li>
+<li>const有<strong>作用域</strong>，而#define不重视作用域，默认定义处到文件结尾.如果定义在指定作用域下有效的常量，那么#define就不能用。</li>
+</ul>
+<hr>
+<h2 id="C-中namespace和using的使用"><a href="#C-中namespace和using的使用" class="headerlink" title="C++中namespace和using的使用"></a>C++中namespace和using的使用</h2><p>C++的Hello World写法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//标准输入流</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//使用命名空间</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main01</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//cout：标准输出；&lt;&lt; 符号重载，字符拼接；endl标准结束换行</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello World"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//返回正常退出</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="namespace用途以及使用方法"><a href="#namespace用途以及使用方法" class="headerlink" title="namespace用途以及使用方法"></a>namespace用途以及使用方法</h3><p>namespace就像一个一个的房子，里边有这个房子特定的数据。使用<strong>命名空间</strong>是为了<strong>更好地控制标识符的作用域</strong></p>
+<ul>
+<li><p>解决名称冲突问题</p>
+</li>
+<li><p><strong>必须在全局作用域下声明</strong></p>
+</li>
+<li><p>命名空间下可以放入 函数、变量、结构体、类…</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> veryLongName&#123;	</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"hello namespace"</span> &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命名空间可以嵌套命名空间</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="title">A</span> &#123;</span><br><span class="line">	<span class="keyword">int</span> m_A = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">namespace</span> <span class="title">B</span> &#123;</span><br><span class="line">		<span class="keyword">int</span> m_C = <span class="number">30</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命名空间是开放的，可以随时加入新的成员</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="title">A</span> &#123;</span><br><span class="line">	<span class="keyword">int</span> m_B = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>匿名命名空间，意味着命名空间中的标识符只能在本文件内访问，相当于给这个标识符加上了static，使得其可以作为内部连接。</p>
+</li>
+<li><p>可以起别名</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="title">S</span> = A;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="namespace用途以及使用方法-1"><a href="#namespace用途以及使用方法-1" class="headerlink" title="namespace用途以及使用方法"></a>namespace用途以及使用方法</h3><ol>
+<li>using声明:<br>using声明可使得指定的标识符可用。</li>
+<li>using编译指令:<br>using编译指令使整个命名空间标识符可用.</li>
+</ol>
+<p>参照上方的命名空间A和B进行使用表示using的使用注意事项。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> m_A = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//声明，注意二义性问题</span></span><br><span class="line">	<span class="comment">//using A::m_A;//编译会失败</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//编译指令，打开房间，并不一定用。</span></span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> A;</span><br><span class="line">	<span class="comment">//using namespace B;//连续打开两个房间，一会产生二义性。</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; m_A &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//此时输出结果为100，虽然此时打开了A的房间，但是并未使用。</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用（reference）"><a href="#引用（reference）" class="headerlink" title="引用（reference）"></a>引用（reference）</h2><p>引用是C++对C的重要扩充。在C/C++中指针的作用基本都是一样的，但是C++增加了另外一种给函数传递地址的途径，这就是<strong>按引用传递</strong>(pass-by-reference)</p>
+<ul>
+<li>变量名实质上是一段连续内存空间的别名，是一个标号(门牌号)</li>
+<li>程序中通过变量来申请并命名内存空间</li>
+<li>通过变量的名字可以使用存储空间</li>
+</ul>
+<p><strong>定义方式：Type&amp; ref = val;</strong></p>
+<p>注意事项：</p>
+<ul>
+<li>&amp;在此不是求地址运算，而是起标识作用。</li>
+<li>类型标识符是指目标变量的类型</li>
+<li><strong>必须在声明引用变量时进行初始化</strong>。</li>
+<li><strong>引用初始化之后不能改变</strong>。</li>
+<li>不能有NULL引用。必须确保引用是和一块<strong>合法的存储单元</strong>关联。即不要返回局部变量的引用</li>
+<li>可以建立对数组的引用。</li>
+</ul>
+<p>定义数组的两种方式</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span>(ARRAY)[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">void</span> test09() &#123;</span><br><span class="line">	<span class="keyword">int</span> arr[<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span>(&amp;reArr)[<span class="number">10</span>] = arr;</span><br><span class="line"></span><br><span class="line">	ARRAY&amp; r = arr;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>做函数参数，例如交换函数，C中调用时需要传入地址，参数需要指针类型，C++大大简化了这些操作</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void <span class="keyword">swap(int&amp; </span>a, int&amp; <span class="keyword">b) </span>&#123;</span><br><span class="line">	int temp = a<span class="comment">;</span></span><br><span class="line">	a = <span class="keyword">b;</span></span><br><span class="line"><span class="keyword">	</span><span class="keyword">b </span>= temp<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void test10() &#123;</span><br><span class="line">	int a = <span class="number">10</span><span class="comment">;</span></span><br><span class="line">	int <span class="keyword">b </span>= <span class="number">20</span><span class="comment">;</span></span><br><span class="line">	<span class="keyword">swap(a, </span><span class="keyword">b);</span></span><br><span class="line"><span class="keyword">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>做函数返回值时</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span>&amp; <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">	test01() = <span class="number">100</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="引用的本质"><a href="#引用的本质" class="headerlink" title="引用的本质"></a>引用的本质</h3><p><strong>引用的本质在c++内部实现是一个指针常量</strong></p>
+<p><strong>自动转换为val的地址或值。</strong></p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Type</span>&amp; <span class="keyword">ref</span> = val; // <span class="keyword">Type</span>* const <span class="keyword">ref</span> = &amp;val;</span><br></pre></td></tr></table></figure>
+
+<h3 id="指针引用"><a href="#指针引用" class="headerlink" title="指针引用"></a>指针引用</h3><p>在C中如果想改变一个指针的指向而不是它所指向的内容，需要用到二级指针，使用指针引用会让函数清晰明了很多。</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Type</span>* <span class="keyword">pointer</span> = NULL;  </span><br><span class="line"><span class="keyword">Type</span>*&amp; = <span class="keyword">pointer</span>;</span><br></pre></td></tr></table></figure>
+
+<p>两者的具体参考以下的代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Teacher</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> mAge;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//指针间接修改teacher的年龄</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AllocateAndInitByPointer</span><span class="params">(Teacher** teacher)</span></span>&#123;</span><br><span class="line">	*teacher = (Teacher*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Teacher));</span><br><span class="line">	(*teacher)-&gt;mAge = <span class="number">200</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//引用修改teacher年龄</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AllocateAndInitByReference</span><span class="params">(Teacher*&amp; teacher)</span></span>&#123;</span><br><span class="line">	teacher-&gt;mAge = <span class="number">300</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//创建Teacher</span></span><br><span class="line">	Teacher* teacher = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="comment">//指针间接赋值</span></span><br><span class="line">	AllocateAndInitByPointer(&amp;teacher);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"AllocateAndInitByPointer:"</span> &lt;&lt; teacher-&gt;mAge &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">//引用赋值,将teacher本身传到ChangeAgeByReference函数中</span></span><br><span class="line">	AllocateAndInitByReference(teacher);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"AllocateAndInitByReference:"</span> &lt;&lt; teacher-&gt;mAge &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">free</span>(teacher);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>常量引用</strong>主要用在函数的形参，尤其是类的拷贝/复制构造函数。</p>
+<p>将函数的形参定义为常量引用的好处:</p>
+<ul>
+<li>引用不产生新的变量，减少形参与实参传递时的开销。</li>
+<li>由于引用可能导致实参随形参改变而改变，将其定义为常量引用可以消除这种副作用。</li>
+<li>如果希望实参随着形参的改变而改变，那么使用一般的引用，如果不希望实参随着形参改变，那么使用常量引用。</li>
+</ul>
+<p>PS:起床后不是立马学习，而是选电脑选了半天。。。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/21/2019-Holiday-Note-09/" rel="next" title="Holiday Note_09">
+                <i class="fa fa-chevron-left"></i> Holiday Note_09
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/23/2019-Holiday-Note-11/" rel="prev" title="Holiday Note_11">
+                Holiday Note_11 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="左手工匠">
+            
+              <p class="site-author-name" itemprop="name">左手工匠</p>
+              <p class="site-description motion-element" itemprop="description">大概就这样，折腾让生活更美好</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ofcZsgj" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tcuZsgj@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Bottle_Wei" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://coolshell.cn/" title="左耳朵耗子(陈浩大佬)" target="_blank">左耳朵耗子(陈浩大佬)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/home.html" title="阮一峰大神" target="_blank">阮一峰大神</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/user/AlehandroMiskauskas/featured" title="Alexandr Misko(战斗民族的Fingerstyle)" target="_blank">Alexandr Misko(战斗民族的Fingerstyle)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw" title="3Blue1Brown(看过的最棒的科普Youtuber)" target="_blank">3Blue1Brown(看过的最棒的科普Youtuber)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/user/KurtHugoSchneider/featured" title="Kurt Hugo Schneider(才华横溢的音乐Youtuber)" target="_blank">Kurt Hugo Schneider(才华横溢的音乐Youtuber)</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Holiday-Note-10"><span class="nav-number">1.</span> <span class="nav-text">Holiday Note_10</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-对C的增强"><span class="nav-number">1.1.</span> <span class="nav-text">C++对C的增强</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量检测增强"><span class="nav-number">1.1.1.</span> <span class="nav-text">全局变量检测增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数检测增强"><span class="nav-number">1.1.2.</span> <span class="nav-text">函数检测增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换检测增强"><span class="nav-number">1.1.3.</span> <span class="nav-text">类型转换检测增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#struct增强"><span class="nav-number">1.1.4.</span> <span class="nav-text">struct增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bool数据类型增强"><span class="nav-number">1.1.5.</span> <span class="nav-text">bool数据类型增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三目运算符增强"><span class="nav-number">1.1.6.</span> <span class="nav-text">三目运算符增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const增强"><span class="nav-number">1.1.7.</span> <span class="nav-text">const增强</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-中namespace和using的使用"><span class="nav-number">1.2.</span> <span class="nav-text">C++中namespace和using的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#namespace用途以及使用方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">namespace用途以及使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#namespace用途以及使用方法-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">namespace用途以及使用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用（reference）"><span class="nav-number">1.3.</span> <span class="nav-text">引用（reference）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引用的本质"><span class="nav-number">1.3.1.</span> <span class="nav-text">引用的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针引用"><span class="nav-number">1.3.2.</span> <span class="nav-text">指针引用</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">左手工匠</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon32.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Note,C,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="君子不器" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Holiday Note_04放假第四天。今天学了内存对齐的原理与一系列原则(感觉还是挺简单的，主要突出了时间换空间的思想)，还有文件打开，关闭以及缓冲区的一些补充知识。另外写了两个练习，一个是结构体嵌套二维指针(依旧是练习分配释放内存，只不过这个练习以Teacher-Student模型分配了4层内存，内存的分配和释放操作还是挺细节的)。另一个练习是 配置文件读写案例，巨恶心，写头文件，然后将功能">
+<meta name="keywords" content="Note,C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Holiday Note_04">
+<meta property="og:url" content="www.bottlewei.com/2019/07/16/2019-Holiday-Note-04/index.html">
+<meta property="og:site_name" content="君子不器">
+<meta property="og:description" content="Holiday Note_04放假第四天。今天学了内存对齐的原理与一系列原则(感觉还是挺简单的，主要突出了时间换空间的思想)，还有文件打开，关闭以及缓冲区的一些补充知识。另外写了两个练习，一个是结构体嵌套二维指针(依旧是练习分配释放内存，只不过这个练习以Teacher-Student模型分配了4层内存，内存的分配和释放操作还是挺细节的)。另一个练习是 配置文件读写案例，巨恶心，写头文件，然后将功能">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://miao.su/images/2019/07/16/463d913c5f9d055218431668f3e527249333.md.png">
+<meta property="og:image" content="https://miao.su/images/2019/07/16/1205c38d33e627257b4b4.png">
+<meta property="og:image" content="https://miao.su/images/2019/07/16/566664cfae.png">
+<meta property="og:image" content="https://miao.su/images/2019/07/16/359febb5d031e91e0bb5f0abb4c31abca5ff.png">
+<meta property="og:updated_time" content="2019-07-16T14:40:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Holiday Note_04">
+<meta name="twitter:description" content="Holiday Note_04放假第四天。今天学了内存对齐的原理与一系列原则(感觉还是挺简单的，主要突出了时间换空间的思想)，还有文件打开，关闭以及缓冲区的一些补充知识。另外写了两个练习，一个是结构体嵌套二维指针(依旧是练习分配释放内存，只不过这个练习以Teacher-Student模型分配了4层内存，内存的分配和释放操作还是挺细节的)。另一个练习是 配置文件读写案例，巨恶心，写头文件，然后将功能">
+<meta name="twitter:image" content="https://miao.su/images/2019/07/16/463d913c5f9d055218431668f3e527249333.md.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":16,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="www.bottlewei.com/2019/07/16/2019-Holiday-Note-04/">
+
+
+
+
+
+  <title>Holiday Note_04 | 君子不器</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '135080128-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?129843fc827ed0b20e0e23de49875737";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+      <a href="https://github.com/ofcZsgj/ofcZsgj.github.io" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">君子不器</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">停灯向晓, 抱影无眠</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.bottlewei.com/2019/07/16/2019-Holiday-Note-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左手工匠">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="君子不器">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Holiday Note_04</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-16T21:14:31+08:00">
+                2019-07-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Holiday-Note-04"><a href="#Holiday-Note-04" class="headerlink" title="Holiday Note_04"></a>Holiday Note_04</h1><p>放假第四天。今天学了<strong>内存对齐</strong>的原理与一系列原则(感觉还是挺简单的，主要突出了时间换空间的思想)，还有<strong>文件打开，关闭以及缓冲区的一些补充知识</strong>。另外写了两个练习，一个是<strong>结构体嵌套二维指针</strong>(依旧是练习分配释放内存，只不过这个练习以Teacher-Student模型分配了4层内存，内存的分配和释放操作还是挺细节的)。另一个练习是 <strong>配置文件读写</strong>案例，巨恶心，写头文件，然后将功能一一封装实现，最后调用测试功能，从下午写到晚上，晕头转向的，全是二级指针三级指针以及结构体指针，刚刚又好好想了一遍，为什么debug了这么久，总结了下是自己没理清楚参数传递的思路和调用过程就写，这样下来效率自然就低了，下次写这种复杂的案例时还是应该先画好图理清楚了再开始。</p>
+<a id="more"></a>
+
+<hr>
+<h2 id="内存对齐"><a href="#内存对齐" class="headerlink" title="内存对齐"></a>内存对齐</h2><h3 id="什么是内存对齐"><a href="#什么是内存对齐" class="headerlink" title="什么是内存对齐"></a>什么是内存对齐</h3><p>在用sizeof运算符求算某结构体所占空间时，并不是简单地将结构体中所有元素各自占的空间相加，<br>这里涉及到内存字节对齐的问题。</p>
+<p><del>从理论上讲，对于任何变量的访问都可以从任何地址开始访问</del></p>
+<p>但是事实上不是如此，<strong>实际上访问特定类型的变量只能在特定的地址访问</strong>，<br>这就需要各个变量在空间上按一定的规则排列， 而不是简单地顺序排列，这就是内存对齐。</p>
+<p>我们知道内存的最小单元是一个字节，当cpu从内存中读取数据的时候，是一个一个字节读取</p>
+<p>但是实际上cpu将内存当成多个块，每次从内存中读取一个块，这个块的大小可能是2、4、8、16等，</p>
+<hr>
+<h3 id="内存对齐的优缺点"><a href="#内存对齐的优缺点" class="headerlink" title="内存对齐的优缺点"></a>内存对齐的优缺点</h3><blockquote>
+<p>空间换时间</p>
+</blockquote>
+<p>内存对齐是操作系统为了<strong>提高访问内存的策略</strong>。<strong>操作系统在访问内存的时候，每次读取一定长度(这个长度是操作系统默认的对齐数，或者默认对齐数的整数倍)</strong>。如果没有对齐，为了访问一个变量可能产生<em>二次访问</em>。而且要注意的是某些平台只能在特定的地址处访问特定类型的数据，否则抛出硬件异常给操作系统。</p>
+<hr>
+<h3 id="内存对齐的三大原则"><a href="#内存对齐的三大原则" class="headerlink" title="内存对齐的三大原则"></a>内存对齐的三大原则</h3><ul>
+<li>对于<em>标准数据类型</em>，它的地址只要是它的<strong>长度的整数倍</strong>。</li>
+</ul>
+<ul>
+<li>对于非标准数据类型，比如结构体，要遵循以下对齐原则：</li>
+</ul>
+<ol>
+<li><p>数组成员对齐规则。第一个数组成员应该放在offset为0的地方，以后每个数组成员应该放在<strong>offset为min（当前成员的大小，#pargama pack(n)）整数倍</strong>的地方开始（比如int在32位机器为４字节，#pargama pack(2)，那么从2的倍数地方开始存储）。</p>
+</li>
+<li><p><strong>结构体总的大小</strong>，也就是sizeof的结果，必须是min（结构体内部最大成员，#pargama pack(n)）的整数倍，<strong>不足要补齐</strong>。</p>
+</li>
+<li><p>结构体做为成员的对齐规则。如果一个结构体B里嵌套另一个结构体A,还是以最大成员类型的大小对齐，但是<strong>结构体A的起点为A内部最大成员的整数倍的地方</strong>。（struct B里存有struct A，A里有char，int，double等成员，那A应该从8的整数倍开始存储。），结构体A中的成员的对齐规则仍满足原则1、原则2。</p>
+</li>
+</ol>
+<p>辅助理解代码如下：</p>
+<p>下面这条代码是显示当前packing alignment的字节数，以warning message的形式被显示。我在VS上显示的结果是8.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> pack(show)</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://miao.su/image/TaHgL" target="_blank" rel="noopener"><img src="https://miao.su/images/2019/07/16/463d913c5f9d055218431668f3e527249333.md.png" alt="463d913c5f9d055218431668f3e527249333.md.png"></a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">STUDENT1</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> a;<span class="comment">//0-3</span></span><br><span class="line">	<span class="keyword">char</span> b;<span class="comment">//4</span></span><br><span class="line">	<span class="keyword">double</span> c;<span class="comment">//8-15  每个成员必须放在min（当前成员的大小，#pargama pack(n)）整数倍的地方开始</span></span><br><span class="line">	<span class="keyword">float</span> d;<span class="comment">//16-19   结构体总的大小必须为min（结构体内部最大成员，#pargama pack(n)）为8的整数倍，因此0-23  大小一共为24</span></span><br><span class="line">&#125;Student1;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">STUDENT2</span> &#123;</span></span><br><span class="line">	<span class="keyword">char</span> a;<span class="comment">//0</span></span><br><span class="line">	Student1 b;<span class="comment">//8-31 结构体A的起点为A内部最大成员的整数倍的地方</span></span><br><span class="line">	<span class="keyword">double</span> c;<span class="comment">//32-39   0-39  40字节</span></span><br><span class="line">&#125;Student2;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, <span class="keyword">sizeof</span>(Student1));<span class="comment">//输出结果为24</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, <span class="keyword">sizeof</span>(Student2));<span class="comment">//输出结果为40</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="结构体嵌套二维指针练习"><a href="#结构体嵌套二维指针练习" class="headerlink" title="结构体嵌套二维指针练习"></a>结构体嵌套二维指针练习</h2><p><img src="https://miao.su/images/2019/07/16/1205c38d33e627257b4b4.png" alt="1205c38d33e627257b4b4.png"></p>
+<p>结构体如下所示，模型为一个Teacher类型的二级指针，为它分配存放三个Teacher类型的一个指针类型用于存放数据，这三个Teacher类型的一级指针再为name和students分配空间，其中students为二级指针即表示有多个学生，因此使用以及分配的二维指针students继续分配4个一维指针存放学生姓名。该案例关键在于<strong>训练分配内存和释放内存的次序以及判定条件的书写</strong>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Teacher</span> &#123;</span></span><br><span class="line">	<span class="keyword">char</span>* name;</span><br><span class="line">	<span class="keyword">char</span>** students;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void printTeacher(struct Teacher** ts) &#123;</span><br><span class="line">	<span class="keyword">for</span> (int <span class="built_in">i</span> = <span class="number">0</span>; <span class="built_in">i</span> &lt; <span class="number">3</span>; ++<span class="built_in">i</span>) &#123;</span><br><span class="line"></span><br><span class="line">		printf(<span class="string">"%s\n"</span>, ts[<span class="built_in">i</span>]-&gt;name);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (int <span class="built_in">j</span> = <span class="number">0</span>; <span class="built_in">j</span> &lt; <span class="number">5</span>; ++<span class="built_in">j</span>) &#123;</span><br><span class="line"></span><br><span class="line">			printf(<span class="string">"%s\n"</span>, ts[<span class="built_in">i</span>]-&gt;students[<span class="built_in">j</span>]);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>分配内存</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">int allocateSpace(<span class="class"><span class="keyword">struct</span> <span class="title">Teacher</span></span>*** ts) &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> (NULL == ts)</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Teacher</span></span>** temp = malloc(<span class="keyword">sizeof</span>(<span class="class"><span class="keyword">struct</span> <span class="title">Teacher</span></span>*) * <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; <span class="number">3</span>; ++i) &#123;</span><br><span class="line"></span><br><span class="line">		temp[i] = malloc(<span class="keyword">sizeof</span>(<span class="class"><span class="keyword">struct</span> <span class="title">Teacher</span></span>));</span><br><span class="line"></span><br><span class="line">		temp[i]-&gt;name = malloc(<span class="keyword">sizeof</span>(<span class="built_in">char</span>) * <span class="number">64</span>);</span><br><span class="line"></span><br><span class="line">		sprintf(temp[i]-&gt;name, <span class="string">"Teacher_%d"</span>, i + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">		temp[i]-&gt;students = malloc(<span class="keyword">sizeof</span>(<span class="built_in">char</span>*) * <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (int j = <span class="number">0</span>; j &lt; <span class="number">5</span>; ++j) &#123;</span><br><span class="line">			temp[i]-&gt;students[j] = malloc(<span class="keyword">sizeof</span>(<span class="built_in">char</span>) * <span class="number">64</span>);</span><br><span class="line">			sprintf(temp[i]-&gt;students[j], <span class="string">"\tStudent_%d"</span>, j + <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//指针的间接赋值</span></span><br><span class="line">	*ts = temp;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>释放内存(关键)</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">void freeSpace(struct Teacher** ts) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (NULL == ts)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (int <span class="built_in">i</span> = <span class="number">0</span>; <span class="built_in">i</span> &lt; <span class="number">3</span>; ++<span class="built_in">i</span>) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (NULL == ts[<span class="built_in">i</span>])</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (ts[<span class="built_in">i</span>]-&gt;name != NULL) &#123;</span><br><span class="line">			free(ts[<span class="built_in">i</span>]-&gt;name);</span><br><span class="line">			ts[<span class="built_in">i</span>]-&gt;name = NULL;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (ts[<span class="built_in">i</span>]-&gt;students != NULL) &#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (int <span class="built_in">j</span> = <span class="number">0</span>; <span class="built_in">j</span> &lt; <span class="number">5</span>; ++<span class="built_in">j</span>) &#123;</span><br><span class="line"></span><br><span class="line">				<span class="keyword">if</span> (NULL == ts[<span class="built_in">i</span>]-&gt;students[<span class="built_in">j</span>]) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				free(ts[<span class="built_in">i</span>]-&gt;students[<span class="built_in">j</span>]);</span><br><span class="line">				ts[<span class="built_in">i</span>]-&gt;students[<span class="built_in">j</span>] = NULL;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			free(ts[<span class="built_in">i</span>]-&gt;students);</span><br><span class="line">			ts[<span class="built_in">i</span>]-&gt;students = NULL;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		free(ts[<span class="built_in">i</span>]);</span><br><span class="line">		ts[<span class="built_in">i</span>] = NULL;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	free(ts);</span><br><span class="line">	ts = NULL;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>调用函数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Teacher</span>** <span class="title">teacher</span>;</span></span><br><span class="line"></span><br><span class="line">	teacher = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//定义allocateSpace函数返回值类型为int的目的为接收不同情况的错误码</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, allocateSpace(&amp;teacher));</span><br><span class="line"></span><br><span class="line">	printTeacher(teacher);</span><br><span class="line"></span><br><span class="line">	freeSpace(teacher);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	test();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="文件相关"><a href="#文件相关" class="headerlink" title="文件相关"></a>文件相关</h2><h3 id="文件缓冲区"><a href="#文件缓冲区" class="headerlink" title="文件缓冲区"></a>文件缓冲区</h3><p>如我们从磁盘里取信息，我们先把读出的数据放在缓冲区，计算机再直接从缓冲区中取数据，等缓冲区的数据取完后再去磁盘中读取，这样就可以<strong>减少磁盘的读写次数</strong>，再加上计算机对缓冲区的操作大大快于对磁盘的操作，故应用缓冲区可大大<strong>提高计算机的运行速度</strong>。</p>
+<p><img src="https://miao.su/images/2019/07/16/566664cfae.png" alt="566664cfae.png"></p>
+<hr>
+<h3 id="理解fopen与fclose与文件缓冲区的关系"><a href="#理解fopen与fclose与文件缓冲区的关系" class="headerlink" title="理解fopen与fclose与文件缓冲区的关系"></a>理解fopen与fclose与文件缓冲区的关系</h3><p>文件的打开操作表示将给用户指定的文件在内存<strong>分配一个FILE结构区</strong>，并将该结构的指针返回给用户程序，以后用户程序就可用此FILE指针来实现对指定文件的存取操作了。</p>
+<p><em>只有对打开的文件进行关闭操作时，停留在文件缓冲区的内容才能写到该文件中去</em>，从而使文件完整。再者一旦关闭了文件，该文件对应的FILE结构将被释放，从而使关闭的文件得到保护，因为这时对该文件的存取操作将不会进行。<strong>文件的关闭也意味着释放了该文件的缓冲区</strong>。</p>
+<hr>
+<h3 id="有关文件指针和EOF的注意事项"><a href="#有关文件指针和EOF的注意事项" class="headerlink" title="有关文件指针和EOF的注意事项"></a>有关文件指针和EOF的注意事项</h3><p>关键在于文件指针何时指向EOF：只有当进行fgetc操作后文件指针后才会指向EOF，此使feof的返回值才为真，没进行fgetc操作前，文件指针仍未指向EOF。若不注意可能在读取时将EOF读取。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	FILE* fp = fopen(<span class="string">"./test.txt"</span>, <span class="string">"r"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> ch;</span><br><span class="line">	<span class="keyword">while</span> (!feof(fp)) &#123;<span class="comment">//注意：该写法将会读取出EOF，因为只有当进行了fgetc操作，文件指针才指向EOF，FILE 中的flag值才会改变，此刻的feof(fp)返回值才为真。</span></span><br><span class="line"></span><br><span class="line">		ch = fgetc(fp);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//加入判断可避免读取出EOF，进行完fgetc操作后文件指针已经指向了EOF</span></span><br><span class="line">		<span class="keyword">if</span> (feof(fp))</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%c"</span>, ch);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fclose(fp);</span><br><span class="line">	fp = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面的写法可以直接规避打印EOF的情况</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void test02() &#123;</span><br><span class="line"></span><br><span class="line">	FILE* <span class="built_in">fp</span> = fopen(<span class="string">"./test.txt"</span>, <span class="string">"r"</span>)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">	char ch<span class="comment">;</span></span><br><span class="line">	while ((ch = fgetc(<span class="built_in">fp</span>)) != EOF) &#123;</span><br><span class="line">		printf(<span class="string">"%c"</span>, ch)<span class="comment">;</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fclose(<span class="built_in">fp</span>)<span class="comment">;</span></span><br><span class="line">	<span class="built_in">fp</span> = NULL<span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="配置文件读写代码"><a href="#配置文件读写代码" class="headerlink" title="配置文件读写代码"></a>配置文件读写代码</h3><p>思路如下: 有如下的配置文件，现需要按找指定格式读取其中有用的key值和value值，如ip:192.168.137.134，ip地址对应key值，192.168.137.134对应value值。将文件中所有有效的key，value值读取后为其分配对应的内存空间，并存放与结构体中，且之后可以通过给定一个key值返回对应的value值。</p>
+<p><img src="https://miao.su/images/2019/07/16/359febb5d031e91e0bb5f0abb4c31abca5ff.png" alt="359febb5d031e91e0bb5f0abb4c31abca5ff.png"></p>
+<p>以下是头文件，定义好函数原型以及存储key，value的结构体，实现过程有点复杂，但是更重要的是<strong>理解各个函数调用的过程以及参数的传递作用</strong>！！！</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//防止头文件重复包含</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//为了C++能够调用C写的函数</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">	<span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">ConfigInfo</span> &#123;</span></span><br><span class="line">		<span class="keyword">char</span> key[<span class="number">64</span>];</span><br><span class="line">		<span class="keyword">char</span> value[<span class="number">128</span>];</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//获取文件有效行</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getLines_ConfigFile</span><span class="params">(FILE* file)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//加载配置文件</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">loadFile_ConfigFile</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* filePath, <span class="keyword">char</span>*** fileData, <span class="keyword">int</span>* line)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//解析配置文件</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">parseFile_ConfigFile</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>** fileData, <span class="keyword">int</span> line, struct ConfigInfo** info)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//获得指定配置信息</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">getInfo_ConfigFile</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* key, struct ConfigInfo* info, <span class="keyword">int</span> line)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//释放配置文件信息</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">destroyFile_ConfigFile</span><span class="params">(struct ConfigInfo* info)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//判断当前行是否有效</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">isValid_ConfigFile</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* buf)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<p>以下为功能实现文件</p>
+<p>获取文件有效行</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#<span class="keyword">include</span> <span class="string">"ConfigFile.h"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> getLines_ConfigFile(<span class="keyword">FILE</span>* <span class="keyword">file</span>) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> buf[<span class="number">1024</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> lines = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span> (fgets(buf, <span class="number">1024</span>, <span class="keyword">file</span>) != <span class="keyword">NULL</span>) &#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (!isValid_ConfigFile(buf)) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		memset(buf, <span class="number">0</span>, <span class="number">1024</span>);</span><br><span class="line"></span><br><span class="line">		++lines;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fseek(<span class="keyword">file</span>, <span class="number">0</span>, SEEK_SET);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> lines;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>加载配置文件</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loadFile_ConfigFile</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* filePath, <span class="keyword">char</span>*** fileData, <span class="keyword">int</span>* line)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	FILE* file = fopen(filePath, <span class="string">"r"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == file)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> lines = getLines_ConfigFile(file);</span><br><span class="line">	<span class="keyword">char</span>** temp = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>*) * lines);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> buf[<span class="number">1024</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (fgets(buf, <span class="number">1024</span>, file) != <span class="literal">NULL</span>) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (!isValid_ConfigFile(buf))<span class="comment">//返回false时，则该行无效，读取下一行</span></span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">		temp[index] = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>) * <span class="built_in">strlen</span>(buf) + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">		<span class="built_in">strcpy</span>(temp[index], buf);</span><br><span class="line"></span><br><span class="line">		++index;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">memset</span>(buf, <span class="number">0</span>, <span class="number">1024</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	*fileData = temp;</span><br><span class="line">	*line = lines;</span><br><span class="line"></span><br><span class="line">	fclose(file);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解析配置文件</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">parseFile_ConfigFile</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>** fileData, <span class="keyword">int</span> line, struct ConfigInfo** info)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">ConfigInfo</span>* <span class="title">myInfo</span> = <span class="title">malloc</span>(<span class="title">sizeof</span>(<span class="title">struct</span> <span class="title">ConfigInfo</span>) * <span class="title">line</span>);</span></span><br><span class="line">	<span class="built_in">memset</span>(myInfo, <span class="number">0</span>, <span class="keyword">sizeof</span>(struct ConfigInfo) * line);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; line; ++i) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">char</span>* pos = <span class="built_in">strchr</span>(fileData[i], <span class="string">':'</span>);</span><br><span class="line"></span><br><span class="line">		<span class="built_in">strncpy</span>(myInfo[i].key, fileData[i], pos - fileData[i]);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (fileData[i][<span class="built_in">strlen</span>(fileData[i]) - <span class="number">1</span>] == <span class="string">'\n'</span>) &#123;<span class="comment">//等价于*(fileData[i] + strlen(fileData[i]) - 1);</span></span><br><span class="line">			<span class="comment">//此使代表该行结尾为换行</span></span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"该行有换行\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">strncpy</span>(myInfo[i].value, pos + <span class="number">1</span>, <span class="built_in">strlen</span>(pos + <span class="number">1</span>) - flag);<span class="comment">//将有换行的'\n'不进行拷贝</span></span><br><span class="line"></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"key = %s  value = %s\n"</span>, myInfo[i].key, myInfo[i].value);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//释放文件信息</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; line; ++i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (fileData[i] != <span class="literal">NULL</span>) &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="built_in">free</span>(fileData[i]);</span><br><span class="line">			fileData[i] = <span class="literal">NULL</span>;</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	*info = myInfo;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>获得指定配置信息</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> getInfo_ConfigFile(<span class="keyword">const</span> <span class="built_in">char</span>* <span class="built_in">key</span>, struct ConfigInfo* info, <span class="built_in">int</span> <span class="built_in">line</span>) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">line</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (strcmp(<span class="built_in">key</span>, info[i].<span class="built_in">key</span>) == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> info[i].value;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>释放配置文件信息</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">destroyFile_ConfigFile</span><span class="params">(struct ConfigInfo* info)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(<span class="literal">NULL</span> == info)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">free</span>(info);</span><br><span class="line">	info = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判断当前行是否有效</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isValid_ConfigFile</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* buf)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (buf[<span class="number">0</span>] == <span class="string">'#'</span> || buf[<span class="number">0</span>] == <span class="string">'\n'</span> || (<span class="built_in">strchr</span>(buf, <span class="string">':'</span>) == <span class="literal">NULL</span>))</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为测试功能函数以及主函数文件</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">char</span>** fileData = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">int</span> lines = <span class="number">0</span>;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">ConfigInfo</span>* <span class="title">myInfo</span> = <span class="title">NULL</span>;</span></span><br><span class="line"></span><br><span class="line">	loadFile_ConfigFile(<span class="string">"./config.ini"</span>, &amp;fileData, &amp;lines);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, lines);</span><br><span class="line"></span><br><span class="line">	parseFile_ConfigFile(fileData, lines, &amp;myInfo);</span><br><span class="line"></span><br><span class="line">	destroyFile_ConfigFile(myInfo);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	test();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>PS：多次想放弃，磕磕绊绊看着源码一行一行改错。。。对这种逻辑复杂的配置文件读写案例，code之前切记画图，切记画图，切记画图。不画图，debug时泪流满面。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/15/2019-Holiday-Note-03/" rel="next" title="Holiday Note_03">
+                <i class="fa fa-chevron-left"></i> Holiday Note_03
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/17/2019-Holiday-Note-05/" rel="prev" title="Holiday Note_05">
+                Holiday Note_05 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="左手工匠">
+            
+              <p class="site-author-name" itemprop="name">左手工匠</p>
+              <p class="site-description motion-element" itemprop="description">大概就这样，折腾让生活更美好</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ofcZsgj" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tcuZsgj@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Bottle_Wei" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://coolshell.cn/" title="左耳朵耗子(陈浩大佬)" target="_blank">左耳朵耗子(陈浩大佬)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/home.html" title="阮一峰大神" target="_blank">阮一峰大神</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/user/AlehandroMiskauskas/featured" title="Alexandr Misko(战斗民族的Fingerstyle)" target="_blank">Alexandr Misko(战斗民族的Fingerstyle)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw" title="3Blue1Brown(看过的最棒的科普Youtuber)" target="_blank">3Blue1Brown(看过的最棒的科普Youtuber)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/user/KurtHugoSchneider/featured" title="Kurt Hugo Schneider(才华横溢的音乐Youtuber)" target="_blank">Kurt Hugo Schneider(才华横溢的音乐Youtuber)</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Holiday-Note-04"><span class="nav-number">1.</span> <span class="nav-text">Holiday Note_04</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存对齐"><span class="nav-number">1.1.</span> <span class="nav-text">内存对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是内存对齐"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是内存对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存对齐的优缺点"><span class="nav-number">1.1.2.</span> <span class="nav-text">内存对齐的优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存对齐的三大原则"><span class="nav-number">1.1.3.</span> <span class="nav-text">内存对齐的三大原则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构体嵌套二维指针练习"><span class="nav-number">1.2.</span> <span class="nav-text">结构体嵌套二维指针练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件相关"><span class="nav-number">1.3.</span> <span class="nav-text">文件相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件缓冲区"><span class="nav-number">1.3.1.</span> <span class="nav-text">文件缓冲区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解fopen与fclose与文件缓冲区的关系"><span class="nav-number">1.3.2.</span> <span class="nav-text">理解fopen与fclose与文件缓冲区的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有关文件指针和EOF的注意事项"><span class="nav-number">1.3.3.</span> <span class="nav-text">有关文件指针和EOF的注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件读写代码"><span class="nav-number">1.3.4.</span> <span class="nav-text">配置文件读写代码</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">左手工匠</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

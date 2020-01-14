@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon32.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="C,DEMO,Game,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="君子不器" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="My first console game demo">
+<meta name="keywords" content="C,DEMO,Game">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笑傲江湖DEMO">
+<meta property="og:url" content="www.bottlewei.com/2019/02/28/笑傲江湖DEMO/index.html">
+<meta property="og:site_name" content="君子不器">
+<meta property="og:description" content="My first console game demo">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://miao.su/images/2019/02/28/2019-02-2831b3de.png">
+<meta property="og:updated_time" content="2019-07-16T14:32:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笑傲江湖DEMO">
+<meta name="twitter:description" content="My first console game demo">
+<meta name="twitter:image" content="https://miao.su/images/2019/02/28/2019-02-2831b3de.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":16,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="www.bottlewei.com/2019/02/28/笑傲江湖DEMO/">
+
+
+
+
+
+  <title>笑傲江湖DEMO | 君子不器</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '135080128-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?129843fc827ed0b20e0e23de49875737";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+      <a href="https://github.com/ofcZsgj/ofcZsgj.github.io" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">君子不器</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">停灯向晓, 抱影无眠</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.bottlewei.com/2019/02/28/笑傲江湖DEMO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左手工匠">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="君子不器">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">笑傲江湖DEMO</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-28T21:22:20+08:00">
+                2019-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 style="text-align:center">My first console game demo <h1>
+
+<p><img src="https://miao.su/images/2019/02/28/2019-02-2831b3de.png" alt="2019-02-2831b3de.png"></p>
+<a id="more"></a>
+
+
+<p>这个demo简单的实现了用户输入方向键, 数字键达到在不同地图切换, 购买商品, 打怪升级等功能, 希望在后期能够实现更加丰富的功能并且能连接网络对战,<br>开发环境为Atom,CodeBlocks,MinGW</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ol>
+<li>道具</li>
+<li>地图</li>
+<li>背包(背包包括道具类型)</li>
+<li>门派</li>
+<li>玩家(玩家包含背包以及门派数据类型)</li>
+<li>怪物</li>
+</ol>
+<h3 id="道具-Prop"><a href="#道具-Prop" class="headerlink" title="道具 (Prop)"></a>道具 (Prop)</h3><p><strong>属性字段</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">编号</td>
+<td align="center">int id</td>
+</tr>
+<tr>
+<td align="center">名称</td>
+<td align="center">char name[30]</td>
+</tr>
+<tr>
+<td align="center">价格</td>
+<td align="center">double price</td>
+</tr>
+<tr>
+<td align="center">等级</td>
+<td align="center">int level</td>
+</tr>
+<tr>
+<td align="center">库存</td>
+<td align="center">int stock</td>
+</tr>
+<tr>
+<td align="center">类别</td>
+<td align="center">propType type(使用枚举)</td>
+</tr>
+<tr>
+<td align="center">最小属性</td>
+<td align="center">union(使用联合体)</td>
+</tr>
+<tr>
+<td align="center">最大属性</td>
+<td align="center">union(使用联合体)</td>
+</tr>
+<tr>
+<td align="center">描述</td>
+<td align="center">char desc[200]</td>
+</tr>
+</tbody></table>
+<p>枚举代码</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typedef <span class="class"><span class="keyword">enum</span> <span class="title">_propType</span> &#123;</span></span><br><span class="line">    Weapon,     <span class="regexp">//</span>武器</span><br><span class="line">    Armor,      <span class="regexp">//</span>防具</span><br><span class="line">    Con,        <span class="regexp">//</span>消耗品</span><br><span class="line">    Frag,       <span class="regexp">//</span>碎片</span><br><span class="line">&#125; Type;</span><br></pre></td></tr></table></figure>
+
+<p>联合体代码  (不同类别拥有不同属性类别)</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">    int minAttack;     <span class="regexp">//</span>如果是武器类别, 则最 低/高 攻击力为</span><br><span class="line">    int minDefence;    <span class="regexp">//</span>如果是防具类别, 则最 低/高 防御力为</span><br><span class="line">    int minPower;      <span class="regexp">//</span>如果是消耗品类别, 则最 低/高 回复值为</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">要注意若定义枚举中使用 ; 分隔开, 则报错如下(这是我自己踩过的一个坑)</span><br><span class="line">Expected <span class="string">'= constant-expression'</span> <span class="keyword">or</span> <span class="keyword">end</span> <span class="keyword">of</span> <span class="keyword">enumerator</span> definition</span><br></pre></td></tr></table></figure>
+
+<h3 id="地图-Map"><a href="#地图-Map" class="headerlink" title="地图(Map)"></a>地图(Map)</h3><ul>
+<li>该DEMO的地图大小为8 * 8</li>
+<li>后期增加地图进入的等级限制</li>
+</ul>
+<p><strong>属性字段</strong> </p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">编号</td>
+<td align="center">int id</td>
+</tr>
+<tr>
+<td align="center">名称</td>
+<td align="center">char name[20]</td>
+</tr>
+<tr>
+<td align="center">进入地图的最低等级</td>
+<td align="center">minLevel</td>
+</tr>
+<tr>
+<td align="center">坐标结构</td>
+<td align="center">COORD coord</td>
+</tr>
+<tr>
+<td align="center">地图描述</td>
+<td align="center">desc[500]</td>
+</tr>
+<tr>
+<td align="center"><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">地图的坐标使用window.h头文件下的COORD结构, 使用方式为coord<span class="selector-class">.X</span> = <span class="number">0</span>, coord<span class="selector-class">.Y</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="背包-Bag"><a href="#背包-Bag" class="headerlink" title="背包 (Bag)"></a>背包 (Bag)</h3><ul>
+<li>背包类型是玩家的一个属性</li>
+<li>后期改进实现人民币玩家可以提升背包容量上限</li>
+</ul>
+<p><strong>属性字段</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">所属玩家ID</td>
+<td align="center">int playId</td>
+</tr>
+<tr>
+<td align="center">当前的道具数量</td>
+<td align="center">int propsCount</td>
+</tr>
+<tr>
+<td align="center">背包最大容量</td>
+<td align="center">maxCount</td>
+</tr>
+<tr>
+<td align="center">道具数组</td>
+<td align="center">Prop props</td>
+</tr>
+</tbody></table>
+<h3 id="门派-Martial"><a href="#门派-Martial" class="headerlink" title="门派 (Martial)"></a>门派 (Martial)</h3><ul>
+<li>门派为玩家的一个属性</li>
+<li>后期改进实现人名币玩家解锁更多帮派功能</li>
+</ul>
+<p><strong>属性字段</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">编号</td>
+<td align="center">int id</td>
+</tr>
+<tr>
+<td align="center">名称</td>
+<td align="center">char name[20]</td>
+</tr>
+<tr>
+<td align="center">门派类型</td>
+<td align="center">char type[10]</td>
+</tr>
+<tr>
+<td align="center">门派总部坐标结构</td>
+<td align="center">COORD hqCoord</td>
+</tr>
+<tr>
+<td align="center">是否对玩家开放</td>
+<td align="center">int isOpen</td>
+</tr>
+<tr>
+<td align="center">门派描述</td>
+<td align="center">char desc[1000]</td>
+</tr>
+</tbody></table>
+<h3 id="玩家-Player"><a href="#玩家-Player" class="headerlink" title="玩家 (Player)"></a>玩家 (Player)</h3><p><strong>属性字段</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">名称</td>
+<td align="center">char name[30]</td>
+</tr>
+<tr>
+<td align="center">编号</td>
+<td align="center">id[10]</td>
+</tr>
+<tr>
+<td align="center">密码</td>
+<td align="center">char passwd[30]</td>
+</tr>
+<tr>
+<td align="center">等级</td>
+<td align="center">int level</td>
+</tr>
+<tr>
+<td align="center">经验值</td>
+<td align="center">int exp</td>
+</tr>
+<tr>
+<td align="center">血量</td>
+<td align="center">int hp</td>
+</tr>
+<tr>
+<td align="center">内力</td>
+<td align="center">int mp</td>
+</tr>
+<tr>
+<td align="center">金币</td>
+<td align="center">int gold</td>
+</tr>
+<tr>
+<td align="center">门派结构</td>
+<td align="center">Martial martial</td>
+</tr>
+<tr>
+<td align="center">武器道具</td>
+<td align="center">Prop weapon</td>
+</tr>
+<tr>
+<td align="center">防具道具</td>
+<td align="center">Prop armor</td>
+</tr>
+<tr>
+<td align="center">玩家当前坐标</td>
+<td align="center">COORD coord</td>
+</tr>
+<tr>
+<td align="center">背包结构</td>
+<td align="center">Bag bag</td>
+</tr>
+</tbody></table>
+<h3 id="怪物-Monster"><a href="#怪物-Monster" class="headerlink" title="怪物 (Monster)"></a>怪物 (Monster)</h3><ul>
+<li>后期加入怪物掉落装备功能</li>
+</ul>
+<p><strong>属性字段</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">编号</td>
+<td align="center">int id</td>
+</tr>
+<tr>
+<td align="center">名称</td>
+<td align="center">char name[20]</td>
+</tr>
+<tr>
+<td align="center">等级</td>
+<td align="center">int level</td>
+</tr>
+<tr>
+<td align="center">血量</td>
+<td align="center">int hp</td>
+</tr>
+<tr>
+<td align="center">攻击力</td>
+<td align="center">int attact</td>
+</tr>
+<tr>
+<td align="center">防御力</td>
+<td align="center">int defence</td>
+</tr>
+<tr>
+<td align="center">掉落的最小金币</td>
+<td align="center">int minMoney</td>
+</tr>
+<tr>
+<td align="center">掉落的最大金币</td>
+<td align="center">int maxMoney</td>
+</tr>
+<tr>
+<td align="center">玩家能够获取的最大经验</td>
+<td align="center">int exp</td>
+</tr>
+<tr>
+<td align="center">怪物的状态(0死1活)</td>
+<td align="center">int state</td>
+</tr>
+<tr>
+<td align="center">怪物的坐标</td>
+<td align="center">COORD coord</td>
+</tr>
+<tr>
+<td align="center">***</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">## 功能实现</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p><strong>通过系统函数辅助实现的方法, 以下方法在GameLib源文件中</strong></p>
+<ol>
+<li>更改控制台标题(SetTitle)</li>
+<li>更改控制台内字体(SetColor)</li>
+<li>设置控制台内光标的位置(SetPosition)</li>
+</ol>
+<h3 id="更改控制台标题-SetTitle"><a href="#更改控制台标题-SetTitle" class="headerlink" title="更改控制台标题(SetTitle)"></a>更改控制台标题(SetTitle)</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 设置控制台的标题 */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetTitle</span><span class="params">(<span class="keyword">char</span> *title)</span> </span>&#123;</span><br><span class="line">    SetConsoleTitle(title);     <span class="comment">//调用windows.h头文件下的系统函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="更改控制台内字体-SetColor"><a href="#更改控制台内字体-SetColor" class="headerlink" title="更改控制台内字体(SetColor)"></a>更改控制台内字体(SetColor)</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 设置控制台的颜色</span></span><br><span class="line"><span class="comment"> * 0-黑色,   1-蓝色,   2-绿色,    3-浅绿色,  4-红色,</span></span><br><span class="line"><span class="comment"> * 5-紫色,   6-黄色,   7-白色,    8-灰色,   9-淡蓝色,</span></span><br><span class="line"><span class="comment"> * 10-淡绿色,  11-淡浅绿色   12-淡红色   13-淡紫色</span></span><br><span class="line"><span class="comment"> * 14-淡黄色   15-亮白色</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetColor</span><span class="params">(<span class="keyword">int</span> ForeColor, <span class="keyword">int</span> BackColor)</span> </span>&#123;<span class="comment">//分别设置前景色与背景色</span></span><br><span class="line">     <span class="comment">//HANDLE: 句柄, GetStdHandle(STD_OUTPUT_HANDLE)获得标准输出流的句柄, 均为windows.h下的系统函数</span></span><br><span class="line">     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);       <span class="comment">//获取当前窗口句柄</span></span><br><span class="line">     SetConsoleTextAttribute(handle, ForeColor + BackColor * <span class="number">0x10</span>);<span class="comment">//设置颜色</span></span><br><span class="line">   </span><br><span class="line">    <span class="comment">//句柄(HANDLE)补充:</span></span><br><span class="line">    <span class="comment">//WINDOWS程序中并不是用物理地址来标识一个内存块，文件，任务或动态装入模块的。</span></span><br><span class="line">    <span class="comment">//相反，WINDOWS API给这些项目分配确定的句柄并将句柄返回给应用程序，</span></span><br><span class="line">    <span class="comment">//然后通过句柄来进行操作(句柄不是指针, 是32或64位的无符号整型)</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置控制台内光标的位置-SetPosition"><a href="#设置控制台内光标的位置-SetPosition" class="headerlink" title="设置控制台内光标的位置(SetPosition)"></a>设置控制台内光标的位置(SetPosition)</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetPosition</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">     HANDLE winHandle = GetStdHandle(STD_OUTPUT_HANDLE);</span><br><span class="line">     COORD pos = &#123;x, y&#125;;</span><br><span class="line">     <span class="comment">//SetConsoleCursorPosition()为windows.h下系统函数</span></span><br><span class="line">     SetConsoleCursorPosition(winHandle, pos);      <span class="comment">//设置光标位置</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>以下方法为自己定义实现游戏主要逻辑功能中比较重要的几个, 在Game源文件中</strong></p>
+<ol>
+<li><strong>GameProcess():</strong> 接收并判断用户的输入, 返回游戏的各个功能(例如用户输入方向键将会移动玩家的所在地图,输入1会显示玩家的个人信息窗口等等)这是游戏最重要的一个方法, 决定了游戏的逻辑实现, 本人水平较差, 当初没有想到将所有的操作均封装到此方法来, 因此使得判断用户输入包括方向键的接收为一个方法并且放入于main()中, 导致了维护困难, 代码不清晰等等问题 </li>
+<li><strong>Clear():</strong> 功能为清理指定区域内的所有字符, 用’\0’替代, 达到刷新屏幕的功能, 由于清屏操作需要使用的次数极多因此封装成方法</li>
+<li><strong>ShowMonster():</strong> 该方法为显示当前地图所有怪物的信息: 等级名称, 但是我却在一个方法包含了接收用户输入导致方法过于复杂难以复用维护, 而且此方法打印怪物使用指针以及辅助数组较难理解</li>
+<li><strong>MonsterFight():</strong> 接收用户输入的怪物编号, 让玩家与怪物进行战斗, 以当前时间为种子, 攻击力防御力取范围该范围内的随机数, 战斗后返回判断打印不同情况的结果 </li>
+<li><strong>PropInit():</strong> 初始化游戏玩家数据, 用于测试功能 </li>
+<li><strong>Trade():</strong> 交易方法, 接收游戏玩家编号与商品编号, 重点为判断无法交易的情况以及对背包物品的添加(背包已有该类别商品/背包暂无此类别商品) </li>
+<li><strong>ShowProps():</strong> 显示商城的信息, 此方法与ShowMonster()类似,  同样我没考虑到方法的复用以及维护, 将Show 和 接收用户的输入 两个方法写在一个方法里了</li>
+<li><strong>showTrade():</strong> 接收Trade()返回的值, 对应交易成功与失败分别执行不同操作</li>
+<li><strong>Login():</strong> 登陆方法, 接收用户输入的用户名以及密码(无回显)进行判断以达到登陆功能</li>
+</ol>
+<h4 id="以下为主要方法的源代码"><a href="#以下为主要方法的源代码" class="headerlink" title="以下为主要方法的源代码"></a>以下为主要方法的源代码</h4><ul>
+<li><p>一些宏定义, 例如游戏窗口的各个部分的行数等等, 在移动光标时使用频率极高</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> COL 78                <span class="comment">//游戏的界面的总宽度</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXGIN_X 20           <span class="comment">//游戏界面与控制台的左边距</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ENDINFO 78            <span class="comment">//各个框架结束'|'的列数</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAPSART_START_Y 3     <span class="comment">//游戏地图开始的行</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAPSART_END_Y 11      <span class="comment">//游戏地图结束行</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFORMATION_START_Y 12<span class="comment">//游戏信息开始行</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFORMATION_END_Y 19  <span class="comment">//游戏信息结束行</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAINMENUE_START_Y 20  <span class="comment">//游戏主菜单开始行</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAINMENUE_END_Y 28    <span class="comment">//游戏主菜单结束行</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SEP <span class="meta-string">"*******************************************************************************"</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>游戏主体的逻辑实现</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">接收main()传递的<span class="built_in">key</span>, 分别执行不同的功能</span><br><span class="line"><span class="comment">/** 执行游戏主菜单功能 */</span></span><br><span class="line"><span class="keyword">void</span> GameProcess(<span class="built_in">char</span> <span class="built_in">key</span>) &#123;</span><br><span class="line">    <span class="keyword">switch</span> (<span class="built_in">key</span>) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'1'</span>: ShowPlayerInfo();<span class="comment">//显示玩家个人信息</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'2'</span>: ShowMonster();<span class="comment">//显示当前地图的怪物(内有打怪)</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'3'</span>: Move(currPlayer-&gt;martial.hqCoord.X, currPlayer-&gt;martial.hqCoord.Y);<span class="comment">//移动到玩家的帮派地图中</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'4'</span>: ShowProps();<span class="comment">//展示游戏商品</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span> : printf(<span class="string">"少侠究竟想要作甚?"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">以下为游戏主逻辑, 死循环中对用户输入进行判断并对应相应的输出(即实现不同游戏功能)</span><br><span class="line">****************************************************************************</span><br><span class="line">main()包括了判断字符进行移动玩家所在地图的功能(未封装成方法!)</span><br><span class="line">****************************************************************************</span><br><span class="line"><span class="built_in">int</span> main() &#123;<span class="comment">//最好通过一个游戏进程函数将main方法里边的各种方法封装, 通过不同状态执行不同方法</span></span><br><span class="line">    <span class="built_in">char</span> <span class="built_in">key</span>;           <span class="comment">//接收用户输入</span></span><br><span class="line">    SetColor(<span class="number">2</span>,<span class="number">0</span>);      <span class="comment">//设置控制台文本颜色(front color为绿色, background color为黑色)</span></span><br><span class="line">    SetConsoleTitle(<span class="string">"笑傲江湖之精忠报国 C语言实现 BY 左手工匠"</span>);    <span class="comment">//设置控制台标题</span></span><br><span class="line">    PropInit();         <span class="comment">//初始化测试人物</span></span><br><span class="line">    ShowWelcome();      <span class="comment">//显示欢迎栏</span></span><br><span class="line">    Login();            <span class="comment">//登陆, 登陆成功继续执行</span></span><br><span class="line">    ShowMap();          <span class="comment">//显示地图</span></span><br><span class="line">    ShowInformation();  <span class="comment">//显示信息栏</span></span><br><span class="line">    ShowMainMenu();     <span class="comment">//显示菜单栏</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;<span class="comment">//死循环, 除非用户选择退出, 否则停止等待用户输入</span></span><br><span class="line">    fflush(stdin);</span><br><span class="line">    <span class="comment">//接收用户输入(无回显)</span></span><br><span class="line">    <span class="built_in">key</span> = getch();</span><br><span class="line">    fflush(stdin);</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">key</span> == <span class="string">'1'</span> || <span class="built_in">key</span> == <span class="string">'2'</span> || <span class="built_in">key</span> == <span class="string">'3'</span> || <span class="built_in">key</span> == <span class="string">'4'</span>)&#123;</span><br><span class="line">        GameProcess(<span class="built_in">key</span>);<span class="comment">//输入正常, 将值传递给GameProcess()来对应输出</span></span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">key</span> == <span class="string">'5'</span> || <span class="built_in">key</span> == <span class="string">'6'</span> )&#123;</span><br><span class="line">        SetPosition(<span class="number">20</span>, <span class="number">12</span>);</span><br><span class="line">        Clear(<span class="number">20</span> , <span class="number">12</span>, <span class="number">7</span>);</span><br><span class="line">        SetPosition(<span class="number">20</span> + <span class="number">5</span>, <span class="number">12</span> + <span class="number">2</span>);</span><br><span class="line">        printf(<span class="string">"放过我吧, 还没开发完呐!!!\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">key</span> == <span class="string">'7'</span>) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">key</span> == VK_UP || <span class="built_in">key</span> == <span class="number">72</span>) &#123;<span class="comment">//X, Y为游戏坐标, 控制X, YS实现地图移动</span></span><br><span class="line">        Y--;            <span class="comment">//输入上</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">key</span> == VK_RIGHT || <span class="built_in">key</span> == <span class="number">77</span>) &#123;</span><br><span class="line">        X++;            <span class="comment">//输入右</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">key</span> == VK_DOWN || <span class="built_in">key</span> == <span class="number">80</span>) &#123;</span><br><span class="line">        Y++;            <span class="comment">//输入下</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">key</span> == VK_LEFT || <span class="built_in">key</span> == <span class="number">75</span>) &#123;</span><br><span class="line">        X--;            <span class="comment">//输入左</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(X &gt; <span class="number">7</span>) &#123;<span class="comment">//移动到最边的话重新回到0, 如贪食蛇穿过地图边缘</span></span><br><span class="line">        X = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(X &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        X = <span class="number">7</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(Y &gt; <span class="number">7</span>) &#123;</span><br><span class="line">        Y = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(Y &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        Y = <span class="number">7</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ShowMap();</span><br><span class="line">&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清空指定区域内所有字符 </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 清除信息区内所有内容(给定坐标及清理的行数) */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Clear</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> rowCount)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rowCount; i ++) &#123;</span><br><span class="line">        SetPosition(x + <span class="number">1</span>, y + i);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; COL - <span class="number">1</span>; j ++)  &#123;    <span class="comment">//使用' '替换指定区域</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打印怪物的信息以及接收并判断玩家的输入的怪物编号, 玩家选择查看怪物信息时调用该方法</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 显示当前地图的怪物********(功能略复杂些)*************/</span></span><br><span class="line">void ShowMonster() &#123;</span><br><span class="line">    <span class="comment">//给怪物各个等级对应相应称号</span></span><br><span class="line">    <span class="comment">//例如：3级怪物，那么就显示这个怪物的描述为粗通皮毛</span></span><br><span class="line">    char *monsterlevelNames[] = &#123;<span class="string">"乳臭未干"</span>, <span class="string">"初出茅庐"</span>, <span class="string">"粗通皮毛"</span>, <span class="string">"青年才俊"</span>, <span class="string">"略有小成"</span>, <span class="string">"心领神会"</span>, <span class="string">"出类拔萃"</span>, <span class="string">"所向无敌"</span>, <span class="string">"天人合一"</span>&#125;;</span><br><span class="line">    Clear(MAXGIN_X,  INFORMATION_START_Y, <span class="number">7</span>);   <span class="comment">//清空信息区的所有内容</span></span><br><span class="line">    int monsterCount;</span><br><span class="line">    <span class="comment">// 记录整个游戏的怪物总数</span></span><br><span class="line">    monsterCount = sizeof(monsterArray) / sizeof(Monster);</span><br><span class="line">    <span class="comment">//记录当前地图的怪数量 记得变量定义时赋初值!!! debug了好久...</span></span><br><span class="line">    int currMapMonsterCount = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 定义一个只有九个空间的一维数组, 用以记录怪物在怪物列表里的下标</span></span><br><span class="line">    int monsterIndex[<span class="number">9</span>];</span><br><span class="line">    for(int i = <span class="number">0</span>; i &lt; monsterCount; i++) &#123;</span><br><span class="line">        <span class="comment">// 关键!!! 满足怪物坐标与当前地图坐标相等 并且 该怪物的状态为存活的条件, 将怪物与怪物数组的下标记录并且当前地图怪物数量自增</span></span><br><span class="line">        if(monsterArray[i].coord.X == X &amp;&amp; monsterArray[i].coord.Y == Y &amp;&amp; monsterArray[i].<span class="section">state</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="comment">// 记录下标</span></span><br><span class="line">            monsterIndex[currMapMonsterCount] = i;</span><br><span class="line">            currMapMonsterCount++;</span><br><span class="line">            <span class="comment">// 设定每个地图最多显示 9 个怪物</span></span><br><span class="line">            if(currMapMonsterCount == <span class="number">9</span>) &#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印怪物</span></span><br><span class="line">    SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_START_Y + <span class="number">1</span>);</span><br><span class="line">    if(currMapMonsterCount == <span class="number">0</span>) &#123;</span><br><span class="line">        SetColor(<span class="number">7</span>, <span class="number">0</span>);<span class="comment">//白字黑底</span></span><br><span class="line">        printf(<span class="string">"这里冷冷清清的什么也没有, 少侠还是到别处看看吧, 呆着也没银子给你!"</span>);</span><br><span class="line">        SetColor(<span class="number">2</span>, <span class="number">0</span>);<span class="comment">//恢复颜色</span></span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*********以下语句为判定用户输入的编号来返回地图信息或进行打怪操作*******/</span></span><br><span class="line">    int pkMonsterId = <span class="number">0</span>;<span class="comment">// 接收玩家输入的怪物编号, 定义在循环外部是因为循环外仍需使用进行判断是否打印地图信息</span></span><br><span class="line">    while(<span class="number">1</span>)&#123;</span><br><span class="line">        pkMonsterId = <span class="number">-1</span>;</span><br><span class="line">        Clear(MAXGIN_X,  INFORMATION_START_Y, <span class="number">7</span>);   <span class="comment">//清空信息区的所有内容</span></span><br><span class="line">        SetPosition(MAXGIN_X + <span class="number">20</span>, INFORMATION_START_Y + <span class="number">0</span>);</span><br><span class="line">        printf(<span class="string">"少侠, 这儿有怪物! 要为百姓除暴安良吗?"</span> );</span><br><span class="line">        SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_START_Y + <span class="number">2</span>);</span><br><span class="line">        for(int i = <span class="number">0</span>; i &lt; currMapMonsterCount; i++) &#123;</span><br><span class="line">            if(i % <span class="number">3</span> == <span class="number">0</span> &amp;&amp; i != <span class="number">0</span>)&#123;<span class="comment">//每行打印三个怪物</span></span><br><span class="line">                SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_START_Y + <span class="number">2</span> + i / <span class="number">3</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//打印怪物, 较为繁琐</span></span><br><span class="line">            <span class="comment">//monsterIndex[i]即为该怪物列表中的怪物编号</span></span><br><span class="line">            SetColor(<span class="number">4</span>, <span class="number">0</span>);<span class="comment">//红字怪物</span></span><br><span class="line">            printf(<span class="string">"%d.%s(%s)<span class="subst">\t</span>  "</span>, i + <span class="number">1</span>, monsterArray[monsterIndex[i]].name, monsterlevelNames[monsterArray[monsterIndex[i]].level - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        SetColor(<span class="number">2</span>, <span class="number">0</span>);<span class="comment">//恢复颜色</span></span><br><span class="line">        SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">        printf(<span class="string">"少侠想攻击几号怪物呢? (按0返回)"</span>);</span><br><span class="line">        scanf(<span class="string">"%d"</span>, &amp;pkMonsterId);</span><br><span class="line">        if(pkMonsterId == <span class="number">0</span>) &#123;<span class="comment">//输入0, 退出循环来返回显示地图信息</span></span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(pkMonsterId &lt; <span class="number">0</span> || pkMonsterId &gt; currMapMonsterCount) &#123;</span><br><span class="line">            <span class="comment">//输入的怪物标号在当前地图不存在</span></span><br><span class="line">            SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">            <span class="comment">//简易清屏</span></span><br><span class="line">            printf(<span class="string">"                                                             "</span>);</span><br><span class="line">            SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">            printf(<span class="string">"少侠选错了吧, 怪物不存在呢!(按任意键重新输入)"</span>);</span><br><span class="line">            char recoverKey = getch();</span><br><span class="line">            if(recoverKey)&#123;<span class="comment">//停顿直到接收任意键后重新显示怪物</span></span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;<span class="comment">//编号对应地图所有的怪物时, 将怪物地址传入打怪方法</span></span><br><span class="line">            MonsterFight(&amp;monsterArray[monsterIndex[pkMonsterId - <span class="number">1</span>]]);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(pkMonsterId == <span class="number">0</span>) &#123;<span class="comment">//输入0, 返回显示地图信息</span></span><br><span class="line">        ShowMapInfo();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>玩家与指定地图指定怪兽进行战斗</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 选定怪物进行对战 */</span></span><br><span class="line">void MonsterFight(Monster *monster) &#123;</span><br><span class="line">    SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">    printf(<span class="string">"                                                             "</span>);<span class="comment">//简易清屏(偷懒)</span></span><br><span class="line">    SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">    srand(<span class="built_in">time</span>(NULL));<span class="comment">//以当前时间为种子</span></span><br><span class="line">    <span class="comment">/* random函数的用法(只能0 - 32767之间)</span></span><br><span class="line"><span class="comment">    * 随机一个a ~ b的数字, 即 rand() % (b - a + 1) + a; 例如0 ~ 5, 即rand() % 6;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    int playerAttact = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 玩家的实际攻击力</span></span><br><span class="line">    <span class="function"><span class="title">playerAttact</span> = rand() % (currPlayer-&gt;</span><span class="function"><span class="title">weapon</span>.maxAttack - currPlayer-&gt;</span><span class="function"><span class="title">weapon</span>.minAttack + 1) + currPlayer-&gt;</span>weapon.minAttack;</span><br><span class="line">    int playerDeffence =<span class="number">0</span>;</span><br><span class="line">    <span class="comment">//玩家实际防御力</span></span><br><span class="line">    <span class="function"><span class="title">playerDeffence</span> = rand() % (currPlayer-&gt;</span><span class="function"><span class="title">armor</span>.maxDefence - currPlayer-&gt;</span><span class="function"><span class="title">armor</span>.minDefence + 1) + currPlayer-&gt;</span>armor.minDefence;</span><br><span class="line">    <span class="comment">//怪物实际掉落的金钱</span></span><br><span class="line">    int monsterGold = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="title">monsterGold</span> = rand() % (monster-&gt;</span><span class="function"><span class="title">maxMoney</span> - monster-&gt;</span><span class="function"><span class="title">minMoney</span> + 1) + monster-&gt;</span>minMoney;</span><br><span class="line">    int pkRound = <span class="number">0</span>;    <span class="comment">//记录战斗的轮次</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;<span class="comment">//打斗循环, 任意一方死亡退出</span></span><br><span class="line">        <span class="comment">//玩家血量变化</span></span><br><span class="line">        <span class="function"><span class="title">currPlayer</span>-&gt;</span><span class="function"><span class="title">hp</span> -= monster-&gt;</span>attact - playerDeffence;</span><br><span class="line">        <span class="comment">//怪物的血量变化</span></span><br><span class="line">        <span class="function"><span class="title">monster</span>-&gt;</span><span class="function"><span class="title">hp</span> -= playerAttact - monster-&gt;</span>defence;</span><br><span class="line">        <span class="function"><span class="title">if</span>(monster-&gt;</span>hp &lt;= <span class="number">0</span>) &#123;<span class="comment">//怪物的血量少于等于0时退出</span></span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="title">if</span>(currPlayer-&gt;</span>hp &lt;= <span class="number">0</span>) &#123;<span class="comment">//玩家血量小于等于0时退出</span></span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//以下为打印战斗详情</span></span><br><span class="line">        SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">        printf(<span class="string">"                                                                         "</span>);<span class="comment">//简易清屏(偷懒)</span></span><br><span class="line">        SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">        pkRound++;</span><br><span class="line">        <span class="comment">//战斗详情使用白底红字</span></span><br><span class="line">        SetColor(<span class="number">4</span>,<span class="number">7</span>);</span><br><span class="line">        <span class="comment">//该语句较长......</span></span><br><span class="line">        <span class="function"><span class="title">printf</span>("第 %d 轮战斗详情:%s 对 %s 造成了 %d 伤害且受到 %s %d 的伤害", pkRound, currPlayer-&gt;</span><span class="function"><span class="title">name</span>, monster-&gt;</span><span class="function"><span class="title">name</span>, playerAttact - monster-&gt;</span><span class="function"><span class="title">defence</span>, monster-&gt;</span><span class="function"><span class="title">name</span>, monster-&gt;</span>attact - playerDeffence);</span><br><span class="line">        <span class="comment">//放慢过程</span></span><br><span class="line">        usleep(<span class="number">1000</span> * <span class="number">800</span>);<span class="comment">//1000毫秒*800</span></span><br><span class="line">        SetColor(<span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">    printf(<span class="string">"                                                                   "</span>);<span class="comment">//简易清屏(偷懒)</span></span><br><span class="line">    SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">    <span class="function"><span class="title">if</span>(currPlayer-&gt;</span>hp &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">//玩家死亡输入完任意键后返回</span></span><br><span class="line">        <span class="function"><span class="title">printf</span>("江湖快讯: 大侠 %s 在与 %s 的对决中壮烈牺牲! (请按任意键返回)", currPlayer-&gt;</span><span class="function"><span class="title">name</span>, monster-&gt;</span><span class="keyword">name</span>);</span><br><span class="line">        <span class="comment">//重置人物的金币与血量</span></span><br><span class="line">        <span class="function"><span class="title">currPlayer</span>-&gt;</span>hp = <span class="number">100</span>;</span><br><span class="line">        <span class="function"><span class="title">currPlayer</span>-&gt;</span>gold = <span class="number">100</span>;</span><br><span class="line">        getch();</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//以下即为怪物死亡的情况</span></span><br><span class="line">    <span class="function"><span class="title">printf</span>("%s 轻而易举的便被 %s 大侠收拾了, 同时掉落了 ", monster-&gt;</span><span class="function"><span class="title">name</span>, currPlayer-&gt;</span><span class="keyword">name</span>);</span><br><span class="line">    <span class="comment">//将怪物的状态调整至死亡</span></span><br><span class="line">    <span class="function"><span class="title">monster</span>-&gt;</span>state = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//设置金币的front color为黄色, background color为亮白色</span></span><br><span class="line">    SetColor(<span class="number">6</span>, <span class="number">15</span>);</span><br><span class="line">    printf(<span class="string">"%d 金币   "</span>, monsterGold);</span><br><span class="line">    <span class="comment">// 设置经验的front color为黄色, background color为亮白色</span></span><br><span class="line">    SetColor(<span class="number">1</span>, <span class="number">15</span>);</span><br><span class="line">    <span class="function"><span class="title">printf</span>("%d 经验  ", monster-&gt;</span><span class="built_in">exp</span>);</span><br><span class="line">    SetColor(<span class="number">2</span>, <span class="number">0</span>); <span class="comment">//颜色恢复</span></span><br><span class="line">    <span class="comment">//玩家获得金币与经验值的加成</span></span><br><span class="line">    <span class="function"><span class="title">currPlayer</span>-&gt;</span>gold += monsterGold;</span><br><span class="line">    <span class="function"><span class="title">currPlayer</span>-&gt;</span><span class="function"><span class="title">exp</span> += monster-&gt;</span><span class="built_in">exp</span>;</span><br><span class="line">    getch();</span><br><span class="line">    ShowMonster();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>初始化游戏数据: 将地图, 玩家, 装备, 怪物置入, 测试各功能</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Player *currPlayer;</span><br><span class="line">void PropInit() &#123;<span class="comment">//初始化游戏数据 (测试用数据)</span></span><br><span class="line">    currPlayer = &amp;playArray[<span class="number">0</span>];</span><br><span class="line">    <span class="function"><span class="title">currPlayer</span>-&gt;</span>weapon = propArray[<span class="number">8</span>];</span><br><span class="line">    <span class="function"><span class="title">currPlayer</span>-&gt;</span>armor = propArray[<span class="number">4</span>];</span><br><span class="line">    <span class="function"><span class="title">currPlayer</span>-&gt;</span>martial = martials[<span class="number">4</span>];</span><br><span class="line">    Bag bag = &#123;<span class="number">95001</span>, <span class="number">0</span>, <span class="number">8</span>&#125;;</span><br><span class="line">    <span class="function"><span class="title">currPlayer</span>-&gt;</span>bag = bag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>交易, 玩家购买指定道具</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 交易</span></span><br><span class="line"><span class="comment">  * 参数1: 玩家的地址</span></span><br><span class="line"><span class="comment">  * 参数2: 商品的编号</span></span><br><span class="line"><span class="comment">  * 返回交易是否成功, 0 失败, 1 成功</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">int Trade(Player *player, int propsId) &#123;</span><br><span class="line">    Prop *tradeProp = NULL;     <span class="comment">//定义一个用于指向及交易商品的指针</span></span><br><span class="line">    <span class="keyword">for</span>(int i = <span class="number">0</span>; i &lt; sizeof(propArray) / sizeof(Prop); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(propsId == propArray[i].id) &#123;<span class="comment">//找到该商品, 并让tradeProp指向它</span></span><br><span class="line">            tradeProp = propArray + i;  <span class="comment">//即tradeProp = &amp;propArray[i]</span></span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断商品是否有库存</span></span><br><span class="line">    <span class="function"><span class="title">if</span>(tradeProp-&gt;</span>stock &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        Clear(MAXGIN_X, INFORMATION_END_Y - <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">        printf(<span class="string">"地主家都没有余粮！商店都被买空啦！"</span>);</span><br><span class="line">        return <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断玩家是否金币足够支付</span></span><br><span class="line">    <span class="function"><span class="title">if</span>(currPlayer-&gt;</span><span class="function"><span class="title">gold</span> &lt; tradeProp-&gt;</span>price) &#123;</span><br><span class="line">        Clear(MAXGIN_X, INFORMATION_END_Y - <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">        printf(<span class="string">"钱包都是瘪的，这可是个看钱的江湖！！!"</span>);</span><br><span class="line">        return <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断玩家背包容量是否充足</span></span><br><span class="line">    <span class="function"><span class="title">if</span>(currPlayer-&gt;</span><span class="function"><span class="title">bag</span>.propsCount &gt; currPlayer-&gt;</span><span class="function"><span class="title">bag</span>.maxCount &amp;&amp; currPlayer-&gt;</span>bag.propsCount != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">//玩家的背包道具数量大于最大容量并且背包道具数不为0则判定为失败</span></span><br><span class="line">        Clear(MAXGIN_X, INFORMATION_END_Y - <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">        printf(<span class="string">"背包已满，交易失败！"</span>);</span><br><span class="line">        return <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//满足交易条件，执行交易的业务操作</span></span><br><span class="line">    <span class="comment">//1、商品库存-1</span></span><br><span class="line">    <span class="function"><span class="title">tradeProp</span>-&gt;</span>stock--;</span><br><span class="line">    <span class="comment">//2、玩家金币-商品单价</span></span><br><span class="line">    <span class="function"><span class="title">player</span>-&gt;</span><span class="function"><span class="title">gold</span> -= tradeProp-&gt;</span>price;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//*****************************玩家背包道具增加*******************************//</span></span><br><span class="line">    <span class="comment">//判断玩家背包中是否已有该商品 !!!</span></span><br><span class="line">    int i;</span><br><span class="line">    <span class="function"><span class="title">for</span>(i = 0; i &lt; currPlayer-&gt;</span>bag.propsCount; i++) &#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(propsId == currPlayer-&gt;</span>bag.props[i].id) &#123;</span><br><span class="line">            <span class="function"><span class="title">currPlayer</span>-&gt;</span>bag.props[i].stock++;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//若为循环正常结束, i = currPlayer-&gt;bag.propsCount, 即为背包无此商品, 需要给背包添加该商品!!!</span></span><br><span class="line">    <span class="function"><span class="title">if</span>(i == currPlayer-&gt;</span>bag.propsCount) &#123;</span><br><span class="line">        <span class="comment">//向背包中创建一个商品-复制一份要交易的商品信息到背包中</span></span><br><span class="line">        <span class="function"><span class="title">currPlayer</span>-&gt;</span><span class="function"><span class="title">bag</span>.props[currPlayer-&gt;</span><span class="function"><span class="title">bag</span>.propsCount].id = tradeProp-&gt;</span>id;</span><br><span class="line">        <span class="function"><span class="title">currPlayer</span>-&gt;</span><span class="function"><span class="title">bag</span>.props[currPlayer-&gt;</span><span class="function"><span class="title">bag</span>.propsCount].price = tradeProp-&gt;</span>price;</span><br><span class="line">        <span class="function"><span class="title">currPlayer</span>-&gt;</span><span class="function"><span class="title">bag</span>.props[currPlayer-&gt;</span>bag.propsCount].stock = <span class="number">1</span>;</span><br><span class="line">        <span class="function"><span class="title">strcpy</span>(currPlayer-&gt;</span><span class="function"><span class="title">bag</span>.props[currPlayer-&gt;</span><span class="function"><span class="title">bag</span>.propsCount].<span class="keyword">name</span>, tradeProp-&gt;</span><span class="keyword">name</span>);</span><br><span class="line">        <span class="function"><span class="title">strcpy</span>(currPlayer-&gt;</span><span class="function"><span class="title">bag</span>.props[currPlayer-&gt;</span><span class="function"><span class="title">bag</span>.propsCount].desc, tradeProp-&gt;</span>desc);</span><br><span class="line">        <span class="function"><span class="title">currPlayer</span>-&gt;</span>bag.propsCount++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//交易成功</span></span><br><span class="line">    return <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>打印商品列表, 玩家选择购买道具调用该方法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 展示游戏商品 */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShowProps</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//此方法应拆分为打印商品 以及用户输入并检验商品编号两个方法!!!!!!!!</span></span><br><span class="line">    <span class="comment">/*******************************/</span></span><br><span class="line">    Clear(MAXGIN_X, INFORMATION_START_Y, <span class="number">7</span>);</span><br><span class="line">    SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_START_Y);</span><br><span class="line">    SetColor(<span class="number">8</span>, <span class="number">0</span>);     <span class="comment">//灰字黑底</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"欢迎大侠 %s 来到 %s 童叟无欺的杂货铺, 瞧一瞧看一看可有需要的?"</span>, currPlayer-&gt;name, mapArray[X][Y].name);</span><br><span class="line">    SetColor(<span class="number">6</span>, <span class="number">0</span>);     <span class="comment">//黄字黑底</span></span><br><span class="line">    SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_START_Y + <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">int</span> propCount = <span class="keyword">sizeof</span>(propArray) / <span class="keyword">sizeof</span>(Prop) &gt;= <span class="number">9</span> ? <span class="number">9</span> : <span class="keyword">sizeof</span>(propArray) / <span class="keyword">sizeof</span>(Prop);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; propCount; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i % <span class="number">3</span> == <span class="number">0</span>) &#123;<span class="comment">//打印商品, 每行 3 个, 且只打印最多 9 个</span></span><br><span class="line">            SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_START_Y + <span class="number">2</span> + i / <span class="number">3</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%-3d.%-10s(%-2d)%-4c"</span>, propArray[i].id, propArray[i].name, propArray[i].stock, <span class="string">' '</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    SetColor(<span class="number">2</span>, <span class="number">0</span>);<span class="comment">//恢复颜色</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> tradeId;<span class="comment">//接收用户输入的商品编号</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="comment">//用于判断输入编号是否正确(此判断未包括检验玩家金币及商品库存及玩家背包是否已满等状态)</span></span><br><span class="line">        Clear(MAXGIN_X, INFORMATION_END_Y - <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"大侠需要什么, 请输入编号立即购买(按 0 退出)"</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;tradeId);</span><br><span class="line">        <span class="keyword">if</span>(tradeId == <span class="number">0</span>) &#123;<span class="comment">//输入0返回显示地图信息</span></span><br><span class="line">            ShowMapInfo();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(tradeId &lt; <span class="number">0</span> || tradeId &gt; <span class="number">9</span>) &#123;<span class="comment">//输入的商品编号错误的情况, 重新输入</span></span><br><span class="line">            Clear(MAXGIN_X, INFORMATION_END_Y - <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">            SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"少侠选错了吧, 商品不存在呢!(按任意键重新输入)"</span>);</span><br><span class="line">            <span class="keyword">char</span> recoverKey = getch();</span><br><span class="line">            <span class="keyword">if</span>(recoverKey)&#123;<span class="comment">//停顿直到接收任意键后重新显示怪物</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;<span class="comment">//输入在1 - 9的情况, 将编号传入交易函数</span></span><br><span class="line">            showTrade(Trade(currPlayer, tradeId), tradeId);<span class="comment">//******调用交易方法, 展示交易信息方法******//</span></span><br><span class="line">            <span class="comment">//以下为重新刷新商品列表, 应该封装为一个打印商品的方法, 该ShowProps()方法过于繁琐, 加入了打印以及检验两个功能</span></span><br><span class="line">            <span class="comment">/********************************/</span></span><br><span class="line">            Clear(MAXGIN_X, INFORMATION_START_Y, <span class="number">7</span>);</span><br><span class="line">            SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_START_Y);</span><br><span class="line">            SetColor(<span class="number">8</span>, <span class="number">0</span>);     <span class="comment">//灰字黑底</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"欢迎大侠 %s 来到 %s 童叟无欺的杂货铺, 瞧一瞧看一看可有需要的?"</span>, currPlayer-&gt;name, mapArray[X][Y].name);</span><br><span class="line">            SetColor(<span class="number">6</span>, <span class="number">0</span>);     <span class="comment">//黄字黑底</span></span><br><span class="line">            SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_START_Y + <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">int</span> propCount = <span class="keyword">sizeof</span>(propArray) / <span class="keyword">sizeof</span>(Prop) &gt;= <span class="number">9</span> ? <span class="number">9</span> : <span class="keyword">sizeof</span>(propArray) / <span class="keyword">sizeof</span>(Prop);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; propCount; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(i % <span class="number">3</span> == <span class="number">0</span>) &#123;<span class="comment">//打印商品, 每行 3 个, 且只打印最多 9 个</span></span><br><span class="line">                    SetPosition(MAXGIN_X + <span class="number">5</span>, INFORMATION_START_Y + <span class="number">2</span> + i / <span class="number">3</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%-3d.%-10s(%-2d)%-4c"</span>, propArray[i].id, propArray[i].name, propArray[i].stock, <span class="string">' '</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            SetColor(<span class="number">2</span>, <span class="number">0</span>);<span class="comment">//恢复颜色</span></span><br><span class="line">            <span class="comment">/********************************/</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回交易结束后的信息</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 接收Trade()返回的值, 判断交易是否成功 */</span></span><br><span class="line"><span class="selector-tag">void</span> <span class="selector-tag">showTrade</span>(int flag, int propId) &#123;</span><br><span class="line">    <span class="selector-tag">if</span>(flag == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="selector-tag">ShowMapInfo</span>();</span><br><span class="line">        <span class="selector-tag">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">if</span>(flag == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="selector-tag">Clear</span>(MAXGIN_X, INFORMATION_END_Y - <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="selector-tag">SetPosition</span>(MAXGIN_X + <span class="number">5</span>, INFORMATION_END_Y - <span class="number">1</span>);</span><br><span class="line">        <span class="selector-tag">printf</span>(<span class="string">"交易成功, "</span>);</span><br><span class="line">        <span class="selector-tag">SetColor</span>(<span class="number">6</span>, <span class="number">0</span>);     <span class="comment">//打印装备为黑底黄字</span></span><br><span class="line">        <span class="selector-tag">printf</span>(<span class="string">"%s"</span>, propArray[propId - <span class="number">1</span>].name);</span><br><span class="line">        <span class="selector-tag">SetColor</span>(<span class="number">2</span>, <span class="number">0</span>);     <span class="comment">//恢复黑底绿字</span></span><br><span class="line">        <span class="selector-tag">printf</span>(<span class="string">" 已经加入你的背包, 赶紧瞧一瞧吧!(按任意键继续)"</span>);</span><br><span class="line">        <span class="selector-tag">getch</span>();            <span class="comment">//暂停</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>验证登陆信息</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 玩家登陆(暂无注册) */</span></span><br><span class="line">void Login() &#123;</span><br><span class="line">    while(<span class="number">1</span>) &#123;</span><br><span class="line">        char id[<span class="number">10</span>];</span><br><span class="line">        char <span class="type">key</span>[<span class="number">10</span>];       <span class="comment">//接收用户输入的id 和 passwd</span></span><br><span class="line">        SetColor(<span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">        Clear(MAXGIN_X, MAPSART_START_Y, <span class="number">4</span>);</span><br><span class="line">        SetPosition(MAXGIN_X + <span class="number">24</span>, MAPSART_START_Y);</span><br><span class="line">        printf(<span class="string">"请在下方输入您的用户名和密码"</span>);</span><br><span class="line">        SetPosition(MAXGIN_X + <span class="number">5</span>, MAPSART_START_Y + <span class="number">1</span>);</span><br><span class="line">        printf(<span class="string">"用户名: "</span>);</span><br><span class="line">        scanf(<span class="string">"%s"</span>, id);</span><br><span class="line">        SetPosition(MAXGIN_X + <span class="number">5</span>, MAPSART_START_Y  + <span class="number">2</span>);</span><br><span class="line">        printf(<span class="string">"密码(无回显哦回车确定): "</span>);</span><br><span class="line">        for(int i = <span class="number">0</span>; <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="type">key</span>[i] = getch();<span class="comment">//无回显输入密码</span></span><br><span class="line">            if(<span class="type">key</span>[i] == <span class="number">13</span>) &#123;</span><br><span class="line">                <span class="comment">//接收到回车跳出循环</span></span><br><span class="line">                <span class="comment">//将回车字符重置为空字符</span></span><br><span class="line">                <span class="type">key</span>[i] = '\<span class="number">0</span>';</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//判断玩家输入的信息是否与玩家id, passwd匹配</span></span><br><span class="line">        if(strcmp(currPlayer-&gt;id, id) == <span class="number">0</span> &amp;&amp; strcmp(currPlayer-&gt;passwd, <span class="type">key</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">//只有玩家输入成功才跳出死循环</span></span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            SetPosition(MAXGIN_X + <span class="number">5</span>, MAPSART_START_Y + <span class="number">3</span>);</span><br><span class="line">            SetColor(<span class="number">12</span>, <span class="number">0</span>);    <span class="comment">//浅红色字体</span></span><br><span class="line">            printf(<span class="string">"用户名或密码错误, 请检查后再次输入!(按任意键继续)"</span>);</span><br><span class="line">            getch();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//用户输入成功后</span></span><br><span class="line">    SetColor(<span class="number">12</span>, <span class="number">0</span>);</span><br><span class="line">    SetPosition(MAXGIN_X, MAPSART_START_Y);</span><br><span class="line">    Clear(MAXGIN_X, MAPSART_START_Y, <span class="number">4</span>);</span><br><span class="line">    SetPosition(MAXGIN_X + <span class="number">15</span>, MAPSART_START_Y);</span><br><span class="line">    printf(<span class="string">"欢迎 "</span>);</span><br><span class="line">    SetColor(<span class="number">1</span>, <span class="number">0</span>);      <span class="comment">//蓝字显示玩家name</span></span><br><span class="line">    printf(<span class="string">"%s"</span>, currPlayer-&gt;name);</span><br><span class="line">    SetColor(<span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">    printf(<span class="string">" 成功登陆笑傲江湖的世界(按任意键继续)"</span>);</span><br><span class="line">    getch();    <span class="comment">//暂停</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="拓展功能"><a href="#拓展功能" class="headerlink" title="拓展功能"></a>拓展功能</h2><p>以下的功能为此DEMO适合拓展的有趣功能:</p>
+<ul>
+<li>玩家的背包容量: 初始设定只有9, 可以通过充值元宝等方式扩充背包最大容量</li>
+<li>注册功能, 玩家设定任意符合指定规则的用户名及密码, 并且在下次可以继续使用</li>
+<li>NPC, 逻辑与怪物相似, 地图随机刷新NPC并且贩卖普通商店没有的道具</li>
+<li>打斗过程加入回复, 增益等功能(打斗前使用消耗品提升属性, 打斗过程回复血量, 内力)</li>
+<li>怪物指定时间刷新</li>
+<li>连接网络, 满足两个玩家在同一张地图进行, 怪物道具资源同步刷新, 并且玩家可以决斗(遥远的目标啊)</li>
+</ul>
+<h2 id="最后的吐槽"><a href="#最后的吐槽" class="headerlink" title="最后的吐槽"></a>最后的吐槽</h2><p>先说说为什么要写这个极小极小的DEMO吧, 寒假前半段在学数据结构, 时间较短, 仅仅实现了顺序表, 单链表, 循环链表等几个简单的数据结构的定义以及实现, 过程不算太美好: 虽然大二上讲过数据结构与算法, 但是非常的粗略, 对数据结构与算法的理解仅仅为有那么几种表, 有那么几种排序方式, 而且C是大一上学的, 早已忘得一干二净, 很多语法尤其是之前就不过关的指针的不熟悉, 应验了那句: 当C的指针指向你的时候, 菜鸡原形毕露! 被头指针头结点折腾的头皮发麻, 尽管磕磕绊绊用代码实现了, 但我深刻感受到了效率的低下, 进度十分缓慢, 遂觉得应该恶补以下C, 于是有了以上的DEMO</p>
+<p>前前后后一共花了十天, 四天的时间都是疯狂刷视频, 把指针, 结构体, 字符串, 数组这四个章节重点看了一到两遍, 然后六天把这个DEMO完成了, 跟着老九的视频, 每天看完示范再理解完敲代码实现, 慢慢的也完成了, 自己也没想到可以写出1000行的东西(可能是我注释比较多吧捂脸), 过程最难过的不是理解也不是一行一行敲出一个功能, 而是无穷无尽的BUG, 早期是用Clion + Cmake的环境, 第二天开始实现游戏的界面栏目并且改变控制台标题栏以及字体颜色时, 因为要在控制台检验, 但是发现Clion + Cmake不能调出Windows的Console, 一顿查阅亦未果, 因此使用了最早使用的Codeblocks(还是这个简单多了…), 嫌弃Cb丑陋UI的我又入坑了Atom, 用Atom码代码, Cb编译…..十分的奇葩, 但是也算是完成了</p>
+<p>总体来讲, 对我感触最深的东西应该就是封装以及设计了, 这次的初版的DEMO我总体时非常不满意的, 糟糕的代码, 凌乱的代码, 混乱的设计, 可能源于我过于追求速度, 也许我做出了和视频效果相似甚至更加花里胡哨的打印结果, 但是里面的东西差距时非常遥远的, 空有其表, 败絮其中. 这种代码在日后非常难以维护, 即使我加了非常多的代码, 缩进也尽量按照标准来, 但是我自己都很难找到一个方法在哪里, 非常难以修改, 修改了一个方法可能需要同时修改其他的很多地方, 或者是修改完出现各种各样的内存问题等等…我现在认为一个方法仅仅对于一个功能是非常重要的, 而且便于记忆以及修改的宏定义我也尝到了它的甜头, 还有对整体程序的逻辑设计, 在不考虑这些东西而仅仅根据几条需求如同大一考试对于问题对于解出来就完事儿了的态度去码代码, 码出来的程序可能是正常运行的, 但是接下来的维护呢, 况且随心所欲的写方法我现在感觉是非常可怕的, 乱码一时爽, 码完以后火葬场, 每次DEBUG的时间都与真实写代码的时间一样长了, 每次改完以后心里憔悴, 这都是不好好规划设计, 拿起手就是敲的后果, 正所谓: 代码千万条, 规范第一条, 代码不规范, 亲人两行泪!写完这个DEMO也让我更加深入理解了一些数据结构, 如同此DEMO中的玩家结构, 玩家中有背包, 背包中有道具, 道具中有类别对应不同属性, 武器对应攻击力, 防具对应防御力等等, 现在我可能会思考, 需要经常插入而又很少需要随机读取的类型会不使用链表更加好一些等等的问题, 看来这波不亏</p>
+<p>最后, 可能我不会再继续修改这个DEMO了, 要么也是重写了(实在太烂了…) 感谢这个DEMO, 感谢老九, 用这样一种方式让我认识到了上课所无法理解的思想, 让我对未来的代码有了期待, 但是这只是一个极小的开始, 这只是站在了一个小石子儿看世界, 要想看到真正的世界, 还需走的更远, 爬到更高的地方去眺望, 去欣赏, 去体味)</p>
+</h1></h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C</a>
+          
+            <a href="/tags/DEMO/" rel="tag"><i class="fa fa-tag"></i> DEMO</a>
+          
+            <a href="/tags/Game/" rel="tag"><i class="fa fa-tag"></i> Game</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/22/Intro/" rel="next" title="Intro">
+                <i class="fa fa-chevron-left"></i> Intro
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/13/2019-Holiday-Note-01/" rel="prev" title="Holiday Note_01">
+                Holiday Note_01 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="左手工匠">
+            
+              <p class="site-author-name" itemprop="name">左手工匠</p>
+              <p class="site-description motion-element" itemprop="description">大概就这样，折腾让生活更美好</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ofcZsgj" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tcuZsgj@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Bottle_Wei" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://coolshell.cn/" title="左耳朵耗子(陈浩大佬)" target="_blank">左耳朵耗子(陈浩大佬)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/home.html" title="阮一峰大神" target="_blank">阮一峰大神</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/user/AlehandroMiskauskas/featured" title="Alexandr Misko(战斗民族的Fingerstyle)" target="_blank">Alexandr Misko(战斗民族的Fingerstyle)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw" title="3Blue1Brown(看过的最棒的科普Youtuber)" target="_blank">3Blue1Brown(看过的最棒的科普Youtuber)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/user/KurtHugoSchneider/featured" title="Kurt Hugo Schneider(才华横溢的音乐Youtuber)" target="_blank">Kurt Hugo Schneider(才华横溢的音乐Youtuber)</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">My first console game demo 
+
+
+
+
+
+这个demo简单的实现了用户输入方向键, 数字键达到在不同地图切换, 购买商品, 打怪升级等功能, 希望在后期能够实现更加丰富的功能并且能连接网络对战,开发环境为Atom,CodeBlocks,MinGW
+数据类型
+道具
+地图
+背包(背包包括道具类型)
+门派
+玩家(玩家包含背包以及门派数据类型)
+怪物
+
+道具 (Prop)属性字段
+
+
+
+属性
+定义
+
+
+
+编号
+int id
+
+
+名称
+char name[30]
+
+
+价格
+double price
+
+
+等级
+int level
+
+
+库存
+int stock
+
+
+类别
+propType type(使用枚举)
+
+
+最小属性
+union(使用联合体)
+
+
+最大属性
+union(使用联合体)
+
+
+描述
+char desc[200]
+
+
+枚举代码
+123456typedef enum _propType {    Weapon,     //武器    Armor,      //防具    Con,        //消耗品    Frag,       //碎片} Type;
+
+联合体代码  (不同类别拥有不同属性类别)
+12345union {    int minAttack;     //如果是武器类别, 则最 低/高 攻击力为    int minDefence;    //如果是防具类别, 则最 低/高 防御力为    int minPower;      //如果是消耗品类别, 则最 低/高 回复值为}
+
+12要注意若定义枚举中使用 ; 分隔开, 则报错如下(这是我自己踩过的一个坑)Expected &#39;= constant-expression&#39; or end of enumerator definition
+
+地图(Map)
+该DEMO的地图大小为8 * 8
+后期增加地图进入的等级限制
+
+属性字段 
+
+
+
+属性
+定义
+
+
+
+编号
+int id
+
+
+名称
+char name[20]
+
+
+进入地图的最低等级
+minLevel
+
+
+坐标结构
+COORD coord
+
+
+地图描述
+desc[500]
+
+
+1地图的坐标使用window.h头文件下的COORD结构, 使用方式为coord.X = 0, coord.Y = 0
+
+
+
+背包 (Bag)
+背包类型是玩家的一个属性
+后期改进实现人民币玩家可以提升背包容量上限
+
+属性字段
+
+
+
+属性
+定义
+
+
+
+所属玩家ID
+int playId
+
+
+当前的道具数量
+int propsCount
+
+
+背包最大容量
+maxCount
+
+
+道具数组
+Prop props
+
+
+门派 (Martial)
+门派为玩家的一个属性
+后期改进实现人名币玩家解锁更多帮派功能
+
+属性字段
+
+
+
+属性
+定义
+
+
+
+编号
+int id
+
+
+名称
+char name[20]
+
+
+门派类型
+char type[10]
+
+
+门派总部坐标结构
+COORD hqCoord
+
+
+是否对玩家开放
+int isOpen
+
+
+门派描述
+char desc[1000]
+
+
+玩家 (Player)属性字段
+
+
+
+属性
+定义
+
+
+
+名称
+char name[30]
+
+
+编号
+id[10]
+
+
+密码
+char passwd[30]
+
+
+等级
+int level
+
+
+经验值
+int exp
+
+
+血量
+int hp
+
+
+内力
+int mp
+
+
+金币
+int gold
+
+
+门派结构
+Martial martial
+
+
+武器道具
+Prop weapon
+
+
+防具道具
+Prop armor
+
+
+玩家当前坐标
+COORD coord
+
+
+背包结构
+Bag bag
+
+
+怪物 (Monster)
+后期加入怪物掉落装备功能
+
+属性字段
+
+
+
+属性
+定义
+
+
+
+编号
+int id
+
+
+名称
+char name[20]
+
+
+等级
+int level
+
+
+血量
+int hp
+
+
+攻击力
+int attact
+
+
+防御力
+int defence
+
+
+掉落的最小金币
+int minMoney
+
+
+掉落的最大金币
+int maxMoney
+
+
+玩家能够获取的最大经验
+int exp
+
+
+怪物的状态(0死1活)
+int state
+
+
+怪物的坐标
+COORD coord
+
+
+***
+
+
+
+## 功能实现
+
+
+
+通过系统函数辅助实现的方法, 以下方法在GameLib源文件中
+
+更改控制台标题(SetTitle)
+更改控制台内字体(SetColor)
+设置控制台内光标的位置(SetPosition)
+
+更改控制台标题(SetTitle)1234/** 设置控制台的标题 */void SetTitle(char *title) {    SetConsoleTitle(title);     //调用windows.h头文件下的系统函数}
+
+更改控制台内字体(SetColor)12345678910111213141516/* 设置控制台的颜色 * 0-黑色,   1-蓝色,   2-绿色,    3-浅绿色,  4-红色, * 5-紫色,   6-黄色,   7-白色,    8-灰色,   9-淡蓝色, * 10-淡绿色,  11-淡浅绿色   12-淡红色   13-淡紫色 * 14-淡黄色   15-亮白色 */void SetColor(int ForeColor, int BackColor) {//分别设置前景色与背景色     //HANDLE: 句柄, GetStdHandle(STD_OUTPUT_HANDLE)获得标准输出流的句柄, 均为windows.h下的系统函数     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);       //获取当前窗口句柄     SetConsoleTextAttribute(handle, ForeColor + BackColor * 0x10);//设置颜色       //句柄(HANDLE)补充:    //WINDOWS程序中并不是用物理地址来标识一个内存块，文件，任务或动态装入模块的。    //相反，WINDOWS API给这些项目分配确定的句柄并将句柄返回给应用程序，    //然后通过句柄来进行操作(句柄不是指针, 是32或64位的无符号整型) }
+
+设置控制台内光标的位置(SetPosition)123456void SetPosition(int x, int y) {     HANDLE winHandle = GetStdHandle(STD_OUTPUT_HANDLE);     COORD pos = {x, y};     //SetConsoleCursorPosition()为windows.h下系统函数     SetConsoleCursorPosition(winHandle, pos);      //设置光标位置 }
+
+
+以下方法为自己定义实现游戏主要逻辑功能中比较重要的几个, 在Game源文件中
+
+GameProcess(): 接收并判断用户的输入, 返回游戏的各个功能(例如用户输入方向键将会移动玩家的所在地图,输入1会显示玩家的个人信息窗口等等)这是游戏最重要的一个方法, 决定了游戏的逻辑实现, 本人水平较差, 当初没有想到将所有的操作均封装到此方法来, 因此使得判断用户输入包括方向键的接收为一个方法并且放入于main()中, 导致了维护困难, 代码不清晰等等问题 
+Clear(): 功能为清理指定区域内的所有字符, 用’\0’替代, 达到刷新屏幕的功能, 由于清屏操作需要使用的次数极多因此封装成方法
+ShowMonster(): 该方法为显示当前地图所有怪物的信息: 等级名称, 但是我却在一个方法包含了接收用户输入导致方法过于复杂难以复用维护, 而且此方法打印怪物使用指针以及辅助数组较难理解
+MonsterFight(): 接收用户输入的怪物编号, 让玩家与怪物进行战斗, 以当前时间为种子, 攻击力防御力取范围该范围内的随机数, 战斗后返回判断打印不同情况的结果 
+PropInit(): 初始化游戏玩家数据, 用于测试功能 
+Trade(): 交易方法, 接收游戏玩家编号与商品编号, 重点为判断无法交易的情况以及对背包物品的添加(背包已有该类别商品/背包暂无此类别商品) 
+ShowProps(): 显示商城的信息, 此方法与ShowMonster()类似,  同样我没考虑到方法的复用以及维护, 将Show 和 接收用户的输入 两个方法写在一个方法里了
+showTrade(): 接收Trade()返回的值, 对应交易成功与失败分别执行不同操作
+Login(): 登陆方法, 接收用户输入的用户名以及密码(无回显)进行判断以达到登陆功能
+
+以下为主要方法的源代码
+一些宏定义, 例如游戏窗口的各个部分的行数等等, 在移动光标时使用频率极高
+12345678910#define COL 78                //游戏的界面的总宽度#define MAXGIN_X 20           //游戏界面与控制台的左边距#define ENDINFO 78            //各个框架结束&#39;|&#39;的列数#define MAPSART_START_Y 3     //游戏地图开始的行#define MAPSART_END_Y 11      //游戏地图结束行#define INFORMATION_START_Y 12//游戏信息开始行#define INFORMATION_END_Y 19  //游戏信息结束行#define MAINMENUE_START_Y 20  //游戏主菜单开始行#define MAINMENUE_END_Y 28    //游戏主菜单结束行#define SEP &quot;*******************************************************************************&quot;
+
+游戏主体的逻辑实现
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576接收main()传递的key, 分别执行不同的功能/** 执行游戏主菜单功能 */void GameProcess(char key) {    switch (key) {        case &#39;1&#39;: ShowPlayerInfo();//显示玩家个人信息            break;        case &#39;2&#39;: ShowMonster();//显示当前地图的怪物(内有打怪)            break;        case &#39;3&#39;: Move(currPlayer-&gt;martial.hqCoord.X, currPlayer-&gt;martial.hqCoord.Y);//移动到玩家的帮派地图中            break;        case &#39;4&#39;: ShowProps();//展示游戏商品            break;        default : printf(&quot;少侠究竟想要作甚?&quot;);    }}以下为游戏主逻辑, 死循环中对用户输入进行判断并对应相应的输出(即实现不同游戏功能)****************************************************************************main()包括了判断字符进行移动玩家所在地图的功能(未封装成方法!)****************************************************************************int main() {//最好通过一个游戏进程函数将main方法里边的各种方法封装, 通过不同状态执行不同方法    char key;           //接收用户输入    SetColor(2,0);      //设置控制台文本颜色(front color为绿色, background color为黑色)    SetConsoleTitle(&quot;笑傲江湖之精忠报国 C语言实现 BY 左手工匠&quot;);    //设置控制台标题    PropInit();         //初始化测试人物    ShowWelcome();      //显示欢迎栏    Login();            //登陆, 登陆成功继续执行    ShowMap();          //显示地图    ShowInformation();  //显示信息栏    ShowMainMenu();     //显示菜单栏    while (1) {//死循环, 除非用户选择退出, 否则停止等待用户输入    fflush(stdin);    //接收用户输入(无回显)    key = getch();    fflush(stdin);    if(key == &#39;1&#39; || key == &#39;2&#39; || key == &#39;3&#39; || key == &#39;4&#39;){        GameProcess(key);//输入正常, 将值传递给GameProcess()来对应输出        continue;    }    else if(key == &#39;5&#39; || key == &#39;6&#39; ){        SetPosition(20, 12);        Clear(20 , 12, 7);        SetPosition(20 + 5, 12 + 2);        printf(&quot;放过我吧, 还没开发完呐!!!\n&quot;);    }    else if(key == &#39;7&#39;) {        break;    }    else if(key == VK_UP || key == 72) {//X, Y为游戏坐标, 控制X, YS实现地图移动        Y--;            //输入上    }    else if(key == VK_RIGHT || key == 77) {        X++;            //输入右    }    else if(key == VK_DOWN || key == 80) {        Y++;            //输入下    }    else if(key == VK_LEFT || key == 75) {        X--;            //输入左    }    if(X &gt; 7) {//移动到最边的话重新回到0, 如贪食蛇穿过地图边缘        X = 0;    }    if(X &lt; 0) {        X = 7;    }    if(Y &gt; 7) {        Y = 0;    }    if(Y &lt; 0) {        Y = 7;    }    ShowMap();}    return 0;}
+
+清空指定区域内所有字符 
+123456789/** 清除信息区内所有内容(给定坐标及清理的行数) */void Clear(int x, int y, int rowCount) {    for(int i = 0; i &lt; rowCount; i ++) {        SetPosition(x + 1, y + i);        for(int j = 0; j &lt; COL - 1; j ++)  {    //使用&#39; &#39;替换指定区域            printf(&quot; &quot;);        }    }}
+
+打印怪物的信息以及接收并判断玩家的输入的怪物编号, 玩家选择查看怪物信息时调用该方法
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980/** 显示当前地图的怪物********(功能略复杂些)*************/void ShowMonster() {    //给怪物各个等级对应相应称号    //例如：3级怪物，那么就显示这个怪物的描述为粗通皮毛    char *monsterlevelNames[] = {&quot;乳臭未干&quot;, &quot;初出茅庐&quot;, &quot;粗通皮毛&quot;, &quot;青年才俊&quot;, &quot;略有小成&quot;, &quot;心领神会&quot;, &quot;出类拔萃&quot;, &quot;所向无敌&quot;, &quot;天人合一&quot;};    Clear(MAXGIN_X,  INFORMATION_START_Y, 7);   //清空信息区的所有内容    int monsterCount;    // 记录整个游戏的怪物总数    monsterCount = sizeof(monsterArray) / sizeof(Monster);    //记录当前地图的怪数量 记得变量定义时赋初值!!! debug了好久...    int currMapMonsterCount = 0;    // 定义一个只有九个空间的一维数组, 用以记录怪物在怪物列表里的下标    int monsterIndex[9];    for(int i = 0; i &lt; monsterCount; i++) {        // 关键!!! 满足怪物坐标与当前地图坐标相等 并且 该怪物的状态为存活的条件, 将怪物与怪物数组的下标记录并且当前地图怪物数量自增        if(monsterArray[i].coord.X == X &amp;&amp; monsterArray[i].coord.Y == Y &amp;&amp; monsterArray[i].state == 1) {            // 记录下标            monsterIndex[currMapMonsterCount] = i;            currMapMonsterCount++;            // 设定每个地图最多显示 9 个怪物            if(currMapMonsterCount == 9) {                break;            }        }    }    // 打印怪物    SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 1);    if(currMapMonsterCount == 0) {        SetColor(7, 0);//白字黑底        printf(&quot;这里冷冷清清的什么也没有, 少侠还是到别处看看吧, 呆着也没银子给你!&quot;);        SetColor(2, 0);//恢复颜色        return;    }/*********以下语句为判定用户输入的编号来返回地图信息或进行打怪操作*******/    int pkMonsterId = 0;// 接收玩家输入的怪物编号, 定义在循环外部是因为循环外仍需使用进行判断是否打印地图信息    while(1){        pkMonsterId = -1;        Clear(MAXGIN_X,  INFORMATION_START_Y, 7);   //清空信息区的所有内容        SetPosition(MAXGIN_X + 20, INFORMATION_START_Y + 0);        printf(&quot;少侠, 这儿有怪物! 要为百姓除暴安良吗?&quot; );        SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 2);        for(int i = 0; i &lt; currMapMonsterCount; i++) {            if(i % 3 == 0 &amp;&amp; i != 0){//每行打印三个怪物                SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 2 + i / 3);            }            //打印怪物, 较为繁琐            //monsterIndex[i]即为该怪物列表中的怪物编号            SetColor(4, 0);//红字怪物            printf(&quot;%d.%s(%s)\t  &quot;, i + 1, monsterArray[monsterIndex[i]].name, monsterlevelNames[monsterArray[monsterIndex[i]].level - 1]);        }        SetColor(2, 0);//恢复颜色        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;少侠想攻击几号怪物呢? (按0返回)&quot;);        scanf(&quot;%d&quot;, &amp;pkMonsterId);        if(pkMonsterId == 0) {//输入0, 退出循环来返回显示地图信息            break;        }        else if(pkMonsterId &lt; 0 || pkMonsterId &gt; currMapMonsterCount) {            //输入的怪物标号在当前地图不存在            SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);            //简易清屏            printf(&quot;                                                             &quot;);            SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);            printf(&quot;少侠选错了吧, 怪物不存在呢!(按任意键重新输入)&quot;);            char recoverKey = getch();            if(recoverKey){//停顿直到接收任意键后重新显示怪物                continue;            }        }        else {//编号对应地图所有的怪物时, 将怪物地址传入打怪方法            MonsterFight(&amp;monsterArray[monsterIndex[pkMonsterId - 1]]);            break;        }    }    if(pkMonsterId == 0) {//输入0, 返回显示地图信息        ShowMapInfo();    }}
+
+玩家与指定地图指定怪兽进行战斗
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172/** 选定怪物进行对战 */void MonsterFight(Monster *monster) {    SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);    printf(&quot;                                                             &quot;);//简易清屏(偷懒)    SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);    srand(time(NULL));//以当前时间为种子    /* random函数的用法(只能0 - 32767之间)    * 随机一个a ~ b的数字, 即 rand() % (b - a + 1) + a; 例如0 ~ 5, 即rand() % 6;    */    int playerAttact = 0;    // 玩家的实际攻击力    playerAttact = rand() % (currPlayer-&gt;weapon.maxAttack - currPlayer-&gt;weapon.minAttack + 1) + currPlayer-&gt;weapon.minAttack;    int playerDeffence =0;    //玩家实际防御力    playerDeffence = rand() % (currPlayer-&gt;armor.maxDefence - currPlayer-&gt;armor.minDefence + 1) + currPlayer-&gt;armor.minDefence;    //怪物实际掉落的金钱    int monsterGold = 0;    monsterGold = rand() % (monster-&gt;maxMoney - monster-&gt;minMoney + 1) + monster-&gt;minMoney;    int pkRound = 0;    //记录战斗的轮次    while(1){//打斗循环, 任意一方死亡退出        //玩家血量变化        currPlayer-&gt;hp -= monster-&gt;attact - playerDeffence;        //怪物的血量变化        monster-&gt;hp -= playerAttact - monster-&gt;defence;        if(monster-&gt;hp &lt;= 0) {//怪物的血量少于等于0时退出            break;        }        if(currPlayer-&gt;hp &lt;= 0) {//玩家血量小于等于0时退出            break;        }        //以下为打印战斗详情        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;                                                                         &quot;);//简易清屏(偷懒)        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        pkRound++;        //战斗详情使用白底红字        SetColor(4,7);        //该语句较长......        printf(&quot;第 %d 轮战斗详情:%s 对 %s 造成了 %d 伤害且受到 %s %d 的伤害&quot;, pkRound, currPlayer-&gt;name, monster-&gt;name, playerAttact - monster-&gt;defence, monster-&gt;name, monster-&gt;attact - playerDeffence);        //放慢过程        usleep(1000 * 800);//1000毫秒*800        SetColor(2, 0);    }    SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);    printf(&quot;                                                                   &quot;);//简易清屏(偷懒)    SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);    if(currPlayer-&gt;hp &lt;= 0) {        //玩家死亡输入完任意键后返回        printf(&quot;江湖快讯: 大侠 %s 在与 %s 的对决中壮烈牺牲! (请按任意键返回)&quot;, currPlayer-&gt;name, monster-&gt;name);        //重置人物的金币与血量        currPlayer-&gt;hp = 100;        currPlayer-&gt;gold = 100;        getch();        return;    }    //以下即为怪物死亡的情况    printf(&quot;%s 轻而易举的便被 %s 大侠收拾了, 同时掉落了 &quot;, monster-&gt;name, currPlayer-&gt;name);    //将怪物的状态调整至死亡    monster-&gt;state = 0;    //设置金币的front color为黄色, background color为亮白色    SetColor(6, 15);    printf(&quot;%d 金币   &quot;, monsterGold);    // 设置经验的front color为黄色, background color为亮白色    SetColor(1, 15);    printf(&quot;%d 经验  &quot;, monster-&gt;exp);    SetColor(2, 0); //颜色恢复    //玩家获得金币与经验值的加成    currPlayer-&gt;gold += monsterGold;    currPlayer-&gt;exp += monster-&gt;exp;    getch();    ShowMonster();}
+
+
+
+初始化游戏数据: 将地图, 玩家, 装备, 怪物置入, 测试各功能
+123456789Player *currPlayer;void PropInit() {//初始化游戏数据 (测试用数据)    currPlayer = &amp;playArray[0];    currPlayer-&gt;weapon = propArray[8];    currPlayer-&gt;armor = propArray[4];    currPlayer-&gt;martial = martials[4];    Bag bag = {95001, 0, 8};    currPlayer-&gt;bag = bag;}
+
+交易, 玩家购买指定道具
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263/** 交易  * 参数1: 玩家的地址  * 参数2: 商品的编号  * 返回交易是否成功, 0 失败, 1 成功  */int Trade(Player *player, int propsId) {    Prop *tradeProp = NULL;     //定义一个用于指向及交易商品的指针    for(int i = 0; i &lt; sizeof(propArray) / sizeof(Prop); i++) {        if(propsId == propArray[i].id) {//找到该商品, 并让tradeProp指向它            tradeProp = propArray + i;  //即tradeProp = &amp;propArray[i]            break;        }    }    //判断商品是否有库存    if(tradeProp-&gt;stock &lt;= 0) {        Clear(MAXGIN_X, INFORMATION_END_Y - 1, 1);        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;地主家都没有余粮！商店都被买空啦！&quot;);        return 0;    }    //判断玩家是否金币足够支付    if(currPlayer-&gt;gold &lt; tradeProp-&gt;price) {        Clear(MAXGIN_X, INFORMATION_END_Y - 1, 1);        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;钱包都是瘪的，这可是个看钱的江湖！！!&quot;);        return 0;    }    //判断玩家背包容量是否充足    if(currPlayer-&gt;bag.propsCount &gt; currPlayer-&gt;bag.maxCount &amp;&amp; currPlayer-&gt;bag.propsCount != 0) {        //玩家的背包道具数量大于最大容量并且背包道具数不为0则判定为失败        Clear(MAXGIN_X, INFORMATION_END_Y - 1, 1);        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;背包已满，交易失败！&quot;);        return 0;    }    //满足交易条件，执行交易的业务操作    //1、商品库存-1    tradeProp-&gt;stock--;    //2、玩家金币-商品单价    player-&gt;gold -= tradeProp-&gt;price;    //*****************************玩家背包道具增加*******************************//    //判断玩家背包中是否已有该商品 !!!    int i;    for(i = 0; i &lt; currPlayer-&gt;bag.propsCount; i++) {        if(propsId == currPlayer-&gt;bag.props[i].id) {            currPlayer-&gt;bag.props[i].stock++;            break;        }    }    //若为循环正常结束, i = currPlayer-&gt;bag.propsCount, 即为背包无此商品, 需要给背包添加该商品!!!    if(i == currPlayer-&gt;bag.propsCount) {        //向背包中创建一个商品-复制一份要交易的商品信息到背包中        currPlayer-&gt;bag.props[currPlayer-&gt;bag.propsCount].id = tradeProp-&gt;id;        currPlayer-&gt;bag.props[currPlayer-&gt;bag.propsCount].price = tradeProp-&gt;price;        currPlayer-&gt;bag.props[currPlayer-&gt;bag.propsCount].stock = 1;        strcpy(currPlayer-&gt;bag.props[currPlayer-&gt;bag.propsCount].name, tradeProp-&gt;name);        strcpy(currPlayer-&gt;bag.props[currPlayer-&gt;bag.propsCount].desc, tradeProp-&gt;desc);        currPlayer-&gt;bag.propsCount++;    }    //交易成功    return 1;}
+
+
+打印商品列表, 玩家选择购买道具调用该方法
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061/** 展示游戏商品 */void ShowProps() {    //此方法应拆分为打印商品 以及用户输入并检验商品编号两个方法!!!!!!!!    /*******************************/    Clear(MAXGIN_X, INFORMATION_START_Y, 7);    SetPosition(MAXGIN_X + 5, INFORMATION_START_Y);    SetColor(8, 0);     //灰字黑底    printf(&quot;欢迎大侠 %s 来到 %s 童叟无欺的杂货铺, 瞧一瞧看一看可有需要的?&quot;, currPlayer-&gt;name, mapArray[X][Y].name);    SetColor(6, 0);     //黄字黑底    SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 2);    int propCount = sizeof(propArray) / sizeof(Prop) &gt;= 9 ? 9 : sizeof(propArray) / sizeof(Prop);    for(int i = 0; i &lt; propCount; i++) {        if(i % 3 == 0) {//打印商品, 每行 3 个, 且只打印最多 9 个            SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 2 + i / 3);        }        printf(&quot;%-3d.%-10s(%-2d)%-4c&quot;, propArray[i].id, propArray[i].name, propArray[i].stock, &#39; &#39;);    }    SetColor(2, 0);//恢复颜色    int tradeId;//接收用户输入的商品编号    while(1) {        //用于判断输入编号是否正确(此判断未包括检验玩家金币及商品库存及玩家背包是否已满等状态)        Clear(MAXGIN_X, INFORMATION_END_Y - 1, 1);        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;大侠需要什么, 请输入编号立即购买(按 0 退出)&quot;);        scanf(&quot;%d&quot;, &amp;tradeId);        if(tradeId == 0) {//输入0返回显示地图信息            ShowMapInfo();            break;        }        else if(tradeId &lt; 0 || tradeId &gt; 9) {//输入的商品编号错误的情况, 重新输入            Clear(MAXGIN_X, INFORMATION_END_Y - 1, 1);            SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);            printf(&quot;少侠选错了吧, 商品不存在呢!(按任意键重新输入)&quot;);            char recoverKey = getch();            if(recoverKey){//停顿直到接收任意键后重新显示怪物                continue;            }        }        else {//输入在1 - 9的情况, 将编号传入交易函数            showTrade(Trade(currPlayer, tradeId), tradeId);//******调用交易方法, 展示交易信息方法******//            //以下为重新刷新商品列表, 应该封装为一个打印商品的方法, 该ShowProps()方法过于繁琐, 加入了打印以及检验两个功能            /********************************/            Clear(MAXGIN_X, INFORMATION_START_Y, 7);            SetPosition(MAXGIN_X + 5, INFORMATION_START_Y);            SetColor(8, 0);     //灰字黑底            printf(&quot;欢迎大侠 %s 来到 %s 童叟无欺的杂货铺, 瞧一瞧看一看可有需要的?&quot;, currPlayer-&gt;name, mapArray[X][Y].name);            SetColor(6, 0);     //黄字黑底            SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 2);            int propCount = sizeof(propArray) / sizeof(Prop) &gt;= 9 ? 9 : sizeof(propArray) / sizeof(Prop);            for(int i = 0; i &lt; propCount; i++) {                if(i % 3 == 0) {//打印商品, 每行 3 个, 且只打印最多 9 个                    SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 2 + i / 3);                }                printf(&quot;%-3d.%-10s(%-2d)%-4c&quot;, propArray[i].id, propArray[i].name, propArray[i].stock, &#39; &#39;);            }            SetColor(2, 0);//恢复颜色            /********************************/            }        }}
+
+返回交易结束后的信息
+1234567891011121314151617/** 接收Trade()返回的值, 判断交易是否成功 */void showTrade(int flag, int propId) {    if(flag == 0) {        ShowMapInfo();        return;    }    if(flag == 1) {        Clear(MAXGIN_X, INFORMATION_END_Y - 1, 1);        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;交易成功, &quot;);        SetColor(6, 0);     //打印装备为黑底黄字        printf(&quot;%s&quot;, propArray[propId - 1].name);        SetColor(2, 0);     //恢复黑底绿字        printf(&quot; 已经加入你的背包, 赶紧瞧一瞧吧!(按任意键继续)&quot;);        getch();            //暂停    }}
+
+
+
+验证登陆信息
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/** 玩家登陆(暂无注册) */void Login() {    while(1) {        char id[10];        char key[10];       //接收用户输入的id 和 passwd        SetColor(2, 0);        Clear(MAXGIN_X, MAPSART_START_Y, 4);        SetPosition(MAXGIN_X + 24, MAPSART_START_Y);        printf(&quot;请在下方输入您的用户名和密码&quot;);        SetPosition(MAXGIN_X + 5, MAPSART_START_Y + 1);        printf(&quot;用户名: &quot;);        scanf(&quot;%s&quot;, id);        SetPosition(MAXGIN_X + 5, MAPSART_START_Y  + 2);        printf(&quot;密码(无回显哦回车确定): &quot;);        for(int i = 0; 1; i++) {            key[i] = getch();//无回显输入密码            if(key[i] == 13) {                //接收到回车跳出循环                //将回车字符重置为空字符                key[i] = &#39;\0&#39;;                break;            }        }        //判断玩家输入的信息是否与玩家id, passwd匹配        if(strcmp(currPlayer-&gt;id, id) == 0 &amp;&amp; strcmp(currPlayer-&gt;passwd, key) == 0) {            //只有玩家输入成功才跳出死循环            break;        }        else {            SetPosition(MAXGIN_X + 5, MAPSART_START_Y + 3);            SetColor(12, 0);    //浅红色字体            printf(&quot;用户名或密码错误, 请检查后再次输入!(按任意键继续)&quot;);            getch();        }    }    //用户输入成功后    SetColor(12, 0);    SetPosition(MAXGIN_X, MAPSART_START_Y);    Clear(MAXGIN_X, MAPSART_START_Y, 4);    SetPosition(MAXGIN_X + 15, MAPSART_START_Y);    printf(&quot;欢迎 &quot;);    SetColor(1, 0);      //蓝字显示玩家name    printf(&quot;%s&quot;, currPlayer-&gt;name);    SetColor(2, 0);    printf(&quot; 成功登陆笑傲江湖的世界(按任意键继续)&quot;);    getch();    //暂停}
+
+拓展功能以下的功能为此DEMO适合拓展的有趣功能:
+
+玩家的背包容量: 初始设定只有9, 可以通过充值元宝等方式扩充背包最大容量
+注册功能, 玩家设定任意符合指定规则的用户名及密码, 并且在下次可以继续使用
+NPC, 逻辑与怪物相似, 地图随机刷新NPC并且贩卖普通商店没有的道具
+打斗过程加入回复, 增益等功能(打斗前使用消耗品提升属性, 打斗过程回复血量, 内力)
+怪物指定时间刷新
+连接网络, 满足两个玩家在同一张地图进行, 怪物道具资源同步刷新, 并且玩家可以决斗(遥远的目标啊)
+
+最后的吐槽先说说为什么要写这个极小极小的DEMO吧, 寒假前半段在学数据结构, 时间较短, 仅仅实现了顺序表, 单链表, 循环链表等几个简单的数据结构的定义以及实现, 过程不算太美好: 虽然大二上讲过数据结构与算法, 但是非常的粗略, 对数据结构与算法的理解仅仅为有那么几种表, 有那么几种排序方式, 而且C是大一上学的, 早已忘得一干二净, 很多语法尤其是之前就不过关的指针的不熟悉, 应验了那句: 当C的指针指向你的时候, 菜鸡原形毕露! 被头指针头结点折腾的头皮发麻, 尽管磕磕绊绊用代码实现了, 但我深刻感受到了效率的低下, 进度十分缓慢, 遂觉得应该恶补以下C, 于是有了以上的DEMO
+前前后后一共花了十天, 四天的时间都是疯狂刷视频, 把指针, 结构体, 字符串, 数组这四个章节重点看了一到两遍, 然后六天把这个DEMO完成了, 跟着老九的视频, 每天看完示范再理解完敲代码实现, 慢慢的也完成了, 自己也没想到可以写出1000行的东西(可能是我注释比较多吧捂脸), 过程最难过的不是理解也不是一行一行敲出一个功能, 而是无穷无尽的BUG, 早期是用Clion + Cmake的环境, 第二天开始实现游戏的界面栏目并且改变控制台标题栏以及字体颜色时, 因为要在控制台检验, 但是发现Clion + Cmake不能调出Windows的Console, 一顿查阅亦未果, 因此使用了最早使用的Codeblocks(还是这个简单多了…), 嫌弃Cb丑陋UI的我又入坑了Atom, 用Atom码代码, Cb编译…..十分的奇葩, 但是也算是完成了
+总体来讲, 对我感触最深的东西应该就是封装以及设计了, 这次的初版的DEMO我总体时非常不满意的, 糟糕的代码, 凌乱的代码, 混乱的设计, 可能源于我过于追求速度, 也许我做出了和视频效果相似甚至更加花里胡哨的打印结果, 但是里面的东西差距时非常遥远的, 空有其表, 败絮其中. 这种代码在日后非常难以维护, 即使我加了非常多的代码, 缩进也尽量按照标准来, 但是我自己都很难找到一个方法在哪里, 非常难以修改, 修改了一个方法可能需要同时修改其他的很多地方, 或者是修改完出现各种各样的内存问题等等…我现在认为一个方法仅仅对于一个功能是非常重要的, 而且便于记忆以及修改的宏定义我也尝到了它的甜头, 还有对整体程序的逻辑设计, 在不考虑这些东西而仅仅根据几条需求如同大一考试对于问题对于解出来就完事儿了的态度去码代码, 码出来的程序可能是正常运行的, 但是接下来的维护呢, 况且随心所欲的写方法我现在感觉是非常可怕的, 乱码一时爽, 码完以后火葬场, 每次DEBUG的时间都与真实写代码的时间一样长了, 每次改完以后心里憔悴, 这都是不好好规划设计, 拿起手就是敲的后果, 正所谓: 代码千万条, 规范第一条, 代码不规范, 亲人两行泪!写完这个DEMO也让我更加深入理解了一些数据结构, 如同此DEMO中的玩家结构, 玩家中有背包, 背包中有道具, 道具中有类别对应不同属性, 武器对应攻击力, 防具对应防御力等等, 现在我可能会思考, 需要经常插入而又很少需要随机读取的类型会不使用链表更加好一些等等的问题, 看来这波不亏
+最后, 可能我不会再继续修改这个DEMO了, 要么也是重写了(实在太烂了…) 感谢这个DEMO, 感谢老九, 用这样一种方式让我认识到了上课所无法理解的思想, 让我对未来的代码有了期待, 但是这只是一个极小的开始, 这只是站在了一个小石子儿看世界, 要想看到真正的世界, 还需走的更远, 爬到更高的地方去眺望, 去欣赏, 去体味)
+</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">
+
+
+
+
+
+这个demo简单的实现了用户输入方向键, 数字键达到在不同地图切换, 购买商品, 打怪升级等功能, 希望在后期能够实现更加丰富的功能并且能连接网络对战,开发环境为Atom,CodeBlocks,MinGW
+数据类型
+道具
+地图
+背包(背包包括道具类型)
+门派
+玩家(玩家包含背包以及门派数据类型)
+怪物
+
+道具 (Prop)属性字段
+
+
+
+属性
+定义
+
+
+
+编号
+int id
+
+
+名称
+char name[30]
+
+
+价格
+double price
+
+
+等级
+int level
+
+
+库存
+int stock
+
+
+类别
+propType type(使用枚举)
+
+
+最小属性
+union(使用联合体)
+
+
+最大属性
+union(使用联合体)
+
+
+描述
+char desc[200]
+
+
+枚举代码
+123456typedef enum _propType {    Weapon,     //武器    Armor,      //防具    Con,        //消耗品    Frag,       //碎片} Type;
+
+联合体代码  (不同类别拥有不同属性类别)
+12345union {    int minAttack;     //如果是武器类别, 则最 低/高 攻击力为    int minDefence;    //如果是防具类别, 则最 低/高 防御力为    int minPower;      //如果是消耗品类别, 则最 低/高 回复值为}
+
+12要注意若定义枚举中使用 ; 分隔开, 则报错如下(这是我自己踩过的一个坑)Expected &#39;= constant-expression&#39; or end of enumerator definition
+
+地图(Map)
+该DEMO的地图大小为8 * 8
+后期增加地图进入的等级限制
+
+属性字段 
+
+
+
+属性
+定义
+
+
+
+编号
+int id
+
+
+名称
+char name[20]
+
+
+进入地图的最低等级
+minLevel
+
+
+坐标结构
+COORD coord
+
+
+地图描述
+desc[500]
+
+
+1地图的坐标使用window.h头文件下的COORD结构, 使用方式为coord.X = 0, coord.Y = 0
+
+
+
+背包 (Bag)
+背包类型是玩家的一个属性
+后期改进实现人民币玩家可以提升背包容量上限
+
+属性字段
+
+
+
+属性
+定义
+
+
+
+所属玩家ID
+int playId
+
+
+当前的道具数量
+int propsCount
+
+
+背包最大容量
+maxCount
+
+
+道具数组
+Prop props
+
+
+门派 (Martial)
+门派为玩家的一个属性
+后期改进实现人名币玩家解锁更多帮派功能
+
+属性字段
+
+
+
+属性
+定义
+
+
+
+编号
+int id
+
+
+名称
+char name[20]
+
+
+门派类型
+char type[10]
+
+
+门派总部坐标结构
+COORD hqCoord
+
+
+是否对玩家开放
+int isOpen
+
+
+门派描述
+char desc[1000]
+
+
+玩家 (Player)属性字段
+
+
+
+属性
+定义
+
+
+
+名称
+char name[30]
+
+
+编号
+id[10]
+
+
+密码
+char passwd[30]
+
+
+等级
+int level
+
+
+经验值
+int exp
+
+
+血量
+int hp
+
+
+内力
+int mp
+
+
+金币
+int gold
+
+
+门派结构
+Martial martial
+
+
+武器道具
+Prop weapon
+
+
+防具道具
+Prop armor
+
+
+玩家当前坐标
+COORD coord
+
+
+背包结构
+Bag bag
+
+
+怪物 (Monster)
+后期加入怪物掉落装备功能
+
+属性字段
+
+
+
+属性
+定义
+
+
+
+编号
+int id
+
+
+名称
+char name[20]
+
+
+等级
+int level
+
+
+血量
+int hp
+
+
+攻击力
+int attact
+
+
+防御力
+int defence
+
+
+掉落的最小金币
+int minMoney
+
+
+掉落的最大金币
+int maxMoney
+
+
+玩家能够获取的最大经验
+int exp
+
+
+怪物的状态(0死1活)
+int state
+
+
+怪物的坐标
+COORD coord
+
+
+***
+
+
+
+## 功能实现
+
+
+
+通过系统函数辅助实现的方法, 以下方法在GameLib源文件中
+
+更改控制台标题(SetTitle)
+更改控制台内字体(SetColor)
+设置控制台内光标的位置(SetPosition)
+
+更改控制台标题(SetTitle)1234/** 设置控制台的标题 */void SetTitle(char *title) {    SetConsoleTitle(title);     //调用windows.h头文件下的系统函数}
+
+更改控制台内字体(SetColor)12345678910111213141516/* 设置控制台的颜色 * 0-黑色,   1-蓝色,   2-绿色,    3-浅绿色,  4-红色, * 5-紫色,   6-黄色,   7-白色,    8-灰色,   9-淡蓝色, * 10-淡绿色,  11-淡浅绿色   12-淡红色   13-淡紫色 * 14-淡黄色   15-亮白色 */void SetColor(int ForeColor, int BackColor) {//分别设置前景色与背景色     //HANDLE: 句柄, GetStdHandle(STD_OUTPUT_HANDLE)获得标准输出流的句柄, 均为windows.h下的系统函数     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);       //获取当前窗口句柄     SetConsoleTextAttribute(handle, ForeColor + BackColor * 0x10);//设置颜色       //句柄(HANDLE)补充:    //WINDOWS程序中并不是用物理地址来标识一个内存块，文件，任务或动态装入模块的。    //相反，WINDOWS API给这些项目分配确定的句柄并将句柄返回给应用程序，    //然后通过句柄来进行操作(句柄不是指针, 是32或64位的无符号整型) }
+
+设置控制台内光标的位置(SetPosition)123456void SetPosition(int x, int y) {     HANDLE winHandle = GetStdHandle(STD_OUTPUT_HANDLE);     COORD pos = {x, y};     //SetConsoleCursorPosition()为windows.h下系统函数     SetConsoleCursorPosition(winHandle, pos);      //设置光标位置 }
+
+
+以下方法为自己定义实现游戏主要逻辑功能中比较重要的几个, 在Game源文件中
+
+GameProcess(): 接收并判断用户的输入, 返回游戏的各个功能(例如用户输入方向键将会移动玩家的所在地图,输入1会显示玩家的个人信息窗口等等)这是游戏最重要的一个方法, 决定了游戏的逻辑实现, 本人水平较差, 当初没有想到将所有的操作均封装到此方法来, 因此使得判断用户输入包括方向键的接收为一个方法并且放入于main()中, 导致了维护困难, 代码不清晰等等问题 
+Clear(): 功能为清理指定区域内的所有字符, 用’\0’替代, 达到刷新屏幕的功能, 由于清屏操作需要使用的次数极多因此封装成方法
+ShowMonster(): 该方法为显示当前地图所有怪物的信息: 等级名称, 但是我却在一个方法包含了接收用户输入导致方法过于复杂难以复用维护, 而且此方法打印怪物使用指针以及辅助数组较难理解
+MonsterFight(): 接收用户输入的怪物编号, 让玩家与怪物进行战斗, 以当前时间为种子, 攻击力防御力取范围该范围内的随机数, 战斗后返回判断打印不同情况的结果 
+PropInit(): 初始化游戏玩家数据, 用于测试功能 
+Trade(): 交易方法, 接收游戏玩家编号与商品编号, 重点为判断无法交易的情况以及对背包物品的添加(背包已有该类别商品/背包暂无此类别商品) 
+ShowProps(): 显示商城的信息, 此方法与ShowMonster()类似,  同样我没考虑到方法的复用以及维护, 将Show 和 接收用户的输入 两个方法写在一个方法里了
+showTrade(): 接收Trade()返回的值, 对应交易成功与失败分别执行不同操作
+Login(): 登陆方法, 接收用户输入的用户名以及密码(无回显)进行判断以达到登陆功能
+
+以下为主要方法的源代码
+一些宏定义, 例如游戏窗口的各个部分的行数等等, 在移动光标时使用频率极高
+12345678910#define COL 78                //游戏的界面的总宽度#define MAXGIN_X 20           //游戏界面与控制台的左边距#define ENDINFO 78            //各个框架结束&#39;|&#39;的列数#define MAPSART_START_Y 3     //游戏地图开始的行#define MAPSART_END_Y 11      //游戏地图结束行#define INFORMATION_START_Y 12//游戏信息开始行#define INFORMATION_END_Y 19  //游戏信息结束行#define MAINMENUE_START_Y 20  //游戏主菜单开始行#define MAINMENUE_END_Y 28    //游戏主菜单结束行#define SEP &quot;*******************************************************************************&quot;
+
+游戏主体的逻辑实现
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576接收main()传递的key, 分别执行不同的功能/** 执行游戏主菜单功能 */void GameProcess(char key) {    switch (key) {        case &#39;1&#39;: ShowPlayerInfo();//显示玩家个人信息            break;        case &#39;2&#39;: ShowMonster();//显示当前地图的怪物(内有打怪)            break;        case &#39;3&#39;: Move(currPlayer-&gt;martial.hqCoord.X, currPlayer-&gt;martial.hqCoord.Y);//移动到玩家的帮派地图中            break;        case &#39;4&#39;: ShowProps();//展示游戏商品            break;        default : printf(&quot;少侠究竟想要作甚?&quot;);    }}以下为游戏主逻辑, 死循环中对用户输入进行判断并对应相应的输出(即实现不同游戏功能)****************************************************************************main()包括了判断字符进行移动玩家所在地图的功能(未封装成方法!)****************************************************************************int main() {//最好通过一个游戏进程函数将main方法里边的各种方法封装, 通过不同状态执行不同方法    char key;           //接收用户输入    SetColor(2,0);      //设置控制台文本颜色(front color为绿色, background color为黑色)    SetConsoleTitle(&quot;笑傲江湖之精忠报国 C语言实现 BY 左手工匠&quot;);    //设置控制台标题    PropInit();         //初始化测试人物    ShowWelcome();      //显示欢迎栏    Login();            //登陆, 登陆成功继续执行    ShowMap();          //显示地图    ShowInformation();  //显示信息栏    ShowMainMenu();     //显示菜单栏    while (1) {//死循环, 除非用户选择退出, 否则停止等待用户输入    fflush(stdin);    //接收用户输入(无回显)    key = getch();    fflush(stdin);    if(key == &#39;1&#39; || key == &#39;2&#39; || key == &#39;3&#39; || key == &#39;4&#39;){        GameProcess(key);//输入正常, 将值传递给GameProcess()来对应输出        continue;    }    else if(key == &#39;5&#39; || key == &#39;6&#39; ){        SetPosition(20, 12);        Clear(20 , 12, 7);        SetPosition(20 + 5, 12 + 2);        printf(&quot;放过我吧, 还没开发完呐!!!\n&quot;);    }    else if(key == &#39;7&#39;) {        break;    }    else if(key == VK_UP || key == 72) {//X, Y为游戏坐标, 控制X, YS实现地图移动        Y--;            //输入上    }    else if(key == VK_RIGHT || key == 77) {        X++;            //输入右    }    else if(key == VK_DOWN || key == 80) {        Y++;            //输入下    }    else if(key == VK_LEFT || key == 75) {        X--;            //输入左    }    if(X &gt; 7) {//移动到最边的话重新回到0, 如贪食蛇穿过地图边缘        X = 0;    }    if(X &lt; 0) {        X = 7;    }    if(Y &gt; 7) {        Y = 0;    }    if(Y &lt; 0) {        Y = 7;    }    ShowMap();}    return 0;}
+
+清空指定区域内所有字符 
+123456789/** 清除信息区内所有内容(给定坐标及清理的行数) */void Clear(int x, int y, int rowCount) {    for(int i = 0; i &lt; rowCount; i ++) {        SetPosition(x + 1, y + i);        for(int j = 0; j &lt; COL - 1; j ++)  {    //使用&#39; &#39;替换指定区域            printf(&quot; &quot;);        }    }}
+
+打印怪物的信息以及接收并判断玩家的输入的怪物编号, 玩家选择查看怪物信息时调用该方法
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980/** 显示当前地图的怪物********(功能略复杂些)*************/void ShowMonster() {    //给怪物各个等级对应相应称号    //例如：3级怪物，那么就显示这个怪物的描述为粗通皮毛    char *monsterlevelNames[] = {&quot;乳臭未干&quot;, &quot;初出茅庐&quot;, &quot;粗通皮毛&quot;, &quot;青年才俊&quot;, &quot;略有小成&quot;, &quot;心领神会&quot;, &quot;出类拔萃&quot;, &quot;所向无敌&quot;, &quot;天人合一&quot;};    Clear(MAXGIN_X,  INFORMATION_START_Y, 7);   //清空信息区的所有内容    int monsterCount;    // 记录整个游戏的怪物总数    monsterCount = sizeof(monsterArray) / sizeof(Monster);    //记录当前地图的怪数量 记得变量定义时赋初值!!! debug了好久...    int currMapMonsterCount = 0;    // 定义一个只有九个空间的一维数组, 用以记录怪物在怪物列表里的下标    int monsterIndex[9];    for(int i = 0; i &lt; monsterCount; i++) {        // 关键!!! 满足怪物坐标与当前地图坐标相等 并且 该怪物的状态为存活的条件, 将怪物与怪物数组的下标记录并且当前地图怪物数量自增        if(monsterArray[i].coord.X == X &amp;&amp; monsterArray[i].coord.Y == Y &amp;&amp; monsterArray[i].state == 1) {            // 记录下标            monsterIndex[currMapMonsterCount] = i;            currMapMonsterCount++;            // 设定每个地图最多显示 9 个怪物            if(currMapMonsterCount == 9) {                break;            }        }    }    // 打印怪物    SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 1);    if(currMapMonsterCount == 0) {        SetColor(7, 0);//白字黑底        printf(&quot;这里冷冷清清的什么也没有, 少侠还是到别处看看吧, 呆着也没银子给你!&quot;);        SetColor(2, 0);//恢复颜色        return;    }/*********以下语句为判定用户输入的编号来返回地图信息或进行打怪操作*******/    int pkMonsterId = 0;// 接收玩家输入的怪物编号, 定义在循环外部是因为循环外仍需使用进行判断是否打印地图信息    while(1){        pkMonsterId = -1;        Clear(MAXGIN_X,  INFORMATION_START_Y, 7);   //清空信息区的所有内容        SetPosition(MAXGIN_X + 20, INFORMATION_START_Y + 0);        printf(&quot;少侠, 这儿有怪物! 要为百姓除暴安良吗?&quot; );        SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 2);        for(int i = 0; i &lt; currMapMonsterCount; i++) {            if(i % 3 == 0 &amp;&amp; i != 0){//每行打印三个怪物                SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 2 + i / 3);            }            //打印怪物, 较为繁琐            //monsterIndex[i]即为该怪物列表中的怪物编号            SetColor(4, 0);//红字怪物            printf(&quot;%d.%s(%s)\t  &quot;, i + 1, monsterArray[monsterIndex[i]].name, monsterlevelNames[monsterArray[monsterIndex[i]].level - 1]);        }        SetColor(2, 0);//恢复颜色        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;少侠想攻击几号怪物呢? (按0返回)&quot;);        scanf(&quot;%d&quot;, &amp;pkMonsterId);        if(pkMonsterId == 0) {//输入0, 退出循环来返回显示地图信息            break;        }        else if(pkMonsterId &lt; 0 || pkMonsterId &gt; currMapMonsterCount) {            //输入的怪物标号在当前地图不存在            SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);            //简易清屏            printf(&quot;                                                             &quot;);            SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);            printf(&quot;少侠选错了吧, 怪物不存在呢!(按任意键重新输入)&quot;);            char recoverKey = getch();            if(recoverKey){//停顿直到接收任意键后重新显示怪物                continue;            }        }        else {//编号对应地图所有的怪物时, 将怪物地址传入打怪方法            MonsterFight(&amp;monsterArray[monsterIndex[pkMonsterId - 1]]);            break;        }    }    if(pkMonsterId == 0) {//输入0, 返回显示地图信息        ShowMapInfo();    }}
+
+玩家与指定地图指定怪兽进行战斗
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172/** 选定怪物进行对战 */void MonsterFight(Monster *monster) {    SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);    printf(&quot;                                                             &quot;);//简易清屏(偷懒)    SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);    srand(time(NULL));//以当前时间为种子    /* random函数的用法(只能0 - 32767之间)    * 随机一个a ~ b的数字, 即 rand() % (b - a + 1) + a; 例如0 ~ 5, 即rand() % 6;    */    int playerAttact = 0;    // 玩家的实际攻击力    playerAttact = rand() % (currPlayer-&gt;weapon.maxAttack - currPlayer-&gt;weapon.minAttack + 1) + currPlayer-&gt;weapon.minAttack;    int playerDeffence =0;    //玩家实际防御力    playerDeffence = rand() % (currPlayer-&gt;armor.maxDefence - currPlayer-&gt;armor.minDefence + 1) + currPlayer-&gt;armor.minDefence;    //怪物实际掉落的金钱    int monsterGold = 0;    monsterGold = rand() % (monster-&gt;maxMoney - monster-&gt;minMoney + 1) + monster-&gt;minMoney;    int pkRound = 0;    //记录战斗的轮次    while(1){//打斗循环, 任意一方死亡退出        //玩家血量变化        currPlayer-&gt;hp -= monster-&gt;attact - playerDeffence;        //怪物的血量变化        monster-&gt;hp -= playerAttact - monster-&gt;defence;        if(monster-&gt;hp &lt;= 0) {//怪物的血量少于等于0时退出            break;        }        if(currPlayer-&gt;hp &lt;= 0) {//玩家血量小于等于0时退出            break;        }        //以下为打印战斗详情        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;                                                                         &quot;);//简易清屏(偷懒)        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        pkRound++;        //战斗详情使用白底红字        SetColor(4,7);        //该语句较长......        printf(&quot;第 %d 轮战斗详情:%s 对 %s 造成了 %d 伤害且受到 %s %d 的伤害&quot;, pkRound, currPlayer-&gt;name, monster-&gt;name, playerAttact - monster-&gt;defence, monster-&gt;name, monster-&gt;attact - playerDeffence);        //放慢过程        usleep(1000 * 800);//1000毫秒*800        SetColor(2, 0);    }    SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);    printf(&quot;                                                                   &quot;);//简易清屏(偷懒)    SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);    if(currPlayer-&gt;hp &lt;= 0) {        //玩家死亡输入完任意键后返回        printf(&quot;江湖快讯: 大侠 %s 在与 %s 的对决中壮烈牺牲! (请按任意键返回)&quot;, currPlayer-&gt;name, monster-&gt;name);        //重置人物的金币与血量        currPlayer-&gt;hp = 100;        currPlayer-&gt;gold = 100;        getch();        return;    }    //以下即为怪物死亡的情况    printf(&quot;%s 轻而易举的便被 %s 大侠收拾了, 同时掉落了 &quot;, monster-&gt;name, currPlayer-&gt;name);    //将怪物的状态调整至死亡    monster-&gt;state = 0;    //设置金币的front color为黄色, background color为亮白色    SetColor(6, 15);    printf(&quot;%d 金币   &quot;, monsterGold);    // 设置经验的front color为黄色, background color为亮白色    SetColor(1, 15);    printf(&quot;%d 经验  &quot;, monster-&gt;exp);    SetColor(2, 0); //颜色恢复    //玩家获得金币与经验值的加成    currPlayer-&gt;gold += monsterGold;    currPlayer-&gt;exp += monster-&gt;exp;    getch();    ShowMonster();}
+
+
+
+初始化游戏数据: 将地图, 玩家, 装备, 怪物置入, 测试各功能
+123456789Player *currPlayer;void PropInit() {//初始化游戏数据 (测试用数据)    currPlayer = &amp;playArray[0];    currPlayer-&gt;weapon = propArray[8];    currPlayer-&gt;armor = propArray[4];    currPlayer-&gt;martial = martials[4];    Bag bag = {95001, 0, 8};    currPlayer-&gt;bag = bag;}
+
+交易, 玩家购买指定道具
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263/** 交易  * 参数1: 玩家的地址  * 参数2: 商品的编号  * 返回交易是否成功, 0 失败, 1 成功  */int Trade(Player *player, int propsId) {    Prop *tradeProp = NULL;     //定义一个用于指向及交易商品的指针    for(int i = 0; i &lt; sizeof(propArray) / sizeof(Prop); i++) {        if(propsId == propArray[i].id) {//找到该商品, 并让tradeProp指向它            tradeProp = propArray + i;  //即tradeProp = &amp;propArray[i]            break;        }    }    //判断商品是否有库存    if(tradeProp-&gt;stock &lt;= 0) {        Clear(MAXGIN_X, INFORMATION_END_Y - 1, 1);        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;地主家都没有余粮！商店都被买空啦！&quot;);        return 0;    }    //判断玩家是否金币足够支付    if(currPlayer-&gt;gold &lt; tradeProp-&gt;price) {        Clear(MAXGIN_X, INFORMATION_END_Y - 1, 1);        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;钱包都是瘪的，这可是个看钱的江湖！！!&quot;);        return 0;    }    //判断玩家背包容量是否充足    if(currPlayer-&gt;bag.propsCount &gt; currPlayer-&gt;bag.maxCount &amp;&amp; currPlayer-&gt;bag.propsCount != 0) {        //玩家的背包道具数量大于最大容量并且背包道具数不为0则判定为失败        Clear(MAXGIN_X, INFORMATION_END_Y - 1, 1);        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;背包已满，交易失败！&quot;);        return 0;    }    //满足交易条件，执行交易的业务操作    //1、商品库存-1    tradeProp-&gt;stock--;    //2、玩家金币-商品单价    player-&gt;gold -= tradeProp-&gt;price;    //*****************************玩家背包道具增加*******************************//    //判断玩家背包中是否已有该商品 !!!    int i;    for(i = 0; i &lt; currPlayer-&gt;bag.propsCount; i++) {        if(propsId == currPlayer-&gt;bag.props[i].id) {            currPlayer-&gt;bag.props[i].stock++;            break;        }    }    //若为循环正常结束, i = currPlayer-&gt;bag.propsCount, 即为背包无此商品, 需要给背包添加该商品!!!    if(i == currPlayer-&gt;bag.propsCount) {        //向背包中创建一个商品-复制一份要交易的商品信息到背包中        currPlayer-&gt;bag.props[currPlayer-&gt;bag.propsCount].id = tradeProp-&gt;id;        currPlayer-&gt;bag.props[currPlayer-&gt;bag.propsCount].price = tradeProp-&gt;price;        currPlayer-&gt;bag.props[currPlayer-&gt;bag.propsCount].stock = 1;        strcpy(currPlayer-&gt;bag.props[currPlayer-&gt;bag.propsCount].name, tradeProp-&gt;name);        strcpy(currPlayer-&gt;bag.props[currPlayer-&gt;bag.propsCount].desc, tradeProp-&gt;desc);        currPlayer-&gt;bag.propsCount++;    }    //交易成功    return 1;}
+
+
+打印商品列表, 玩家选择购买道具调用该方法
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061/** 展示游戏商品 */void ShowProps() {    //此方法应拆分为打印商品 以及用户输入并检验商品编号两个方法!!!!!!!!    /*******************************/    Clear(MAXGIN_X, INFORMATION_START_Y, 7);    SetPosition(MAXGIN_X + 5, INFORMATION_START_Y);    SetColor(8, 0);     //灰字黑底    printf(&quot;欢迎大侠 %s 来到 %s 童叟无欺的杂货铺, 瞧一瞧看一看可有需要的?&quot;, currPlayer-&gt;name, mapArray[X][Y].name);    SetColor(6, 0);     //黄字黑底    SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 2);    int propCount = sizeof(propArray) / sizeof(Prop) &gt;= 9 ? 9 : sizeof(propArray) / sizeof(Prop);    for(int i = 0; i &lt; propCount; i++) {        if(i % 3 == 0) {//打印商品, 每行 3 个, 且只打印最多 9 个            SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 2 + i / 3);        }        printf(&quot;%-3d.%-10s(%-2d)%-4c&quot;, propArray[i].id, propArray[i].name, propArray[i].stock, &#39; &#39;);    }    SetColor(2, 0);//恢复颜色    int tradeId;//接收用户输入的商品编号    while(1) {        //用于判断输入编号是否正确(此判断未包括检验玩家金币及商品库存及玩家背包是否已满等状态)        Clear(MAXGIN_X, INFORMATION_END_Y - 1, 1);        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;大侠需要什么, 请输入编号立即购买(按 0 退出)&quot;);        scanf(&quot;%d&quot;, &amp;tradeId);        if(tradeId == 0) {//输入0返回显示地图信息            ShowMapInfo();            break;        }        else if(tradeId &lt; 0 || tradeId &gt; 9) {//输入的商品编号错误的情况, 重新输入            Clear(MAXGIN_X, INFORMATION_END_Y - 1, 1);            SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);            printf(&quot;少侠选错了吧, 商品不存在呢!(按任意键重新输入)&quot;);            char recoverKey = getch();            if(recoverKey){//停顿直到接收任意键后重新显示怪物                continue;            }        }        else {//输入在1 - 9的情况, 将编号传入交易函数            showTrade(Trade(currPlayer, tradeId), tradeId);//******调用交易方法, 展示交易信息方法******//            //以下为重新刷新商品列表, 应该封装为一个打印商品的方法, 该ShowProps()方法过于繁琐, 加入了打印以及检验两个功能            /********************************/            Clear(MAXGIN_X, INFORMATION_START_Y, 7);            SetPosition(MAXGIN_X + 5, INFORMATION_START_Y);            SetColor(8, 0);     //灰字黑底            printf(&quot;欢迎大侠 %s 来到 %s 童叟无欺的杂货铺, 瞧一瞧看一看可有需要的?&quot;, currPlayer-&gt;name, mapArray[X][Y].name);            SetColor(6, 0);     //黄字黑底            SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 2);            int propCount = sizeof(propArray) / sizeof(Prop) &gt;= 9 ? 9 : sizeof(propArray) / sizeof(Prop);            for(int i = 0; i &lt; propCount; i++) {                if(i % 3 == 0) {//打印商品, 每行 3 个, 且只打印最多 9 个                    SetPosition(MAXGIN_X + 5, INFORMATION_START_Y + 2 + i / 3);                }                printf(&quot;%-3d.%-10s(%-2d)%-4c&quot;, propArray[i].id, propArray[i].name, propArray[i].stock, &#39; &#39;);            }            SetColor(2, 0);//恢复颜色            /********************************/            }        }}
+
+返回交易结束后的信息
+1234567891011121314151617/** 接收Trade()返回的值, 判断交易是否成功 */void showTrade(int flag, int propId) {    if(flag == 0) {        ShowMapInfo();        return;    }    if(flag == 1) {        Clear(MAXGIN_X, INFORMATION_END_Y - 1, 1);        SetPosition(MAXGIN_X + 5, INFORMATION_END_Y - 1);        printf(&quot;交易成功, &quot;);        SetColor(6, 0);     //打印装备为黑底黄字        printf(&quot;%s&quot;, propArray[propId - 1].name);        SetColor(2, 0);     //恢复黑底绿字        printf(&quot; 已经加入你的背包, 赶紧瞧一瞧吧!(按任意键继续)&quot;);        getch();            //暂停    }}
+
+
+
+验证登陆信息
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/** 玩家登陆(暂无注册) */void Login() {    while(1) {        char id[10];        char key[10];       //接收用户输入的id 和 passwd        SetColor(2, 0);        Clear(MAXGIN_X, MAPSART_START_Y, 4);        SetPosition(MAXGIN_X + 24, MAPSART_START_Y);        printf(&quot;请在下方输入您的用户名和密码&quot;);        SetPosition(MAXGIN_X + 5, MAPSART_START_Y + 1);        printf(&quot;用户名: &quot;);        scanf(&quot;%s&quot;, id);        SetPosition(MAXGIN_X + 5, MAPSART_START_Y  + 2);        printf(&quot;密码(无回显哦回车确定): &quot;);        for(int i = 0; 1; i++) {            key[i] = getch();//无回显输入密码            if(key[i] == 13) {                //接收到回车跳出循环                //将回车字符重置为空字符                key[i] = &#39;\0&#39;;                break;            }        }        //判断玩家输入的信息是否与玩家id, passwd匹配        if(strcmp(currPlayer-&gt;id, id) == 0 &amp;&amp; strcmp(currPlayer-&gt;passwd, key) == 0) {            //只有玩家输入成功才跳出死循环            break;        }        else {            SetPosition(MAXGIN_X + 5, MAPSART_START_Y + 3);            SetColor(12, 0);    //浅红色字体            printf(&quot;用户名或密码错误, 请检查后再次输入!(按任意键继续)&quot;);            getch();        }    }    //用户输入成功后    SetColor(12, 0);    SetPosition(MAXGIN_X, MAPSART_START_Y);    Clear(MAXGIN_X, MAPSART_START_Y, 4);    SetPosition(MAXGIN_X + 15, MAPSART_START_Y);    printf(&quot;欢迎 &quot;);    SetColor(1, 0);      //蓝字显示玩家name    printf(&quot;%s&quot;, currPlayer-&gt;name);    SetColor(2, 0);    printf(&quot; 成功登陆笑傲江湖的世界(按任意键继续)&quot;);    getch();    //暂停}
+
+拓展功能以下的功能为此DEMO适合拓展的有趣功能:
+
+玩家的背包容量: 初始设定只有9, 可以通过充值元宝等方式扩充背包最大容量
+注册功能, 玩家设定任意符合指定规则的用户名及密码, 并且在下次可以继续使用
+NPC, 逻辑与怪物相似, 地图随机刷新NPC并且贩卖普通商店没有的道具
+打斗过程加入回复, 增益等功能(打斗前使用消耗品提升属性, 打斗过程回复血量, 内力)
+怪物指定时间刷新
+连接网络, 满足两个玩家在同一张地图进行, 怪物道具资源同步刷新, 并且玩家可以决斗(遥远的目标啊)
+
+最后的吐槽先说说为什么要写这个极小极小的DEMO吧, 寒假前半段在学数据结构, 时间较短, 仅仅实现了顺序表, 单链表, 循环链表等几个简单的数据结构的定义以及实现, 过程不算太美好: 虽然大二上讲过数据结构与算法, 但是非常的粗略, 对数据结构与算法的理解仅仅为有那么几种表, 有那么几种排序方式, 而且C是大一上学的, 早已忘得一干二净, 很多语法尤其是之前就不过关的指针的不熟悉, 应验了那句: 当C的指针指向你的时候, 菜鸡原形毕露! 被头指针头结点折腾的头皮发麻, 尽管磕磕绊绊用代码实现了, 但我深刻感受到了效率的低下, 进度十分缓慢, 遂觉得应该恶补以下C, 于是有了以上的DEMO
+前前后后一共花了十天, 四天的时间都是疯狂刷视频, 把指针, 结构体, 字符串, 数组这四个章节重点看了一到两遍, 然后六天把这个DEMO完成了, 跟着老九的视频, 每天看完示范再理解完敲代码实现, 慢慢的也完成了, 自己也没想到可以写出1000行的东西(可能是我注释比较多吧捂脸), 过程最难过的不是理解也不是一行一行敲出一个功能, 而是无穷无尽的BUG, 早期是用Clion + Cmake的环境, 第二天开始实现游戏的界面栏目并且改变控制台标题栏以及字体颜色时, 因为要在控制台检验, 但是发现Clion + Cmake不能调出Windows的Console, 一顿查阅亦未果, 因此使用了最早使用的Codeblocks(还是这个简单多了…), 嫌弃Cb丑陋UI的我又入坑了Atom, 用Atom码代码, Cb编译…..十分的奇葩, 但是也算是完成了
+总体来讲, 对我感触最深的东西应该就是封装以及设计了, 这次的初版的DEMO我总体时非常不满意的, 糟糕的代码, 凌乱的代码, 混乱的设计, 可能源于我过于追求速度, 也许我做出了和视频效果相似甚至更加花里胡哨的打印结果, 但是里面的东西差距时非常遥远的, 空有其表, 败絮其中. 这种代码在日后非常难以维护, 即使我加了非常多的代码, 缩进也尽量按照标准来, 但是我自己都很难找到一个方法在哪里, 非常难以修改, 修改了一个方法可能需要同时修改其他的很多地方, 或者是修改完出现各种各样的内存问题等等…我现在认为一个方法仅仅对于一个功能是非常重要的, 而且便于记忆以及修改的宏定义我也尝到了它的甜头, 还有对整体程序的逻辑设计, 在不考虑这些东西而仅仅根据几条需求如同大一考试对于问题对于解出来就完事儿了的态度去码代码, 码出来的程序可能是正常运行的, 但是接下来的维护呢, 况且随心所欲的写方法我现在感觉是非常可怕的, 乱码一时爽, 码完以后火葬场, 每次DEBUG的时间都与真实写代码的时间一样长了, 每次改完以后心里憔悴, 这都是不好好规划设计, 拿起手就是敲的后果, 正所谓: 代码千万条, 规范第一条, 代码不规范, 亲人两行泪!写完这个DEMO也让我更加深入理解了一些数据结构, 如同此DEMO中的玩家结构, 玩家中有背包, 背包中有道具, 道具中有类别对应不同属性, 武器对应攻击力, 防具对应防御力等等, 现在我可能会思考, 需要经常插入而又很少需要随机读取的类型会不使用链表更加好一些等等的问题, 看来这波不亏
+最后, 可能我不会再继续修改这个DEMO了, 要么也是重写了(实在太烂了…) 感谢这个DEMO, 感谢老九, 用这样一种方式让我认识到了上课所无法理解的思想, 让我对未来的代码有了期待, 但是这只是一个极小的开始, 这只是站在了一个小石子儿看世界, 要想看到真正的世界, 还需走的更远, 爬到更高的地方去眺望, 去欣赏, 去体味)
+</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#道具-Prop"><span class="nav-number">2.1.1.</span> <span class="nav-text">道具 (Prop)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#地图-Map"><span class="nav-number">2.1.2.</span> <span class="nav-text">地图(Map)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背包-Bag"><span class="nav-number">2.1.3.</span> <span class="nav-text">背包 (Bag)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#门派-Martial"><span class="nav-number">2.1.4.</span> <span class="nav-text">门派 (Martial)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#玩家-Player"><span class="nav-number">2.1.5.</span> <span class="nav-text">玩家 (Player)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怪物-Monster"><span class="nav-number">2.1.6.</span> <span class="nav-text">怪物 (Monster)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改控制台标题-SetTitle"><span class="nav-number">2.1.7.</span> <span class="nav-text">更改控制台标题(SetTitle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改控制台内字体-SetColor"><span class="nav-number">2.1.8.</span> <span class="nav-text">更改控制台内字体(SetColor)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置控制台内光标的位置-SetPosition"><span class="nav-number">2.1.9.</span> <span class="nav-text">设置控制台内光标的位置(SetPosition)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以下为主要方法的源代码"><span class="nav-number">2.1.9.1.</span> <span class="nav-text">以下为主要方法的源代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展功能"><span class="nav-number">2.2.</span> <span class="nav-text">拓展功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后的吐槽"><span class="nav-number">2.3.</span> <span class="nav-text">最后的吐槽</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">左手工匠</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
