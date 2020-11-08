@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon32.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Note,C,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="zsgj" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Holiday Note_02放假第二天。今天学的主要只有两块内容：分别是字符串相关(字符串格式化函数使用，字符串的拷贝和反转实现方法，查找字串的方法)；指针作为函数参数时具有的输入输出特性相关(指针间接赋值，主调函数分配内存与被调函数分配的内存的使用区别，二级指针对指定文件分配，释放空间练习)。难点主要在于理解指针作为函数参数时需要使用哪种类型接收，指针的间接赋值时二级指针的使用，查找子串功能实">
+<meta name="keywords" content="Note,C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Holiday Note_02">
+<meta property="og:url" content="www.bottlewei.com/2019/07/14/2019-Holiday-Note-02/index.html">
+<meta property="og:site_name" content="zsgj">
+<meta property="og:description" content="Holiday Note_02放假第二天。今天学的主要只有两块内容：分别是字符串相关(字符串格式化函数使用，字符串的拷贝和反转实现方法，查找字串的方法)；指针作为函数参数时具有的输入输出特性相关(指针间接赋值，主调函数分配内存与被调函数分配的内存的使用区别，二级指针对指定文件分配，释放空间练习)。难点主要在于理解指针作为函数参数时需要使用哪种类型接收，指针的间接赋值时二级指针的使用，查找子串功能实">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://miao.su/images/2019/07/14/b89941.png">
+<meta property="og:updated_time" content="2019-07-15T14:29:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Holiday Note_02">
+<meta name="twitter:description" content="Holiday Note_02放假第二天。今天学的主要只有两块内容：分别是字符串相关(字符串格式化函数使用，字符串的拷贝和反转实现方法，查找字串的方法)；指针作为函数参数时具有的输入输出特性相关(指针间接赋值，主调函数分配内存与被调函数分配的内存的使用区别，二级指针对指定文件分配，释放空间练习)。难点主要在于理解指针作为函数参数时需要使用哪种类型接收，指针的间接赋值时二级指针的使用，查找子串功能实">
+<meta name="twitter:image" content="https://miao.su/images/2019/07/14/b89941.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":16,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="www.bottlewei.com/2019/07/14/2019-Holiday-Note-02/">
+
+
+
+
+
+  <title>Holiday Note_02 | zsgj</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '135080128-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?129843fc827ed0b20e0e23de49875737";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+      <a href="https://github.com/ofcZsgj/ofcZsgj.github.io" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zsgj</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">停灯向晓, 抱影无眠</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.bottlewei.com/2019/07/14/2019-Holiday-Note-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左手工匠">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zsgj">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Holiday Note_02</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-14T19:23:03+08:00">
+                2019-07-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Holiday-Note-02"><a href="#Holiday-Note-02" class="headerlink" title="Holiday Note_02"></a>Holiday Note_02</h1><p>放假第二天。今天学的主要只有两块内容：分别是<strong>字符串相关</strong>(字符串格式化函数使用，字符串的拷贝和反转实现方法，查找字串的方法)；<strong>指针作为函数参数时具有的输入输出特性</strong>相关(指针间接赋值，主调函数分配内存与被调函数分配的内存的使用区别，二级指针对指定文件分配，释放空间练习)。难点主要在于理解指针作为函数参数时需要使用哪种类型接收，指针的间接赋值时二级指针的使用，查找子串功能实现时各个指针实现的功能。</p>
+<a id="more"></a>
+
+<hr>
+<h2 id="字符串相关"><a href="#字符串相关" class="headerlink" title="字符串相关"></a>字符串相关</h2><p>以下为sprintf函数以及sscanf函数在格式化字符串时的一些注意要点以及用法场景。</p>
+<h3 id="sprintf-函数"><a href="#sprintf-函数" class="headerlink" title="sprintf 函数"></a>sprintf 函数</h3><p>sprintf简单来讲就是按照指定格式，将字符串进行格式化后放入char * str中，与printf相比不过是多了一个接收存放格式化后字符串的指针。具体函数参数以及返回值如下所示。</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> sprintf(<span class="built_in">char</span>* <span class="built_in">str</span>, <span class="keyword">const</span> <span class="built_in">char</span>* format, ...);</span><br><span class="line">功能：</span><br><span class="line">	根据参数format字符串来转换并格式化数据，然后将结果输出到<span class="built_in">str</span>指定的空间中，直到出现字符串结束符 <span class="string">'\0'</span>为止。</span><br><span class="line">参数：</span><br><span class="line">	<span class="built_in">str</span>：字符串首地址</span><br><span class="line">	format：字符串格式，用法和printf()一样</span><br><span class="line">返回值：</span><br><span class="line">	成功：实际格式化的字符个数</span><br><span class="line">	失败： - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>这是sprintf的三种常见用法</p>
+<h4 id="格式化字符串"><a href="#格式化字符串" class="headerlink" title="格式化字符串"></a>格式化字符串</h4><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">char <span class="keyword">buf[1024] </span>= &#123; <span class="number">0</span> &#125;<span class="comment">;</span></span><br><span class="line">sprintf(<span class="keyword">buf, </span><span class="string">"Hello %s!"</span>, <span class="string">"World"</span>)<span class="comment">;</span></span><br><span class="line">printf(<span class="string">"%s\n"</span>, <span class="keyword">buf);//输出结果为：Hello </span>World!</span><br></pre></td></tr></table></figure>
+
+<h4 id="拼接字符串"><a href="#拼接字符串" class="headerlink" title="拼接字符串"></a>拼接字符串</h4><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">char* <span class="built_in">s1</span> = <span class="string">"Hello"</span><span class="comment">;</span></span><br><span class="line">char* <span class="built_in">s2</span> = <span class="string">"World!"</span><span class="comment">;</span></span><br><span class="line">sprintf(<span class="keyword">buf, </span><span class="string">"%s %s"</span>, <span class="built_in">s1</span>, <span class="built_in">s2</span>)<span class="comment">;</span></span><br><span class="line">printf(<span class="string">"%s\n"</span>, <span class="keyword">buf);//输出结果为：Hello </span>World!</span><br></pre></td></tr></table></figure>
+
+<h4 id="数字转换为字符串"><a href="#数字转换为字符串" class="headerlink" title="数字转换为字符串"></a>数字转换为字符串</h4><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> number = <span class="number">666</span>;</span><br><span class="line"><span class="keyword">sprintf</span>(buf, <span class="string">"%d"</span>, number);</span><br><span class="line"><span class="keyword">printf</span>(<span class="string">"%s\n"</span>, buf);<span class="regexp">//</span>输出结果为<span class="number">666</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="sscanf-函数"><a href="#sscanf-函数" class="headerlink" title="sscanf 函数"></a>sscanf 函数</h3><p>sscanf函数的主要功能为从指定的字符串中按照给定的格式读取并转换出来。如果说sprintf是放进去，那么sscanf则为取出来，且均按照指定格式进行放入和取出。</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> sscanf(<span class="keyword">const</span> <span class="built_in">char</span>* <span class="built_in">str</span>, <span class="keyword">const</span> <span class="built_in">char</span>* format, ...);</span><br><span class="line">功能：</span><br><span class="line">	从<span class="built_in">str</span>指定的字符串读取数据，并根据参数format字符串来转换并格式化数据。</span><br><span class="line">参数：</span><br><span class="line">	<span class="built_in">str</span>：指定的字符串首地址</span><br><span class="line">	format：字符串格式，用法和scanf()一样</span><br><span class="line">返回值：</span><br><span class="line">	成功：实际读取的字符个数</span><br><span class="line">	失败： - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>以下为sscanf的<strong>六种</strong>常见格式与作用</p>
+<h4 id="1、-s或-d"><a href="#1、-s或-d" class="headerlink" title="1、%s或%d"></a>1、%<em>s或%</em>d</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>* str = <span class="string">"123456abcdefg"</span>;</span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">1024</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="built_in">sscanf</span>(str, <span class="string">"%*d%s"</span>, buf);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"buf: %s\n"</span>, buf);<span class="comment">//输出结果为buf: abcdefg</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>忽略字符串时是忽略到空格或者’\t’</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>* str1 = <span class="string">"abcdef\t123456"</span>;</span><br><span class="line"><span class="keyword">char</span> buf1[<span class="number">1024</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="built_in">sscanf</span>(str1, <span class="string">"%*s%s"</span>, buf1);<span class="comment">//此使输出结果为buf: 123456</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"buf1: %s\n"</span>, buf1);<span class="comment">//若str1字母与数字间无空格或'\t'，将会把str1全部忽略掉，这种情况输出将为buf1:</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2、-width-s"><a href="#2、-width-s" class="headerlink" title="2、%[width]s"></a>2、%[width]s</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>* str = <span class="string">"123456abcdefg"</span>;</span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">1024</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="built_in">sscanf</span>(str, <span class="string">"%7s"</span>, buf);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"buf: %s\n"</span>, buf);<span class="comment">//输出结果为buf: 123456a</span></span><br></pre></td></tr></table></figure>
+
+<p>以下四种特点均为只要与要求不符合立即不进行匹配。简单说就是，不是将整个字符串中匹配的筛选出来，而是从字符串头部开始，判断一个字符格式不符合的即退出或者至’\0’退出</p>
+<h4 id="3、-a-z"><a href="#3、-a-z" class="headerlink" title="3、%[a-z]"></a>3、%[a-z]</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>* str = <span class="string">"123456abcdefg"</span>;</span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">1024</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="built_in">sscanf</span>(str, <span class="string">"%*d%[a-c]"</span>, buf);<span class="comment">//若不加忽略%*d的话，由于第一个字符为'1'，将直接退出，不拷贝</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"buf: %s\n"</span>, buf);<span class="comment">//输出结果为buf: abc</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4、-aBc"><a href="#4、-aBc" class="headerlink" title="4、%[aBc]"></a>4、%[aBc]</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>* str = <span class="string">"aABb"</span>;</span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">1024</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="built_in">sscanf</span>(str, <span class="string">"%[aAb]"</span>, buf);<span class="comment">//从第一个开始比对，若不同依旧是直接不拷贝</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"buf: %s\n"</span>, buf);<span class="comment">//输出结果为buf: aA</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5、-a"><a href="#5、-a" class="headerlink" title="5、%[^a]"></a>5、%[^a]</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>* str = <span class="string">"aABb"</span>;</span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">1024</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="built_in">sscanf</span>(str, <span class="string">"%[^B]"</span>, buf);<span class="comment">//从第一个开始比对，若不同依旧是直接不拷贝</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"buf: %s\n"</span>, buf);<span class="comment">//输出结果为buf:aA</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="6、-a-z"><a href="#6、-a-z" class="headerlink" title="6、%[^a-z]"></a>6、%[^a-z]</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>* str = <span class="string">"cdaABb"</span>;</span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">1024</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="built_in">sscanf</span>(str, <span class="string">"%[^a-b]"</span>, buf);<span class="comment">//从第一个开始比对，若不同依旧是直接不拷贝</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"buf: %s\n"</span>, buf);<span class="comment">//输出结果为buf:cd</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="综合使用演示"><a href="#综合使用演示" class="headerlink" title="综合使用演示"></a>综合使用演示</h4><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//取出<span class="number">12</span>uiop</span><br><span class="line"><span class="symbol">char</span>* <span class="keyword">str </span>= <span class="string">"abSi#12uiop@Tsi("</span><span class="comment">;</span></span><br><span class="line"><span class="symbol">char</span> <span class="keyword">buf[1024] </span>= &#123;<span class="number">0</span>&#125;<span class="comment">;</span></span><br><span class="line">//sscanf(<span class="keyword">str, </span><span class="string">"%*[^#]"</span>, <span class="keyword">buf);//输出结果buf:</span></span><br><span class="line"><span class="keyword">//sscanf(str, </span><span class="string">"%*[^#]%s"</span>, <span class="keyword">buf);//输出结果buf:#12uiop@Tsi(</span></span><br><span class="line"><span class="keyword">sscanf(str, </span><span class="string">"%*[^#]#%[^@]"</span>, <span class="keyword">buf);//输出结果:buf: </span><span class="number">12</span>uiop</span><br><span class="line"><span class="symbol">printf</span>(<span class="string">"buf: %s\n"</span>, <span class="keyword">buf);</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="字符串与字符数组的易错点"><a href="#字符串与字符数组的易错点" class="headerlink" title="字符串与字符数组的易错点"></a>字符串与字符数组的易错点</h3><p><em>最重要记住一句话：字符串是以0或者’\0’结尾的字符数组，(数字0和字符’\0’等价)</em></p>
+<h4 id="字符数组初始化"><a href="#字符数组初始化" class="headerlink" title="字符数组初始化"></a>字符数组初始化</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字符数组只能初始化5个字符，当输出的时候，从开始位置 直到找到0结束</span></span><br><span class="line"><span class="keyword">char</span> str1[] = &#123; <span class="string">'h'</span>,<span class="string">'e'</span>,<span class="string">'l'</span>,<span class="string">'l'</span>,<span class="string">'o'</span>,&#125;;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"str1 = %s"</span>, str1);<span class="comment">//输出结果将为 str1 = hello烫烫烫剃*堺?</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果以字符串初始化，那么编译器默认会在字符串尾部添加'\0'</span></span><br><span class="line"><span class="keyword">char</span> str2[] = <span class="string">"hello"</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="sizeof与strlen差别"><a href="#sizeof与strlen差别" class="headerlink" title="sizeof与strlen差别"></a>sizeof与strlen差别</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//sizeof计算数组大小，数组包含'\0'字符</span></span><br><span class="line"><span class="comment">//strlen计算字符串的长度，到'\0'结束</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"sizeof str:%d\n"</span>, <span class="keyword">sizeof</span>(str2));<span class="comment">//结果为6</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"strlen str:%d\n"</span>, <span class="built_in">strlen</span>(str2));<span class="comment">//结果为5</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="实现字符串拷贝函数的三种写法"><a href="#实现字符串拷贝函数的三种写法" class="headerlink" title="实现字符串拷贝函数的三种写法"></a>实现字符串拷贝函数的三种写法</h3><p>三种方法由易到难，由数组到指针，其实指针理解了很简单。</p>
+<p>主调用函数为</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">test05() &#123;</span><br><span class="line">	char* source = <span class="string">"Hello World"</span><span class="comment">;</span></span><br><span class="line">	char <span class="keyword">buf[1024];</span></span><br><span class="line"><span class="keyword">	</span>copyString01(<span class="keyword">buf, </span>source)<span class="comment">;</span></span><br><span class="line">	copyString02(<span class="keyword">buf, </span>source)<span class="comment">;</span></span><br><span class="line">	copyString03(<span class="keyword">buf, </span>source)<span class="comment">;</span></span><br><span class="line">	printf(<span class="string">"%s\n"</span>, <span class="keyword">buf);</span></span><br><span class="line"><span class="keyword">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">copyString01</span><span class="params">(<span class="keyword">char</span>*dest,<span class="keyword">const</span> <span class="keyword">char</span>*source)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> len = <span class="built_in">strlen</span>(source);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; ++i) &#123;</span><br><span class="line">		dest[i] = source[i];</span><br><span class="line">	&#125;</span><br><span class="line">	dest[len] = <span class="string">'\0'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h4><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> copyString02(<span class="keyword">char</span>* dest, const <span class="keyword">char</span>* <span class="keyword">source</span>) &#123;</span><br><span class="line">	<span class="keyword">while</span> (*<span class="keyword">source</span>) &#123;</span><br><span class="line">		*dest = *<span class="keyword">source</span>;</span><br><span class="line">		++dest;</span><br><span class="line">		++<span class="keyword">source</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	*dest = <span class="string">'\0'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="我认为最好的方法3"><a href="#我认为最好的方法3" class="headerlink" title="我认为最好的方法3"></a>我认为最好的方法3</h4><p>此写法，简洁优雅。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">copyString03</span><span class="params">(<span class="keyword">char</span>* dest, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (*(dest++) = *(source++));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="指针和数组方式实现字符串反转"><a href="#指针和数组方式实现字符串反转" class="headerlink" title="指针和数组方式实现字符串反转"></a>指针和数组方式实现字符串反转</h3><p>两种写法大同小异，思路均为两个变量，头尾互换即可，关键点在于反转后的字符串结尾进行 ‘\0’ 操作。</p>
+<h4 id="数组实现"><a href="#数组实现" class="headerlink" title="数组实现"></a>数组实现</h4><figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void reverseString01(char *<span class="keyword">str</span>) &#123;</span><br><span class="line">	<span class="keyword">if</span> (NULL == <span class="keyword">str</span>)</span><br><span class="line">		<span class="keyword">return</span><span class="comment">;</span></span><br><span class="line">	<span class="keyword">int</span> len = <span class="keyword">strlen</span>(<span class="keyword">str</span>)<span class="comment">;</span></span><br><span class="line">	<span class="comment">//以下为数组方式实现</span></span><br><span class="line">	<span class="keyword">int</span> start = <span class="number">0</span><span class="comment">;</span></span><br><span class="line">	<span class="keyword">int</span> <span class="keyword">end</span> = len - <span class="number">1</span><span class="comment">;</span></span><br><span class="line">	<span class="keyword">while</span> (start &lt; <span class="keyword">end</span>) &#123;</span><br><span class="line">		char temp<span class="comment">;</span></span><br><span class="line">		temp = <span class="keyword">str</span>[start]<span class="comment">;</span></span><br><span class="line">		<span class="keyword">str</span>[start] = <span class="keyword">str</span>[<span class="keyword">end</span>]<span class="comment">;</span></span><br><span class="line">		<span class="keyword">str</span>[<span class="keyword">end</span>] = temp<span class="comment">;</span></span><br><span class="line">		++start<span class="comment">;</span></span><br><span class="line">		--<span class="keyword">end</span><span class="comment">;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">str</span>[len] = <span class="string">'\0'</span><span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="指针实现"><a href="#指针实现" class="headerlink" title="指针实现"></a>指针实现</h4><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (NULL == <span class="keyword">str</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">int</span> len = strlen(<span class="keyword">str</span>);	</span><br><span class="line"></span><br><span class="line">	<span class="comment">//以下为指针方式实现</span></span><br><span class="line">	<span class="keyword">char</span>* pStart = <span class="keyword">str</span>;</span><br><span class="line">	<span class="keyword">char</span>* pEnd = <span class="keyword">str</span> + len - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (pStart &lt; pEnd) &#123;</span><br><span class="line">		<span class="keyword">char</span> temp;</span><br><span class="line">		temp = *pStart;</span><br><span class="line">		*pStart = *pEnd;</span><br><span class="line">		*pEnd = temp;</span><br><span class="line"></span><br><span class="line">		++pStart;</span><br><span class="line">		--pEnd;</span><br><span class="line">	&#125;</span><br><span class="line">	*(<span class="keyword">str</span> + len) = <span class="string">'\0'</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="实现查找子串"><a href="#实现查找子串" class="headerlink" title="实现查找子串"></a>实现查找子串</h3><p>该功能理解稍有难度，主要是理清楚逻辑。例如字符串为”abdecdfw”,”df”,首先思考的是找到字符串与字串第一个字符是否吻合，且定义一个指针记录哪一个字符与字串开始吻合，当找到了吻合的字符 ‘d’ 后，关键步骤为，定义两个指针，一个指向字符串此时的位置，一个指向子串第一个字符的位置，分别进行遍历比较，应设定有两种退出情况，一种是比较字符不相等，另一种指向字串的指针指向’\0’返回。即退出后验证若指向字串的字符串已经指向 ‘\0’ 即找到真正字串，此使返回最初用于记录字符串与字串字符开始吻合时位置的指针即可。 </p>
+<p><img src="https://miao.su/images/2019/07/14/b89941.png" alt="b89941.png"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">const</span> <span class="keyword">char</span>* <span class="title">myStrStr</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str, <span class="keyword">const</span> <span class="keyword">char</span>* sub)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span>* mystr = str;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span>* mysub = sub;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (*mystr != <span class="string">'\0'</span>) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (*mystr != *mysub) &#123;</span><br><span class="line">			++mystr;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">const</span> <span class="keyword">char</span>* temp_str = mystr;</span><br><span class="line">		<span class="keyword">const</span> <span class="keyword">char</span>* temp_sub = mysub;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (*temp_sub !=<span class="string">'\0'</span>) &#123;<span class="comment">//第一个字符相等，继续向后比对</span></span><br><span class="line">			<span class="keyword">if</span> (*temp_str != *temp_sub) &#123;</span><br><span class="line">				++mystr;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			++temp_str;</span><br><span class="line">			++temp_sub;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (*temp_sub == <span class="string">'\0'</span>) &#123;<span class="comment">// 匹配成功</span></span><br><span class="line">			<span class="keyword">return</span> mystr;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span>* str = <span class="string">"abdecdfw"</span>;</span><br><span class="line">	<span class="keyword">char</span>* sub = <span class="string">"df"</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span>* p = myStrStr(str, sub);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	test();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="指针作为函数参数时具有的输入输出特性"><a href="#指针作为函数参数时具有的输入输出特性" class="headerlink" title="指针作为函数参数时具有的输入输出特性"></a>指针作为函数参数时具有的输入输出特性</h2><p>指针的<strong>间接赋值</strong>需要理解的十分到位！</p>
+<h3 id="指针间接赋值"><a href="#指针间接赋值" class="headerlink" title="指针间接赋值"></a>指针间接赋值</h3><ul>
+<li>用1级指针形参，去间接修改了0级指针(实参)的值。</li>
+<li>用2级指针形参，去间接修改了1级指针(实参)的值。</li>
+<li>用3级指针形参，去间接修改了2级指针(实参)的值。</li>
+<li>用n级指针形参，去间接修改了n-1级指针(实参)的值。</li>
+</ul>
+<hr>
+<h3 id="指针作为函数参数时具有的输入特性"><a href="#指针作为函数参数时具有的输入特性" class="headerlink" title="指针作为函数参数时具有的输入特性"></a>指针作为函数参数时具有的输入特性</h3><p>内容不难，但关键在于理解函数作为参数时的内存分配使用模型。</p>
+<h4 id="输入特性：主调函数分配内存，被调函数使用内存使用内存"><a href="#输入特性：主调函数分配内存，被调函数使用内存使用内存" class="headerlink" title="输入特性：主调函数分配内存，被调函数使用内存使用内存"></a><em>输入特性</em>：主调函数分配内存，被调函数使用内存使用内存</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printString</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"s= %s\n"</span>, str);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//主调函数于堆上分配内存</span></span><br><span class="line">	<span class="keyword">char</span>* s = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>) * <span class="number">100</span>);</span><br><span class="line">	<span class="built_in">memset</span>(s, <span class="number">0</span>, <span class="number">100</span>);</span><br><span class="line">	<span class="built_in">strcpy</span>(s, <span class="string">"Hello World\n"</span>);</span><br><span class="line">	printString(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printStringArray</span><span class="params">(<span class="keyword">char</span>** arr,<span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 因arr[0]是char*, 因此需要用char**来接收</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; ++i) &#123;</span><br><span class="line">		<span class="comment">//arr[i] 等价于 *(arr + i)</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test02</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//主调函数于栈上分配内存</span></span><br><span class="line">	<span class="keyword">char</span>* arr[] = &#123;</span><br><span class="line">		<span class="string">"aaaaa"</span>,</span><br><span class="line">		<span class="string">"bbbbb"</span>,</span><br><span class="line">		<span class="string">"ccccc"</span>,</span><br><span class="line">		<span class="string">"ddddd"</span>,</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="comment">//数组名作为函数参数进行传递时，会退化为指向数组首元素类型的指针</span></span><br><span class="line">	printStringArray(arr, <span class="keyword">sizeof</span>(arr) / <span class="keyword">sizeof</span>(arr[<span class="number">0</span>]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出特性：被调函数分配内存，主调函数使用内存使用内存"><a href="#输出特性：被调函数分配内存，主调函数使用内存使用内存" class="headerlink" title="输出特性：被调函数分配内存，主调函数使用内存使用内存"></a><em>输出特性</em>：被调函数分配内存，主调函数使用内存使用内存</h4><p>输出特性即被调函数开辟空间，即若主调函数想使用该空间需要使用指针的间接赋值，如不能成功将被调函数开辟的内存空间地址保存，将可能导致内存泄露，这是重难点。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">allocateSpace</span><span class="params">(<span class="keyword">char</span> **p)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//被调函数于堆空间开辟内存</span></span><br><span class="line">	<span class="keyword">char</span>* temp = <span class="built_in">malloc</span>(<span class="number">100</span>);</span><br><span class="line">	<span class="built_in">memset</span>(temp, <span class="number">0</span>, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//指针的间接赋值</span></span><br><span class="line">	*p = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test03() &#123;</span><br><span class="line">	<span class="comment">//主调函数使用被调函数开辟的堆空间内存</span></span><br><span class="line">	<span class="keyword">char</span>* p = <span class="literal">NULL</span>;</span><br><span class="line">	allocateSpace(&amp;p);	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="二级指针针对文件的开辟释放内存练习-有一定难度的综合练习"><a href="#二级指针针对文件的开辟释放内存练习-有一定难度的综合练习" class="headerlink" title="二级指针针对文件的开辟释放内存练习 (有一定难度的综合练习)"></a>二级指针针对文件的开辟释放内存练习 (有一定难度的综合练习)</h3><p>该练习为：读取一个文件，根据其行数与每一行的字符数，为每一行开辟一个堆空间，且每一行的堆空间大小即为该行等到字符数，实现较为繁琐，有很多细节如指针为空需要即使进行返回，文件指针的重置操作，重置缓冲区，关闭文件，释放内存的顺序以及将指针置空等。</p>
+<p>获取文件行数模块</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取文件行数</span></span><br><span class="line"><span class="keyword">int</span> getFileLines(<span class="keyword">FILE</span>* <span class="keyword">file</span>) &#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">NULL</span> == <span class="keyword">file</span>)</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> lines = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> buf[<span class="number">1024</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (fgets(buf, <span class="number">1024</span>, <span class="keyword">file</span>) != <span class="keyword">NULL</span>) &#123;</span><br><span class="line">		++lines;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//注意：恢复文件指针指向初始位置！！！</span></span><br><span class="line">	fseek(<span class="keyword">file</span>, <span class="number">0</span>, SEEK_SET);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> lines;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>读取文件数据并分配空间模块(重点！)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//读取文件数据，为每一行分配对应大小的堆空间</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">readFileData</span><span class="params">(FILE* file,<span class="keyword">char</span>** pContents,<span class="keyword">int</span> fileLines)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == file)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == pContents)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (fileLines &lt;= <span class="number">0</span>) </span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> buf[<span class="number">1024</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (fgets(buf, <span class="number">1024</span>, file) != <span class="literal">NULL</span>) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//计算当前行的字符数</span></span><br><span class="line">		<span class="keyword">int</span> curLineLen = <span class="built_in">strlen</span>(buf) + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//给当前行开辟对应大小的堆空间</span></span><br><span class="line">		<span class="keyword">char</span>* lineContent = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>) * curLineLen);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//将该行数据拷贝进堆空间中</span></span><br><span class="line">		<span class="built_in">strcpy</span>(lineContent, buf);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//重置buf数据</span></span><br><span class="line">		<span class="built_in">memset</span>(buf, <span class="number">0</span>, <span class="number">1024</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//指向开辟的空间</span></span><br><span class="line">		pContents[index++] = lineContent;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//关闭文件</span></span><br><span class="line">	fclose(file);</span><br><span class="line">	file = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打印文件内容模块</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printData</span><span class="params">(<span class="keyword">char</span>** pContents, <span class="keyword">int</span> fileLines)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == pContents)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (fileLines &lt;= <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; fileLines; ++i) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"第 %d 行：%s"</span>, i + <span class="number">1</span>, pContents[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>释放内存空间模块</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">freeSpace</span><span class="params">(<span class="keyword">char</span>** pContents, <span class="keyword">int</span> fileLines)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//从里到外释放，与开辟空间顺序相反</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; fileLines; ++i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (pContents[i] != <span class="literal">NULL</span>) &#123;</span><br><span class="line">			<span class="built_in">free</span>(pContents[i]);</span><br><span class="line">			pContents[i] = <span class="literal">NULL</span>;</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (pContents != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="built_in">free</span>(pContents);</span><br><span class="line">		pContents = <span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为函数主体逻辑函数和主函数</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> test() &#123;</span><br><span class="line">	<span class="keyword">FILE</span>* <span class="keyword">file</span> = fopen(<span class="string">"./test.txt"</span>, <span class="string">"r"</span>);</span><br><span class="line">	<span class="keyword">if</span> (!<span class="keyword">file</span>)<span class="comment">//文件打开失败另一种写法</span></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> fileLines = getFileLines(<span class="keyword">file</span>);	</span><br><span class="line">	<span class="comment">//printf("行数为：%d\n", fileLines);</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span>** pContents = malloc(sizeof(<span class="keyword">char</span>*) * fileLines);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//读取文件并对应每行开辟堆空间</span></span><br><span class="line">	readFileData(<span class="keyword">file</span>, pContents, fileLines);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//打印文件内容</span></span><br><span class="line">	printData(pContents, fileLines);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//释放堆空间</span></span><br><span class="line">	freeSpace(pContents, fileLines);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> main() &#123;</span><br><span class="line"></span><br><span class="line">	test();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>PS：今天只花了俩小时就总结完了，总体来说这样复习的效果还是不错的，而且越来越熟练，白天码代码时就有意识的写注释进行整理了。但是排版还是个问题，一直觉得排版巨丑，不知道什么时候能好好学学解决下。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/13/2019-Holiday-Note-01/" rel="next" title="Holiday Note_01">
+                <i class="fa fa-chevron-left"></i> Holiday Note_01
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/15/2019-Holiday-Note-03/" rel="prev" title="Holiday Note_03">
+                Holiday Note_03 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="左手工匠">
+            
+              <p class="site-author-name" itemprop="name">左手工匠</p>
+              <p class="site-description motion-element" itemprop="description">大概就这样，折腾让生活更美好</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ofcZsgj" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tcuZsgj@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Bottle_Wei" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://coolshell.cn/" title="左耳朵耗子(陈浩大佬)" target="_blank">左耳朵耗子(陈浩大佬)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/home.html" title="阮一峰大神" target="_blank">阮一峰大神</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/user/AlehandroMiskauskas/featured" title="Alexandr Misko(战斗民族的Fingerstyle)" target="_blank">Alexandr Misko(战斗民族的Fingerstyle)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw" title="3Blue1Brown(看过的最棒的科普Youtuber)" target="_blank">3Blue1Brown(看过的最棒的科普Youtuber)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/user/KurtHugoSchneider/featured" title="Kurt Hugo Schneider(才华横溢的音乐Youtuber)" target="_blank">Kurt Hugo Schneider(才华横溢的音乐Youtuber)</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Holiday-Note-02"><span class="nav-number">1.</span> <span class="nav-text">Holiday Note_02</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串相关"><span class="nav-number">1.1.</span> <span class="nav-text">字符串相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sprintf-函数"><span class="nav-number">1.1.1.</span> <span class="nav-text">sprintf 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#格式化字符串"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">格式化字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拼接字符串"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">拼接字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数字转换为字符串"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">数字转换为字符串</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sscanf-函数"><span class="nav-number">1.1.2.</span> <span class="nav-text">sscanf 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、-s或-d"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1、%s或%d</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、-width-s"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">2、%[width]s</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、-a-z"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">3、%[a-z]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、-aBc"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">4、%[aBc]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、-a"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">5、%[^a]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、-a-z"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">6、%[^a-z]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#综合使用演示"><span class="nav-number">1.1.2.7.</span> <span class="nav-text">综合使用演示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串与字符数组的易错点"><span class="nav-number">1.1.3.</span> <span class="nav-text">字符串与字符数组的易错点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符数组初始化"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">字符数组初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sizeof与strlen差别"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">sizeof与strlen差别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现字符串拷贝函数的三种写法"><span class="nav-number">1.1.4.</span> <span class="nav-text">实现字符串拷贝函数的三种写法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法1"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法2"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">方法2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我认为最好的方法3"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">我认为最好的方法3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针和数组方式实现字符串反转"><span class="nav-number">1.1.5.</span> <span class="nav-text">指针和数组方式实现字符串反转</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组实现"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">数组实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指针实现"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">指针实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现查找子串"><span class="nav-number">1.1.6.</span> <span class="nav-text">实现查找子串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针作为函数参数时具有的输入输出特性"><span class="nav-number">1.2.</span> <span class="nav-text">指针作为函数参数时具有的输入输出特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#指针间接赋值"><span class="nav-number">1.2.1.</span> <span class="nav-text">指针间接赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针作为函数参数时具有的输入特性"><span class="nav-number">1.2.2.</span> <span class="nav-text">指针作为函数参数时具有的输入特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入特性：主调函数分配内存，被调函数使用内存使用内存"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">输入特性：主调函数分配内存，被调函数使用内存使用内存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出特性：被调函数分配内存，主调函数使用内存使用内存"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">输出特性：被调函数分配内存，主调函数使用内存使用内存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二级指针针对文件的开辟释放内存练习-有一定难度的综合练习"><span class="nav-number">1.2.3.</span> <span class="nav-text">二级指针针对文件的开辟释放内存练习 (有一定难度的综合练习)</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">左手工匠</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

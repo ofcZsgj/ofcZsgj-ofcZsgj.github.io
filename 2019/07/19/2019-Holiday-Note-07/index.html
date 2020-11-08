@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon32.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Note,C,DataStructure,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="zsgj" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Holiday Note_07一周了。今天接触了动态数组，挺简单的，主要考虑的应该是每一次增加的空间大小的逻辑。又学习了另外一种结构的单向链表，也就是额外用一个链表结构去嵌套结点结构的设计。最重要的学习了封装的方式去实现对数据结构的操作，不再返回链表的指针，而是使用万能指针避免使用者进行操作数据结构时对数据进行修改；并且广泛使用回调函数增加了数据结构的复用性。随着使用回调函数的次数增多，也逐渐开始">
+<meta name="keywords" content="Note,C,DataStructure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Holiday Note_07">
+<meta property="og:url" content="www.bottlewei.com/2019/07/19/2019-Holiday-Note-07/index.html">
+<meta property="og:site_name" content="zsgj">
+<meta property="og:description" content="Holiday Note_07一周了。今天接触了动态数组，挺简单的，主要考虑的应该是每一次增加的空间大小的逻辑。又学习了另外一种结构的单向链表，也就是额外用一个链表结构去嵌套结点结构的设计。最重要的学习了封装的方式去实现对数据结构的操作，不再返回链表的指针，而是使用万能指针避免使用者进行操作数据结构时对数据进行修改；并且广泛使用回调函数增加了数据结构的复用性。随着使用回调函数的次数增多，也逐渐开始">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://miao.su/images/2019/07/19/699829f16d3528ced1cf85eeff57238906a5.png">
+<meta property="og:image" content="https://miao.su/images/2019/07/19/6607952a5f706902e176b84c1cbcca38405c.png">
+<meta property="og:updated_time" content="2019-07-19T13:59:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Holiday Note_07">
+<meta name="twitter:description" content="Holiday Note_07一周了。今天接触了动态数组，挺简单的，主要考虑的应该是每一次增加的空间大小的逻辑。又学习了另外一种结构的单向链表，也就是额外用一个链表结构去嵌套结点结构的设计。最重要的学习了封装的方式去实现对数据结构的操作，不再返回链表的指针，而是使用万能指针避免使用者进行操作数据结构时对数据进行修改；并且广泛使用回调函数增加了数据结构的复用性。随着使用回调函数的次数增多，也逐渐开始">
+<meta name="twitter:image" content="https://miao.su/images/2019/07/19/699829f16d3528ced1cf85eeff57238906a5.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":16,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="www.bottlewei.com/2019/07/19/2019-Holiday-Note-07/">
+
+
+
+
+
+  <title>Holiday Note_07 | zsgj</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '135080128-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?129843fc827ed0b20e0e23de49875737";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+      <a href="https://github.com/ofcZsgj/ofcZsgj.github.io" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zsgj</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">停灯向晓, 抱影无眠</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.bottlewei.com/2019/07/19/2019-Holiday-Note-07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左手工匠">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zsgj">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Holiday Note_07</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-19T20:07:00+08:00">
+                2019-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Holiday-Note-07"><a href="#Holiday-Note-07" class="headerlink" title="Holiday Note_07"></a>Holiday Note_07</h1><p>一周了。今天接触了<strong>动态数组</strong>，挺简单的，主要考虑的应该是每一次增加的空间大小的逻辑。又学习了另外一种结构的<strong>单向链表</strong>，也就是额外用一个链表结构去嵌套结点结构的设计。最重要的学习了<strong>封装</strong>的方式去实现对数据结构的操作，不再返回链表的指针，而是使用万能指针避免使用者进行操作数据结构时对数据进行修改；并且广泛使用<strong>回调函数</strong>增加了数据结构的复用性。随着使用回调函数的次数增多，也逐渐开始体会到了封装所带来的便利了，理解这一部分尤其重要。对于<strong>单向链表各个函数定义的参数那部分一定要读懂其设置的含义</strong>。</p>
+<a id="more"></a>
+<hr>
+<h2 id="动态数组"><a href="#动态数组" class="headerlink" title="动态数组"></a>动态数组</h2><p>第一次接触动态数组，听名字DynamicArray感觉很厉害，其实实现起来，和普通的数组结构差不多，主要有三个成员，分别是<strong>数组空间首地址(二维指针)，容量大小，当前大小</strong>，唯一不同的就是判断空间不足时需要再分配一块新空间，再将原空间的数据拷贝过去。</p>
+<h3 id="动态数组头文件"><a href="#动态数组头文件" class="headerlink" title="动态数组头文件"></a>动态数组头文件</h3><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> DynamicArray &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//数组存储元素的空间的首地址</span></span><br><span class="line">	<span class="keyword">void</span>** addr;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//数组能够在内存中存取的最大元素的个数</span></span><br><span class="line">	<span class="keyword">int</span> capacity;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//当前存储数据的内存中一共有多少个元素</span></span><br><span class="line">	<span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化数组</span></span><br><span class="line"><span class="keyword">struct</span> DynamicArray* Init_DynamicArray(<span class="keyword">int</span> capacity);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入元素</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Insert_DynamicArray</span>(<span class="params"><span class="keyword">struct</span> DynamicArray* arr, <span class="keyword">int</span> pos, <span class="keyword">void</span>* data</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按位置删除</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DeleteByPos_DynamicArray</span>(<span class="params"><span class="keyword">struct</span> DynamicArray* arr, <span class="keyword">int</span> pos</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按值删除</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DeleteByValue_DynamicArray</span>(<span class="params"><span class="keyword">struct</span> DynamicArray* arr, <span class="keyword">void</span>* delData, <span class="keyword">int</span>(*CompareCallback</span>)(<span class="params"><span class="keyword">void</span>*, <span class="keyword">void</span>*</span>))</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历数组</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Foreach_DynamicArray</span>(<span class="params"><span class="keyword">struct</span> DynamicArray* arr, <span class="keyword">void</span>(*_callback</span>)(<span class="params"><span class="keyword">void</span>*</span>))</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//销毁数组</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Destroy_DynamicArray</span>(<span class="params"><span class="keyword">struct</span> DynamicArray* arr</span>)</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="动态数组实现文件"><a href="#动态数组实现文件" class="headerlink" title="动态数组实现文件"></a>动态数组实现文件</h3><h4 id="初始化数组"><a href="#初始化数组" class="headerlink" title="初始化数组"></a>初始化数组</h4><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">DynamicArray</span></span>* Init_DynamicArray(int capacity) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (capacity &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> NULL;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">DynamicArray</span></span>* arr = malloc(<span class="keyword">sizeof</span>(<span class="class"><span class="keyword">struct</span> <span class="title">DynamicArray</span></span>));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (NULL == arr) &#123;</span><br><span class="line">		<span class="keyword">return</span> NULL;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	arr-&gt;addr = malloc(<span class="keyword">sizeof</span>(void*) * capacity);</span><br><span class="line"></span><br><span class="line">	arr-&gt;capacity = capacity;</span><br><span class="line"></span><br><span class="line">	arr-&gt;size = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> arr;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="插入元素-重点，需要判断空间是否足够集进行分配空间，拷贝数据，释放原空间操作"><a href="#插入元素-重点，需要判断空间是否足够集进行分配空间，拷贝数据，释放原空间操作" class="headerlink" title="插入元素(重点，需要判断空间是否足够集进行分配空间，拷贝数据，释放原空间操作)"></a>插入元素(重点，需要判断空间是否足够集进行<strong>分配空间</strong>，<strong>拷贝数据</strong>，<strong>释放原空间</strong>操作)</h4><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">void Insert_DynamicArray(struct DynamicArray* arr, int pos, void* <span class="keyword">data</span>) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (NULL == arr) &#123;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (NULL == <span class="keyword">data</span>) &#123;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//传入的位置不管是小于0还是大于容量，都让插入的位置为最后一个，因为数组元素间不能不连续</span></span><br><span class="line">	<span class="function"><span class="title">if</span> (pos &lt; 0 || pos &gt;= arr-&gt;</span>capacity) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="title">pos</span> = arr-&gt;</span>size;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//当存储的数据个数已经等于容量时，需要增长数组空间</span></span><br><span class="line">	<span class="function"><span class="title">if</span> (arr-&gt;</span><span class="function"><span class="title">size</span> &gt;= arr-&gt;</span>capacity) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//分配更大的内存空间，暂时不考虑增长策略，默认直接翻倍</span></span><br><span class="line">		<span class="function"><span class="title">int</span> newCapacity = arr-&gt;</span>capacity * <span class="number">2</span>;</span><br><span class="line">		void** newAddr = malloc(sizeof(void*) * newCapacity);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//将原空间的数据拷贝至新分配的空间中</span></span><br><span class="line">		<span class="function"><span class="title">memcpy</span>(newAddr, arr-&gt;</span><span class="function"><span class="title">addr</span>, sizeof(void*) * arr-&gt;</span>size);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//释放原空间内存</span></span><br><span class="line">		<span class="function"><span class="title">free</span>(arr-&gt;</span>addr);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//更新数组的指向以及容量</span></span><br><span class="line">		<span class="function"><span class="title">arr</span>-&gt;</span>addr = newAddr;</span><br><span class="line">		<span class="function"><span class="title">arr</span>-&gt;</span>capacity = newCapacity;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//为要插入的元素腾出空间</span></span><br><span class="line">	<span class="function"><span class="title">for</span> (int i = arr-&gt;</span>size - <span class="number">1</span>; i &gt;= pos; --i) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="title">arr</span>-&gt;</span><span class="function"><span class="title">addr</span>[i + 1] = arr-&gt;</span>addr[i];</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//将元素插入并且更新数组存储数据个数</span></span><br><span class="line">	<span class="function"><span class="title">arr</span>-&gt;</span>addr[pos] = <span class="keyword">data</span>;</span><br><span class="line">	<span class="function"><span class="title">arr</span>-&gt;</span>size++;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="按位置删除"><a href="#按位置删除" class="headerlink" title="按位置删除"></a>按位置删除</h4><p>功能不够完善，当<em>删除最后一个元素时</em>，即pos == size-1的情况时，并未进入循环，而是直接size–，实际该元素仍然存在，在测试文件中，我仍可以将依旧删除的最后一个元素进行打印输出。</p>
+<figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">void DeleteByPos_DynamicArray(struct DynamicArray* arr, <span class="keyword">int</span> pos) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">NULL</span> == arr) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (pos &lt; <span class="number">0</span> || pos &gt; arr-&gt;size - <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//！！！！！</span></span><br><span class="line">	<span class="comment">//当删除最后一个元素时，即pos == size-1的情况时，并未进入循环，而是直接size--，实际该元素仍然存在</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = pos; i &lt; arr-&gt;size - <span class="number">1</span>; ++i) &#123;</span><br><span class="line"></span><br><span class="line">		arr-&gt;addr[i] = arr-&gt;addr[i + <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	arr-&gt;size--;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="按值删除"><a href="#按值删除" class="headerlink" title="按值删除"></a>按值删除</h4><p>使用了回调函数对数据进行比对操作，传递数据地址和需要删除的值的指针，用户根据不同数据类型编写对应的比对函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DeleteByValue_DynamicArray</span><span class="params">(struct DynamicArray* arr, <span class="keyword">void</span>* delData, <span class="keyword">int</span>(*CompareCallback)(<span class="keyword">void</span>*, <span class="keyword">void</span>*))</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == arr) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == delData) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == CompareCallback) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr-&gt;size; ++i) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (CompareCallback(arr-&gt;addr[i], delData)) &#123;</span><br><span class="line"></span><br><span class="line">			DeleteByPos_DynamicArray(arr, i);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h4><p>同样使用了回调函数</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void Foreach_DynamicArray(struct DynamicArray* arr, void<span class="comment">(*_callback)(void*)</span>) <span class="comment">&#123;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	if (NULL == arr)</span></span><br><span class="line"><span class="comment">		return;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	for (int i = 0; i &lt; arr-&gt;size; ++i) &#123;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		_callback(arr-&gt;addr[i]);</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="销毁数组"><a href="#销毁数组" class="headerlink" title="销毁数组"></a>销毁数组</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Destroy_DynamicArray</span><span class="params">(struct DynamicArray* arr)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == arr) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (arr-&gt;addr != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="built_in">free</span>(arr-&gt;addr);</span><br><span class="line">		arr-&gt;addr = <span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">free</span>(arr);</span><br><span class="line">	arr = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="动态数组测试文件"><a href="#动态数组测试文件" class="headerlink" title="动态数组测试文件"></a>动态数组测试文件</h3><p>定义一个结构体数组，调用动态数组进行存储并操作，测试文件需要根据定义的数据类型编写对应回调函数才能调用写好的数据结构操作数据，注意看最后的将删除元素打印步骤。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span> &#123;</span><br><span class="line">	<span class="built_in">char</span> name[<span class="number">64</span>];</span><br><span class="line">	int age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历回调函数</span></span><br><span class="line">void myPrint(void* data) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span>* arrayData = (<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span>*)data;</span><br><span class="line">	printf(<span class="string">"name: %s age: %d\n"</span>, arrayData-&gt;name, arrayData-&gt;age);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//比较回调函数</span></span><br><span class="line">int myCompare(void* arrData, void* delData) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (NULL == arrData) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (NULL == delData) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span>* ArrData = (<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span>*)arrData;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span>* DelData = (<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span>*)delData;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> (strcmp(ArrData-&gt;name, DelData-&gt;name) == <span class="number">0</span>) &amp;&amp; (ArrData-&gt;age == DelData-&gt;age);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void test() &#123;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span> person1 = &#123; <span class="string">"aaa"</span>,<span class="number">10</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span> person2 = &#123; <span class="string">"bbb"</span>,<span class="number">20</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span> person3 = &#123; <span class="string">"ccc"</span>,<span class="number">30</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span> person4 = &#123; <span class="string">"ddd"</span>,<span class="number">40</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span> person5 = &#123; <span class="string">"eee"</span>,<span class="number">50</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span> person6 = &#123; <span class="string">"fff"</span>,<span class="number">60</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 初始化一个容量只有5的动态数组</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">DynamicArray</span></span> * testArray= Init_DynamicArray(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">	Insert_DynamicArray(testArray, <span class="number">0</span>, &amp;person1);</span><br><span class="line">	Insert_DynamicArray(testArray, <span class="number">0</span>, &amp;person2);</span><br><span class="line">	Insert_DynamicArray(testArray, <span class="number">0</span>, &amp;person3);</span><br><span class="line">	Insert_DynamicArray(testArray, <span class="number">1</span>, &amp;person4);</span><br><span class="line">	Insert_DynamicArray(testArray, <span class="number">1</span>, &amp;person5);</span><br><span class="line"></span><br><span class="line">	printf(<span class="string">"当前数组的容量为 %d \n"</span>, testArray-&gt;capacity);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//插入六个数据检测是否实现容量增长</span></span><br><span class="line">	Insert_DynamicArray(testArray, <span class="number">666</span>, &amp;person6);</span><br><span class="line"></span><br><span class="line">	printf(<span class="string">"此时数组的容量为 %d \n"</span>, testArray-&gt;capacity);</span><br><span class="line"></span><br><span class="line">	Foreach_DynamicArray(testArray, myPrint);<span class="comment">// 3 5 4 2 1 6</span></span><br><span class="line"></span><br><span class="line">	DeleteByPos_DynamicArray(testArray, <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">	printf(<span class="string">"------按位置删除-----\n"</span>);</span><br><span class="line"></span><br><span class="line">	Foreach_DynamicArray(testArray,myPrint);<span class="comment">// 3 5 4 2 1</span></span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span> pTest = &#123; <span class="string">"aaa"</span>, <span class="number">10</span> &#125;;</span><br><span class="line">	DeleteByValue_DynamicArray(testArray, &amp;pTest, myCompare);</span><br><span class="line"></span><br><span class="line">	printf(<span class="string">"-------按值删除------\n"</span>);</span><br><span class="line"></span><br><span class="line">	Foreach_DynamicArray(testArray, myPrint);<span class="comment">//3 5 4 2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	printf(<span class="string">"----\n"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//按值删除的内部由于调用了按位置删除的函数，因此，对数组当前最后一个元素进行删除时依旧存在没有真正删除的问题</span></span><br><span class="line">	<span class="comment">//因为按位置删除对最后一个元素的删除时，并未采取清除或替换操作，仅仅是进行了size--操作，因此可以通过直接访问该元素地址进行输出</span></span><br><span class="line">	printf(<span class="string">"第五个元素并未删除 name: %s age: %d\n"</span>, ((<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span>*)testArray-&gt;addr[<span class="number">4</span>])-&gt;name, ((<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span>*)testArray-&gt;addr[<span class="number">4</span>])-&gt;age);</span><br><span class="line">	printf(<span class="string">"第六个元素并未删除 name: %s age: %d\n"</span>, ((<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span>*)testArray-&gt;addr[<span class="number">5</span>])-&gt;name, ((<span class="class"><span class="keyword">struct</span> <span class="title">Person</span></span>*)testArray-&gt;addr[<span class="number">5</span>])-&gt;age);</span><br><span class="line"></span><br><span class="line">	Destroy_DynamicArray(testArray);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	test();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试输入如下：<br><img src="https://miao.su/images/2019/07/19/699829f16d3528ced1cf85eeff57238906a5.png" alt="699829f16d3528ced1cf85eeff57238906a5.png"></p>
+<h2 id="单向链表"><a href="#单向链表" class="headerlink" title="单向链表"></a>单向链表</h2><p>与之前写的链表不同的是，这次定义了<strong>两个结构体</strong>，一个是<em>结点结构</em>，一个是<em>链表结构</em>，其中链表结构嵌套了结点结构，存放了<strong>链表的头结点</strong>，<strong>结点个数</strong>。后期可以根据需要加入类似<strong>尾指针</strong>，让尾插法更加高效的操作链表的一系列成员。</p>
+<p>还有一点就是，<strong>封装的思想</strong>。之前写的链表，初始化传递回去的直接就是一个<em>指向数据结构首地址的数据结构类型指针</em>，虽然这样可以更加方便操作数据结构，但不加以约束的会带来许多<strong>弊端</strong>：拿到指针后可以随意修改数据，还可以对数据进行清空。</p>
+<p>因此这次在实现单向链表时，<strong>初始化数据结构</strong>后传递回去的是一个<strong>万能指针类型</strong>，这样用户在得到该指针后，只能使用这个指针调用我们数据结构已经写好的功能，比如获取结点个数等之前可以直接通过指针操作获取的数据。</p>
+<p>在写数据结构的过程中，由于传递的是万能指针类型，所以实现各个功能都需要进行强转万能指针对数据结构进行操作，因为是自己实现数据结构，知道数据结构的类型因此可以通过强转进行操作，而用户则不能进行这种操作。</p>
+<p>而且封装的思想还体现在了<strong>插入数据</strong>时接收数据的形参也是万能指针，即我们写数据结构时无需考虑用户传递的数据类型，当实现遍历打印，按值删除这些需要<strong>明确清楚数据类型的功能</strong>时，在函数的形参中使用<strong>函数指针</strong>，这些<strong>回调函数</strong>均由用户去实现，我们的函数指针指向用户写好的回调函数后，根据返回值便可以对数据进行上述功能的实现了。</p>
+<h3 id="单向链表头文件"><a href="#单向链表头文件" class="headerlink" title="单向链表头文件"></a>单向链表头文件</h3><p><strong>这部分是重点！！！</strong></p>
+<p>增加了使用typedef给万能指针，函数指针重新命名的操作，目的是增加程序的可读性。而且不在头文件中定义数据结构了而是放到了实现文件中，也是封装的思想，<strong>让用户看到更少的细节</strong>，仅需要注重调用功能的实现。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用void*保护链表</span></span><br><span class="line">	<span class="keyword">typedef</span> <span class="keyword">void</span>* LList;</span><br><span class="line">	<span class="function"><span class="keyword">typedef</span> <span class="title">void</span><span class="params">(*FOREACH)</span><span class="params">(<span class="keyword">void</span>* )</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">typedef</span> <span class="title">int</span><span class="params">(*COMPARE)</span><span class="params">(<span class="keyword">void</span>*, <span class="keyword">void</span>*)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//初始化链表，不再返回指向链表指针类型</span></span><br><span class="line">	<span class="function">LList <span class="title">Init_LinkList</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//插入结点</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Insert_LinkList</span><span class="params">(LList <span class="built_in">list</span>, <span class="keyword">int</span> pos, <span class="keyword">void</span>* data)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//遍历链表</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">ForEach_LinkList</span><span class="params">(LList <span class="built_in">list</span>, FOREACH myfoeach)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//按位置删除结点</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">DeleteByPos_LinkList</span><span class="params">(LList <span class="built_in">list</span>, <span class="keyword">int</span> pos)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//按值删除结点</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">DeleteByValue_LinkList</span><span class="params">(LList <span class="built_in">list</span>, <span class="keyword">void</span>* data, COMPARE compare)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//链表大小</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">Size_LinkList</span><span class="params">(LList <span class="built_in">list</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//清空链表</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Clear_LinkList</span><span class="params">(LList <span class="built_in">list</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//销毁链表</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Destroy_LinkList</span><span class="params">(LList <span class="built_in">list</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="单向链表实现文件"><a href="#单向链表实现文件" class="headerlink" title="单向链表实现文件"></a>单向链表实现文件</h3><h4 id="单向链表数据结构的定义"><a href="#单向链表数据结构的定义" class="headerlink" title="单向链表数据结构的定义"></a>单向链表数据结构的定义</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 结点数据类型</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span> &#123;</span></span><br><span class="line">	<span class="keyword">void</span>* data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 链表数据类型</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LinkList</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span> <span class="title">header</span>;</span></span><br><span class="line">	<span class="keyword">int</span> size;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="初始化链表，不再返回指向链表指针类型"><a href="#初始化链表，不再返回指向链表指针类型" class="headerlink" title="初始化链表，不再返回指向链表指针类型"></a>初始化链表，不再返回指向链表指针类型</h4><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">LList Init_LinkList() &#123;</span><br><span class="line"></span><br><span class="line">	struct LinkList* <span class="built_in">list</span> = malloc(sizeof(struct LinkList));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">NULL</span> == <span class="built_in">list</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">list</span>-&gt;<span class="keyword">header</span>.next = <span class="built_in">NULL</span>;</span><br><span class="line">	<span class="built_in">list</span>-&gt;<span class="keyword">header</span>.<span class="built_in">data</span> = <span class="built_in">NULL</span>;</span><br><span class="line">	<span class="built_in">list</span>-&gt;size = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">list</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="插入结点-比较重要"><a href="#插入结点-比较重要" class="headerlink" title="插入结点(比较重要)"></a>插入结点(比较重要)</h4><p>中间有两条语句是插入结点后重新连接链表的操作，因为没画图，就脑子想了想，结果debug了一个半小时，差点崩溃了，所以数据结构画图很重要啊！！</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">void Insert_LinkList(LList list, int pos, void* data) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (NULL == list) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (NULL == data) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//传入的list是void*类型，需要进行强转</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkList</span></span>* myList = (<span class="class"><span class="keyword">struct</span> <span class="title">LinkList</span></span>*)list;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (pos &lt; <span class="number">0</span> || pos &gt; myList-&gt;size) &#123;</span><br><span class="line"></span><br><span class="line">		pos = myList-&gt;size;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//查找插入位置的前一个结点(重点！)</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span></span>* pCurrent = &amp;(myList-&gt;header);</span><br><span class="line">	<span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; pos; ++i) &#123;</span><br><span class="line"></span><br><span class="line">		pCurrent = pCurrent-&gt;next;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span></span>* newNode = malloc(<span class="keyword">sizeof</span>(<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span></span>));</span><br><span class="line">	newNode-&gt;next = NULL;</span><br><span class="line">	newNode-&gt;data = data;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 插入结点，两条语句的先后顺序很关键，画图！！！再写</span></span><br><span class="line">	newNode-&gt;next = pCurrent-&gt;next;</span><br><span class="line">	pCurrent-&gt;next = newNode;</span><br><span class="line"></span><br><span class="line">	myList-&gt;size++;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="遍历链表"><a href="#遍历链表" class="headerlink" title="遍历链表"></a>遍历链表</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ForEach_LinkList</span><span class="params">(LList <span class="built_in">list</span>, FOREACH myfoeach)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == <span class="built_in">list</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(<span class="literal">NULL</span> == myfoeach) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//传入的list是void*类型，需要进行强转</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkList</span>* <span class="title">myList</span> = (<span class="title">struct</span> <span class="title">Links</span>*)<span class="title">list</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">pCurrent</span> = <span class="title">myList</span>-&gt;<span class="title">header</span>.<span class="title">next</span>;</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span> (pCurrent != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		myfoeach(pCurrent-&gt;data);</span><br><span class="line">		pCurrent = pCurrent-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="按位置删除结点"><a href="#按位置删除结点" class="headerlink" title="按位置删除结点"></a>按位置删除结点</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DeleteByPos_LinkList</span><span class="params">(LList <span class="built_in">list</span>, <span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == <span class="built_in">list</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkList</span>* <span class="title">myList</span> = (<span class="title">struct</span> <span class="title">LinkList</span>*)<span class="title">list</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (pos &lt; <span class="number">0</span> || pos &gt; myList-&gt;size) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 重点理解以下的pCurrent指针和for循环功能</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">pCurrent</span> = &amp;(<span class="title">myList</span>-&gt;<span class="title">header</span>);</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//找到要删除的结点的前一个结点位置</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; pos; ++i) &#123;</span><br><span class="line"></span><br><span class="line">		pCurrent = pCurrent-&gt;next;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//将被删除结点的前驱结点和后继结点进行连接</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">pDel</span> = <span class="title">pCurrent</span>-&gt;<span class="title">next</span>;</span></span><br><span class="line">	pCurrent-&gt;next = pDel-&gt;next;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">free</span>(pDel);</span><br><span class="line">	pDel = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">	myList-&gt;size--;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="按值删除结点-比较重要"><a href="#按值删除结点-比较重要" class="headerlink" title="按值删除结点(比较重要)"></a>按值删除结点(比较重要)</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DeleteByValue_LinkList</span><span class="params">(LList <span class="built_in">list</span>, <span class="keyword">void</span>* data, COMPARE compare)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == <span class="built_in">list</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == data) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == compare) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkList</span>* <span class="title">myList</span> = (<span class="title">struct</span> <span class="title">LinkList</span>*)<span class="title">list</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//两个辅助指针变量</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">pPre</span> = &amp;(<span class="title">myList</span>-&gt;<span class="title">header</span>);</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">pCurrent</span> = <span class="title">myList</span>-&gt;<span class="title">header</span>.<span class="title">next</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (pCurrent != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (compare(pCurrent-&gt;data, data)) &#123;</span><br><span class="line">			<span class="comment">// 找到要删除的结点</span></span><br><span class="line">			pPre-&gt;next = pCurrent-&gt;next;		</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		pPre = pCurrent;</span><br><span class="line">		pCurrent = pCurrent-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//释放被删除的结点</span></span><br><span class="line">	<span class="built_in">free</span>(pCurrent);</span><br><span class="line">	pCurrent = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">	myList-&gt;size--;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="链表大小"><a href="#链表大小" class="headerlink" title="链表大小"></a>链表大小</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Size_LinkList</span><span class="params">(LList <span class="built_in">list</span>)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == <span class="built_in">list</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkList</span>* <span class="title">myList</span> = (<span class="title">struct</span> <span class="title">LinkList</span>*)<span class="title">list</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> myList-&gt;size;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="清空链表"><a href="#清空链表" class="headerlink" title="清空链表"></a>清空链表</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Clear_LinkList</span><span class="params">(LList <span class="built_in">list</span>)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == <span class="built_in">list</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkList</span>* <span class="title">myList</span> = (<span class="title">struct</span> <span class="title">LinkList</span>*)<span class="title">list</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">pCurrent</span> = <span class="title">myList</span>-&gt;<span class="title">header</span>.<span class="title">next</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (pCurrent != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//先记录下一个结点的地址</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">pNext</span> = <span class="title">pCurrent</span>-&gt;<span class="title">next</span>;</span></span><br><span class="line">		<span class="comment">//释放当前结点的空间</span></span><br><span class="line">		<span class="built_in">free</span>(pCurrent);</span><br><span class="line">		pCurrent = pNext;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	myList-&gt;header.next = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//将链表大小置为0</span></span><br><span class="line">	myList-&gt;size = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="销毁链表"><a href="#销毁链表" class="headerlink" title="销毁链表"></a>销毁链表</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Destroy_LinkList</span><span class="params">(LList <span class="built_in">list</span>)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == <span class="built_in">list</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Clear_LinkList(<span class="built_in">list</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">free</span>(<span class="built_in">list</span>);</span><br><span class="line">	<span class="built_in">list</span> = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="我认为比较重要的一个循环"><a href="#我认为比较重要的一个循环" class="headerlink" title="我认为比较重要的一个循环"></a>我认为比较重要的一个循环</h4><p>在插入和按位置删除结点都使用了这个循环，用途是找到<strong>需要操作的结点的前一个结点</strong>。</p>
+<figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="type">LinkNode</span>* pCurrent = &amp;(myList-&gt;header);</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; pos; ++i) &#123;</span><br><span class="line"></span><br><span class="line">    pCurrent = pCurrent-&gt;next;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="单向链表测试文件"><a href="#单向链表测试文件" class="headerlink" title="单向链表测试文件"></a>单向链表测试文件</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Person</span> &#123;</span></span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">64</span>];</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//用于对链表遍历的数据进行转换</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myPrint</span><span class="params">(<span class="keyword">void</span>* data)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span>* <span class="title">Data</span> = (<span class="title">struct</span> <span class="title">Person</span>*)<span class="title">data</span>;</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"name: %s age: %d\n"</span>, Data-&gt;name, Data-&gt;age);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//用于对按值删除的数据进行比较</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">myCompare</span><span class="params">(<span class="keyword">void</span>* pre, <span class="keyword">void</span>* cur)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span>* <span class="title">p1</span> = (<span class="title">struct</span> <span class="title">Person</span>*)<span class="title">pre</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span>* <span class="title">p2</span> = (<span class="title">struct</span> <span class="title">Person</span>*)<span class="title">cur</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> (<span class="built_in">strcmp</span>(p1-&gt;name, p2-&gt;name) == <span class="number">0</span>) &amp;&amp; (p1-&gt;age == p2-&gt;age);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span> <span class="title">p1</span> = &#123;</span> <span class="string">"aa"</span>,<span class="number">1</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span> <span class="title">p2</span> = &#123;</span> <span class="string">"bb"</span>,<span class="number">2</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span> <span class="title">p3</span> = &#123;</span> <span class="string">"cc"</span>,<span class="number">3</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span> <span class="title">p4</span> = &#123;</span> <span class="string">"dd"</span>,<span class="number">4</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span> <span class="title">p5</span> = &#123;</span> <span class="string">"ee"</span>,<span class="number">5</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span> <span class="title">p6</span> = &#123;</span> <span class="string">"ff"</span>,<span class="number">6</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span> <span class="title">p7</span> = &#123;</span> <span class="string">"gg"</span>,<span class="number">7</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//初始化链表</span></span><br><span class="line">	LList testList = Init_LinkList();</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 插入数据</span></span><br><span class="line">	Insert_LinkList(testList, <span class="number">0</span>, &amp;p1);</span><br><span class="line">	Insert_LinkList(testList, <span class="number">1</span>, &amp;p2);</span><br><span class="line">	Insert_LinkList(testList, <span class="number">2</span>, &amp;p3);</span><br><span class="line">	Insert_LinkList(testList, <span class="number">3</span>, &amp;p4);</span><br><span class="line">	Insert_LinkList(testList, <span class="number">4</span>, &amp;p5);</span><br><span class="line">	Insert_LinkList(testList, <span class="number">5</span>, &amp;p6);</span><br><span class="line">	Insert_LinkList(testList, <span class="number">6</span>, &amp;p7);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"链表大小初始为 %d \n"</span>, Size_LinkList(testList));</span><br><span class="line"></span><br><span class="line">	ForEach_LinkList(testList, myPrint);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"-----------------\n"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//按位置删除</span></span><br><span class="line">	DeleteByPos_LinkList(testList, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">	ForEach_LinkList(testList, myPrint);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"-----------------\n"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//按值删除</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Person</span> <span class="title">testDel</span> = &#123;</span> <span class="string">"gg"</span>, <span class="number">7</span>&#125;;</span><br><span class="line">	DeleteByValue_LinkList(testList, &amp;testDel, myCompare);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	ForEach_LinkList(testList, myPrint);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"-----------------\n"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"链表大小为 %d \n"</span>, Size_LinkList(testList));</span><br><span class="line"></span><br><span class="line">	<span class="comment">//清空链表</span></span><br><span class="line">	Clear_LinkList(testList);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"清空后链表大小为 %d \n"</span>, Size_LinkList(testList));</span><br><span class="line"></span><br><span class="line">	<span class="comment">//销毁链表</span></span><br><span class="line">	Destroy_LinkList(testList);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	test();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试输出如下：<br><img src="https://miao.su/images/2019/07/19/6607952a5f706902e176b84c1cbcca38405c.png" alt="6607952a5f706902e176b84c1cbcca38405c.png"><br>PS:一周了，多写一篇周记吧。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C</a>
+          
+            <a href="/tags/DataStructure/" rel="tag"><i class="fa fa-tag"></i> DataStructure</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/18/2019-Holiday-Note-06/" rel="next" title="Holiday Note_05">
+                <i class="fa fa-chevron-left"></i> Holiday Note_05
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/19/XBB01/" rel="prev" title="Weekly Report 1">
+                Weekly Report 1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="左手工匠">
+            
+              <p class="site-author-name" itemprop="name">左手工匠</p>
+              <p class="site-description motion-element" itemprop="description">大概就这样，折腾让生活更美好</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ofcZsgj" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tcuZsgj@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Bottle_Wei" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://coolshell.cn/" title="左耳朵耗子(陈浩大佬)" target="_blank">左耳朵耗子(陈浩大佬)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/home.html" title="阮一峰大神" target="_blank">阮一峰大神</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/user/AlehandroMiskauskas/featured" title="Alexandr Misko(战斗民族的Fingerstyle)" target="_blank">Alexandr Misko(战斗民族的Fingerstyle)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw" title="3Blue1Brown(看过的最棒的科普Youtuber)" target="_blank">3Blue1Brown(看过的最棒的科普Youtuber)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.youtube.com/user/KurtHugoSchneider/featured" title="Kurt Hugo Schneider(才华横溢的音乐Youtuber)" target="_blank">Kurt Hugo Schneider(才华横溢的音乐Youtuber)</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Holiday-Note-07"><span class="nav-number">1.</span> <span class="nav-text">Holiday Note_07</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动态数组"><span class="nav-number">1.1.</span> <span class="nav-text">动态数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态数组头文件"><span class="nav-number">1.1.1.</span> <span class="nav-text">动态数组头文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态数组实现文件"><span class="nav-number">1.1.2.</span> <span class="nav-text">动态数组实现文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化数组"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">初始化数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入元素-重点，需要判断空间是否足够集进行分配空间，拷贝数据，释放原空间操作"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">插入元素(重点，需要判断空间是否足够集进行分配空间，拷贝数据，释放原空间操作)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按位置删除"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">按位置删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按值删除"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">按值删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历数组"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">遍历数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#销毁数组"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">销毁数组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态数组测试文件"><span class="nav-number">1.1.3.</span> <span class="nav-text">动态数组测试文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单向链表"><span class="nav-number">1.2.</span> <span class="nav-text">单向链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单向链表头文件"><span class="nav-number">1.2.1.</span> <span class="nav-text">单向链表头文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单向链表实现文件"><span class="nav-number">1.2.2.</span> <span class="nav-text">单向链表实现文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单向链表数据结构的定义"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">单向链表数据结构的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化链表，不再返回指向链表指针类型"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">初始化链表，不再返回指向链表指针类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入结点-比较重要"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">插入结点(比较重要)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历链表"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">遍历链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按位置删除结点"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">按位置删除结点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按值删除结点-比较重要"><span class="nav-number">1.2.2.6.</span> <span class="nav-text">按值删除结点(比较重要)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链表大小"><span class="nav-number">1.2.2.7.</span> <span class="nav-text">链表大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清空链表"><span class="nav-number">1.2.2.8.</span> <span class="nav-text">清空链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#销毁链表"><span class="nav-number">1.2.2.9.</span> <span class="nav-text">销毁链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我认为比较重要的一个循环"><span class="nav-number">1.2.2.10.</span> <span class="nav-text">我认为比较重要的一个循环</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单向链表测试文件"><span class="nav-number">1.2.3.</span> <span class="nav-text">单向链表测试文件</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">左手工匠</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
